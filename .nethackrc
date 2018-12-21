@@ -1,0 +1,13 @@
+OPTIONS=number_pad
+OPTIONS=time
+OPTIONS=showscore
+OPTIONS=showexp
+#OPTIONS=noautopickup
+OPTIONS=pickup_types:=$!
+OPTIONS=fruit:kebap
+OPTIONS=color
+OPTIONS=pettype:none
+#OPTIONS=decgraphics
+#OPTIONS=lit_corridor
+OPTIONS=boulder:0
+OPTIONS=!mail
