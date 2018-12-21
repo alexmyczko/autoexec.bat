@@ -1,0 +1,4 @@
+nethack on
+hardstatus string "%h(screen %n.%t)"
+startup_message off
+layout save default
