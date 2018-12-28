@@ -5,6 +5,7 @@ fi
 
 if [[ $(uname) == "Darwin" ]]; then
     setup='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    #brew install htop mc memtester ecm cmake lame lftp madplay ncdu tcc wget xz
     # disable creating .DS_store files
     #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
     # show all files in Finder
