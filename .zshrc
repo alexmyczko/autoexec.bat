@@ -5,6 +5,10 @@ fi
 
 if [[ $(uname) == "Darwin" ]]; then
     setup='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    # disable creating .DS_store files
+    #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
+    # show all files in Finder
+    #defaults write com.apple.Finder AppleShowAllFiles true
 fi
 if [[ $(uname) == "Linux" ]]; then
     setup=''
