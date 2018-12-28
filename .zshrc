@@ -4,7 +4,7 @@ if [[ $TERM == "screen" ]]; then
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
-    setup='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+    alias setup='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     #brew install htop mc memtester ecm cmake lame lftp madplay ncdu tcc wget xz
     # disable creating .DS_store files
     #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
@@ -14,7 +14,7 @@ if [[ $(uname) == "Darwin" ]]; then
     #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 fi
 if [[ $(uname) == "Linux" ]]; then
-    setup=''
+    alias setup=''
 fi
 
 # set favourite editor, emacs is an alternative
