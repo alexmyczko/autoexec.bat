@@ -9,6 +9,8 @@ if [[ $(uname) == "Darwin" ]]; then
     #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
     # show all files in Finder
     #defaults write com.apple.Finder AppleShowAllFiles true
+    # Finder show file extensions
+    #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 fi
 if [[ $(uname) == "Linux" ]]; then
     setup=''
