@@ -15,6 +15,7 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 if [[ $(uname) == "Linux" ]]; then
     alias setup=''
+    #systemctl disable motd-news.timer
 fi
 
 # set favourite editor, emacs is an alternative
