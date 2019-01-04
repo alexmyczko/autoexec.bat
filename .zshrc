@@ -16,6 +16,7 @@ fi
 if [[ $(uname) == "Linux" ]]; then
     alias setup=''
     #systemctl disable motd-news.timer
+    #apt-get --purge remove ubuntu-report
 fi
 
 # set favourite editor, emacs is an alternative
