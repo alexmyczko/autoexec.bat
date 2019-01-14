@@ -17,6 +17,7 @@ if [[ $(uname) == "Linux" ]]; then
     alias setup=''
     #systemctl disable motd-news.timer
     #apt-get --purge remove ubuntu-report
+    if [ -f /usr/share/GNUstep/Makefiles/GNUstep.sh ]; then source /usr/share/GNUstep/Makefiles/GNUstep.sh; fi
 fi
 
 # set favourite editor, emacs is an alternative
