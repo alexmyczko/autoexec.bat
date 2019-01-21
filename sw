@@ -3,6 +3,8 @@
 # exclue cpan and build them with native tools like
 # dh-make-perl --build --cpan CPAN::Name
 
+# maybe add nix packaging, stuck in debian new queue
+
 # spack packaging
 # http://spack.readthedocs.io/en/latest/tutorial_packaging.html#packaging-tutorial
 
