@@ -22,25 +22,9 @@ if [ `uname` = Linux ]; then
     fi
 fi
 
-#n24=`update-grub 2>&1 | grep vmlinuz | grep "2.4." | wc -l`
-#n26=`update-grub 2>&1 | grep vmlinuz | grep "2.6." | wc -l`
-#n3x=`update-grub 2>&1 | grep vmlinuz | grep "3." | wc -l`
-
 # could as well be
 #ls /boot/vmlinuz-* | grep vmlinuz | sed 's,.*vmlinuz-,,'
 n4x=`update-grub 2>&1 | grep vmlinuz | grep "4." | wc -l`
-#while [ $n24 -gt 2 ]; do
-#    apt-get --purge remove .*`update-grub 2>&1 | grep "vmlinuz-2.4." | tail -1 | sed "s,.*vmlinuz-,,"`.* -uy
-#    n24=`update-grub 2>&1 | grep vmlinuz | grep "2.4." | wc -l`
-#done
-#while [ $n26 -gt 2 ]; do
-#    apt-get --purge remove .*`update-grub 2>&1 | grep "vmlinuz-2.6." | tail -1 | sed "s,.*vmlinuz-,,"`.* -uy
-#    n26=`update-grub 2>&1 | grep vmlinuz | grep "2.6." | wc -l`
-#done
-#while [ $n3x -gt 2 ]; do
-#    apt-get --purge remove .*`update-grub 2>&1 | grep "vmlinuz-3." | grep -v $(uname -r) | tail -1 | sed "s,.*vmlinuz-,,"`.* -uy
-#    n3x=`update-grub 2>&1 | grep vmlinuz | grep "3." | wc -l`
-#done
 while [ $n4x -gt 2 ]; do
     apt-get --purge remove .*`update-grub 2>&1 | grep "vmlinuz-4." | grep -v $(uname -r) | tail -1 | sed "s,.*vmlinuz-,,"`.* -uy
     n4x=`update-grub 2>&1 | grep vmlinuz | grep "4." | wc -l`
