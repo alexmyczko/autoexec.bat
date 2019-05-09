@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# macOS doesn't have gnu date so no +%N also dd wants m instead of M for buffer size
+# about the same with FreeBSD
+# patches welcome
+
+# check if called binaries are available
+for a in uname date bc seq sync dd file awk tail grep shuf; do
+    hash $a >/dev/null
+    if [ ! $? -eq 0 ]; then
+	echo $a not found
+	exit 1
+    fi
+done
+
+trap ctrl_c INT
+
+# catch ctrl-c
+function ctrl_c() {
+    echo -e "\rCleaning up..."
+    if [ -d _fsbench ]; then
+	rm -rf _fsbench
+    fi
+    exit 0
+}
+
+# does the user want to test with something else than up to 50 mb files?
+if [ "$#" -ne 1 ]; then
+    num=50
+else
+    num=$1
+    if ! expr $num + 0 >/dev/null 2>&1; then
+	echo Syntax error: need a number.
+	exit 1
+    fi
+fi
+
+# check if there's enough diskspace, compare value above with num
+freemb=`df -m . | tail -1 | awk '{print $4}'`
+if [ $num -gt $freemb ]; then
+    echo $num MB diskspace needed, but only $freemb MB found.
+    exit 1
+fi
+
+totalmb=0
+for a in `seq -f "%04.0f" 1 $num`; do
+    totalmb=`echo ${totalmb}+${a}|bc`
+done
+
+if [ `uname` = Linux ]; then
+    if [ 0 -eq `id -u` ]; then
+	echo "Filesystem:" `file -bLs $(df -h . | tail -1 | awk '{print $1}')`
+    fi
+fi
+
+sync
+start=`date +%s.%N`
+
+if [ -d _fsbench ]; then
+    rm -rf _fsbench
+fi
+mkdir _fsbench 2>/dev/null
+if [ ! $? -eq 0 ]; then
+    echo "Can't create temporary directory"
+    exit 1
+fi
+mb=0
+for a in `seq -f "%04.0f" 1 $num | shuf`; do
+    percent=`echo ${mb}*100/${totalmb}|bc`
+    mb=`echo ${mb}+${a}|bc`
+    echo -ne "${percent}% (${mb} MB)"
+    dd if=/dev/zero of=_fsbench/$a bs=${a}M count=1 2>/dev/null
+    rm _fsbench/$a
+    mkdir _fsbench/$a
+    echo -ne "     \r"
+done
+echo
+rm -rf _fsbench
+
+sync
+end=`date +%s.%N`
+
+# print results
+echo "Time used in seconds to create $num files of 1 to $num MB size, and $num"
+echo -n "directories, then removing them all: "
+t=`echo $end - $start | bc`
+ts=`echo ${totalmb}/${t}|bc`
+echo $t
+echo "Making a total read/write of: $ts MB/s"
