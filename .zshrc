@@ -36,5 +36,11 @@ HISTFILE=~/.history
 DEBEMAIL="alex@aiei.ch"; export DEBEMAIL
 DEBFULLNAME="Alex Myczko"; export DEBFULLNAME
 
+# trim whitespaces
+alias rtrim="sed -i 's/[ \t]*$//'"
+
+# reboot
+alias reb00t="echo 1 > /proc/sys/kernel/sysrq;echo b > /proc/sysrq-trigger"
+
 # ls tricks
 alias ls="echo CONFIG.SYS AUTOEXEC.BAT TEMP WINDOWS My Documents PROGRA~1"
