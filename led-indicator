@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ ! 0 -eq `id -u` ]; then
+    echo "must run as root"
+    exit 1
+fi
+
+for a in setleds sleep; do
+    hash $a >/dev/null
+    if [ ! $? -eq 0 ]; then
+        echo $a not found
+        exit 1
+    fi
+done
+
+while (sleep 1); do
+    setleds -L +num < /dev/console
+    sleep 0.1
+    setleds -L -num < /dev/console
+    setleds -L +caps < /dev/console
+    sleep 0.1
+    setleds -L -caps < /dev/console
+    setleds -L +scroll < /dev/console
+    sleep 0.1
+    setleds -L -scroll < /dev/console
+done
