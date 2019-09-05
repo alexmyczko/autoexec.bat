@@ -1,0 +1,56 @@
+#!/bin/bash
+# alex@aiei.ch
+# very easy AppImage generator
+#ARCH=x86_64 ./linuxdeploy-x86_64.AppImage --appdir=fasttracker2 -e /usr/bin/fasttracker2 -d /usr/share/applications/fasttracker2.desktop -i /usr/share/icons/fasttracker2.png --output appimage
+
+# linux deploy for i386
+lide32=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-i386.AppImage
+# linux deploy for x86_64
+lide=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+
+# iselect is needed for the conversion
+for a in dpkg iselect wget; do
+    hash $a >/dev/null
+    if [ ! $? -eq 0 ]; then
+	echo $a not found
+	exit 1
+    fi
+done
+
+if [ ${1}x = setupx ]; then
+    wget $lide32
+    wget $lide
+    chmod +x linuxdeploy*
+    exit 0
+fi
+
+if [ ${1}x = x ]; then
+    echo syntax: $0 debpkgname [alternative-full-path-for-icon]
+    exit 0
+fi
+
+# package to create AppImage of needs be installed
+dpkg -l $1 &>/dev/null
+if [ $? != 0 ]; then
+    echo $1 needs be installed
+    exit 1
+fi
+
+# package needs to have a valid desktop file
+
+# package needs to have a valid icon
+
+# $2 can override icon
+if [ ${2}x = x ]; then
+ARCH=x86_64 ./linuxdeploy-x86_64.AppImage --appdir=.${1} \
+ -e `dpkg -L $1|grep "bin/\|games/"|iselect -a -t "Select Application"` \
+ -d `dpkg -L $1|grep "desktop"|iselect -a -t "Select fd.o desktop file"` \
+ -i `dpkg -L $1|grep "png\|xpm"|iselect -a -t "Select Icon"` \
+ --output appimage
+else
+ARCH=x86_64 ./linuxdeploy-x86_64.AppImage --appdir=.${1} \
+ -e `dpkg -L $1|grep "bin/\|games/"|iselect -a -t "Select Application"` \
+ -d `dpkg -L $1|grep "desktop"|iselect -a -t "Select fd.o desktop file"` \
+ -i $2 \
+ --output appimage
+fi
