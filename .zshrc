@@ -16,6 +16,10 @@ fi
 if [[ $(uname) == "Linux" ]]; then
     alias setup=''
     #systemctl disable motd-news.timer
+    #systemctl disable atd
+    #systemctl disable colord
+    #systemctl disable bluetooth
+    #systemctl disable upower
     #apt-get --purge remove ubuntu-report modemmanager whoopsie apparmor snapd bolt kerneloops
     if [ -f /usr/share/GNUstep/Makefiles/GNUstep.sh ]; then source /usr/share/GNUstep/Makefiles/GNUstep.sh; fi
 fi
