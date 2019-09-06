@@ -16,7 +16,7 @@ fi
 if [[ $(uname) == "Linux" ]]; then
     alias setup=''
     #systemctl disable motd-news.timer
-    #apt-get --purge remove ubuntu-report
+    #apt-get --purge remove ubuntu-report modemmanager whoopsie apparmor snapd
     if [ -f /usr/share/GNUstep/Makefiles/GNUstep.sh ]; then source /usr/share/GNUstep/Makefiles/GNUstep.sh; fi
 fi
 
