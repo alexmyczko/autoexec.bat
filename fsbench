@@ -3,6 +3,8 @@
 # macOS doesn't have gnu date so no +%N also dd wants m instead of M for buffer size
 # about the same with FreeBSD
 # patches welcome
+#
+# https://www.thegeekdiary.com/how-to-clear-the-buffer-pagecache-disk-cache-under-linux/
 
 # check if called binaries are available
 for a in uname date bc seq sync dd file awk tail grep shuf; do
