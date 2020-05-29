@@ -14,7 +14,7 @@
 # module -V
 # pip* -V
 
-for a in dpkg rpm snap spack 0install flatpak opam cpan module pip2 pip3 brew; do
+for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 brew; do
     which $a &>/dev/null && (
 	case $a in
 	    dpkg)
@@ -25,6 +25,9 @@ for a in dpkg rpm snap spack 0install flatpak opam cpan module pip2 pip3 brew; d
 	    rpm)
 		# rpm --version | awk '{print $NF}'
 		num=`rpm -qa | wc -l`
+	    ;;
+	    nix)
+	    	num=`echo ?`
 	    ;;
 	    brew)
 		num=`(brew list;brew cask list)| wc -l`
