@@ -1,7 +1,7 @@
-# markdown conversion of
-# https://www.icloud.com/pages/0LWQ2LkV15Hvi49zYRwzS1AcA#Debian-Packaging
+#### markdown conversion of
+#### https://www.icloud.com/pages/0LWQ2LkV15Hvi49zYRwzS1AcA#Debian-Packaging
 
-### Debian Packaging
+# Debian Packaging
 pretty much the same with Ubuntu
 
 22/02/2003, Gürkan Sengün <gurkan@linuks.mine.nu>
@@ -16,7 +16,7 @@ We will package mguesser for Debian. Knowledge about Makefiles, configure and sh
 A development environment, some utilities and debhelper which we will install like this:
 
 ```
-$ apt-get install binutils cpp cpio dpkg-dev file gcc make patch \
+# apt-get install binutils cpp cpio dpkg-dev file gcc make patch \
                   dh-make debhelper devscripts fakeroot lintian \
                   debian-policy developers-reference \
 		       man-db manpages reportbug
