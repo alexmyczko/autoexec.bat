@@ -4,12 +4,11 @@
 # Debian Packaging
 pretty much the same with Ubuntu
 
-22/02/2003, Gürkan Sengün <gurkan@linuks.mine.nu>
-Updated 18/08/2016  Gürkan Myczko <gurkan@phys.ethz.ch>
+2003-2020 Gürkan Myczko <gurkan@phys.ethz.ch>
 
 ## Introduction
 
-We will package mguesser for Debian. Knowledge about Makefiles, configure and shell scripting or C programming can be very helpful. Man and the manpages are also very useful. Also have a look at help2man or pod2man. I want to guide you packaging mguesser from the beginning to the end.
+We will package `mguesser` for Debian. Knowledge about Makefiles, configure and shell scripting or C programming can be very helpful. Man and the manpages are also very useful. Also have a look at `help2man` or `pod2man`. I want to guide you packaging mguesser from the beginning to the end.
 
 ## What you will need
 
@@ -63,14 +62,14 @@ $ cd software-2.1/
 $ dh_make
 ```
 
-`dh_make` will make a directory called debian/ with a few files in it. Now your task is to fill them. I usually start with control, then edit copyright. There is also changelog, rules, dirs and more. In rules you will find alot of dh_* commands, they are all from debhelper. Each of them has a manpage, please refer to man debhelper for details, as well as the Debian New Maintainers' Guide. Read more about the Debian Policy Manual. Updating the debian/changelog is done with dch or debchange (symlink).
+`dh_make` will make a directory called `debian/` with a few files in it. Now your task is to fill them. I usually start with `control`, then edit `copyright`. There is also `changelog`, `rules`, `dirs` and more. In `rules` you will find some `dh` commands, they are all from debhelper. Each of them has a manpage, please refer to `man debhelper` for details, as well as the Debian New Maintainers' Guide. Read more about the Debian Policy Manual. Updating the `debian/changelog` is done with `dch` or debchange (symlink).
 
 When you think the thing is ready, you can start building the package
 
-The most important files are probably debian/changelog, debian/control, debian/copyright, debian/rules and the following ones are helpful
-debian/clean	files to be removed that get generated at build time (make clean)
-debian/install	files to be installed
-debian/manpages	manpage(s) to be installed
+The most important files are probably `debian/changelog`, `debian/control`, `debian/copyright`, `debian/rules` and the following ones are helpful
+`debian/clean`	files to be removed that get generated at build time (make clean)
+`debian/install`	files to be installed
+`debian/manpages`	manpage(s) to be installed
 
 `$ debuild`
 
@@ -95,7 +94,7 @@ And being in touch with upstream is important, contact them somehow.
 My debian/ directory for mguesser. Here is my Makefile changes.
 
 Ensuring completeness of Build-Depends
-Use sbuild to ensure build-depends are complete:
+Use `sbuild` to ensure build-depends are complete:
 ```
 apt-get install sbuild
 mkdir -p /srv/chroot/sid
@@ -105,10 +104,11 @@ Now test your packages with:
 `sbuild -d sid yourpackage_version-rev.dsc`
 
 ## After Work
+
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
 Tagging the package is also a good idea: https://debtags.debian.org/
 Check Lintian output: https://lintian.debian.org/
-I did not go into detail with debian/watch.
+I did not go into detail with `debian/watch`.
 Make sure it builds on as many architectures as possible: https://buildd.debian.org/
 If your software works with data files, that can be detected with the file(5) utility, send patches for its detection.
 
