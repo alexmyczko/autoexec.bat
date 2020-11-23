@@ -125,11 +125,3 @@ macOS: https://guide.macports.org/#project.contributing
 Spack: https://github.com/spack/spack
 flatpak/flathub: https://flatpak.org/ / https://flathub.org/
 Ubuntu Snap: https://snapcraft.io/
-
-AppImage
-To generate single binary executables of your software for distribution, you can use the AppImage format. Get the tool as AppImage from: https://github.com/linuxdeploy/linuxdeploy/releases
-
-Simple example (works if the protracker package is installed):
-`$ ARCH=x86_64 ./linuxdeploy-x86_64.AppImage --appdir=protracker -e /usr/bin/protracker -d /usr/share/applications/protracker.desktop -i /usr/share/icons/protracker.png --output appimage`
-
-This will create ProTracker-x86_64.AppImage, which can be run on other systems.
