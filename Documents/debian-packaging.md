@@ -71,6 +71,8 @@ The most important files are probably `debian/changelog`, `debian/control`, `deb
 `debian/install`	files to be installed
 `debian/manpages`	manpage(s) to be installed
 
+You will find `licensecheck -r . | grep -v UNKNOWN` useful during the writing of `debian/copyright`.
+
 `$ debuild`
 
 When things are built you should check the package using
