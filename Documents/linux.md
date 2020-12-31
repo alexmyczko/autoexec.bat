@@ -1,5 +1,13 @@
 # Some notes about Linux as a user/developer/sysadmin
 
+## General
+
+Hint for getting your sources.list as you want
+```
+debian-distro-info -af
+ubuntu-distro-info -r -f --all
+```
+
 ## RTL SDR
 
 rtl-433
