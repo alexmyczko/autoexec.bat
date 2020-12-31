@@ -9,14 +9,14 @@ mkdir $(cat applist | awk '{ print $1 }')
 #make links for files of an application
 #dpkg -L $(cat applist | awk '{ print $1 }')
 cat applist | awk '{ print $1 }' | while read a; do
-echo $a
-dpkg -L $a | while read b; do
-#echo $a $b
-#echo $(basename $b)
-if [ ! -d $b ]; then
-#echo ln -s $b $(basename $a /)/$(basename $b)
-ln -s $b $(basename $a /)/$(basename $b)
-fi
-done
+  echo $a
+  dpkg -L $a | while read b; do
+    #echo $a $b
+    #echo $(basename $b)
+    if [ ! -d $b ]; then
+      #echo ln -s $b $(basename $a /)/$(basename $b)
+      ln -s $b $(basename $a /)/$(basename $b)
+    fi
+  done
 #sleep 5
 done 
