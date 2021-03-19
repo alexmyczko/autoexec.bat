@@ -58,6 +58,10 @@ rtl-433
 dump1090
 `dump1090 --interactive --metric`
 
+## If the keyboard is broken
+
+`setxkbmap us` in X11 or `loadkeys us` in the console/fb
+
 ## Check your disk read only or read write
 
 ```
