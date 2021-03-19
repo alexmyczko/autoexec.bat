@@ -25,6 +25,10 @@ deb http://deb.debian.org/debian-ports experimental main
 deb-src http://ftp.ch.debian.org/debian experimental main contrib non-free
 ```
 
+## Web
+
+`woff2_compress your.ttf|otf` saves a lot of bytes to transfer for custom fonts.
+
 ## Networking
 
 `lltdscan -v |awk '/100 Mbit/ {print; print ""}' RS= -`
