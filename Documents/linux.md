@@ -25,6 +25,10 @@ deb http://deb.debian.org/debian-ports experimental main
 deb-src http://ftp.ch.debian.org/debian experimental main contrib non-free
 ```
 
+## Special function files
+
+https://github.com/xen0vas/UserManager/issues/8#issuecomment-622936119
+
 ## Monitor resolution
 
 ```
