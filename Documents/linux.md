@@ -52,6 +52,13 @@ rtl-433
 dump1090
 `dump1090 --interactive --metric`
 
+## Check your disk read only or read write
+
+```
+badblocks -nsv /dev/sdX
+badblocks -b4096 -sv /dev/sdX
+```
+
 ## Wrapper scripts for binary only software
 
 ```
