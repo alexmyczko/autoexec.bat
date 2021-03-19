@@ -32,6 +32,10 @@ auth=$(ps -ef |grep X | grep auth |sed s,.*-auth.,, | awk '{print $1}')
 timeout 5 env XAUTHORITY=$auth DISPLAY=:0 xrandr |grep \ connected| sed s/$/\<br\>/g
 ```
 
+## Popularity of window managers
+
+`cat /home/*/.wm_style | awk '{wm[$0]++} END {for (n in wm) print wm[n] " " n}'`
+
 ## Web
 
 `woff2_compress your.ttf|otf` saves a lot of bytes to transfer for custom fonts.
