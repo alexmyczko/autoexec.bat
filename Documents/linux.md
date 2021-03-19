@@ -47,3 +47,11 @@ rtl-433
 
 dump1090
 `dump1090 --interactive --metric`
+
+## Wrapper scripts for binary only software
+
+```
+#!/bin/bash
+latest=`ls -1d /opt/whatever-* | sort -Vr | head -1`
+$latest/whatever "$@"
+```
