@@ -44,6 +44,8 @@ timeout 5 env XAUTHORITY=$auth DISPLAY=:0 xrandr |grep \ connected| sed s/$/\<br
 
 `woff2_compress your.ttf|otf` saves a lot of bytes to transfer for custom fonts.
 
+Tools to further minimize traffic: `pngquant optipng jpegoptim convert heif-<kbd>tab</kbd><kbd>tab</kbd>`
+
 ## Networking
 
 `lltdscan -v |awk '/100 Mbit/ {print; print ""}' RS= -`
