@@ -25,6 +25,10 @@ deb http://deb.debian.org/debian-ports experimental main
 deb-src http://ftp.ch.debian.org/debian experimental main contrib non-free
 ```
 
+## Networking
+
+`lltdscan -v |awk '/100 Mbit/ {print; print ""}' RS= -`
+
 ## RTL SDR
 
 rtl-433
