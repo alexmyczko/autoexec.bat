@@ -25,6 +25,13 @@ deb http://deb.debian.org/debian-ports experimental main
 deb-src http://ftp.ch.debian.org/debian experimental main contrib non-free
 ```
 
+## Monitor resolution
+
+```
+auth=$(ps -ef |grep X | grep auth |sed s,.*-auth.,, | awk '{print $1}')
+timeout 5 env XAUTHORITY=$auth DISPLAY=:0 xrandr |grep \ connected| sed s/$/\<br\>/g
+```
+
 ## Web
 
 `woff2_compress your.ttf|otf` saves a lot of bytes to transfer for custom fonts.
