@@ -36,6 +36,16 @@ auth=$(ps -ef |grep X | grep auth |sed s,.*-auth.,, | awk '{print $1}')
 timeout 5 env XAUTHORITY=$auth DISPLAY=:0 xrandr |grep \ connected| sed s/$/\<br\>/g
 ```
 
+## Programming Languages
+
+http://www.rosettacode.org/wiki/Category:Programming_Languages
+
+## Compressing disk and memory
+
+`apt install nohang zram-config`
+
+`btrfs fi defragment -r -clzo .`   # compress existing data
+
 ## Popularity of window managers
 
 `cat /home/*/.wm_style | awk '{wm[$0]++} END {for (n in wm) print wm[n] " " n}'`
