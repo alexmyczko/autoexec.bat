@@ -8,7 +8,7 @@ Sometimes you want to know the performance of some things, or just test it. Here
 
 ## Disk
 
-See [https://github.com/alexmyczko/autoexec.bat/blob/master/fsbench](fsbench)
+See [fsbench](https://github.com/alexmyczko/autoexec.bat/blob/master/fsbench)
 
 ## Memory
 
