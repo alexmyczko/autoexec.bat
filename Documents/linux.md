@@ -91,3 +91,10 @@ badblocks -b4096 -sv /dev/sdX
 latest=`ls -1d /opt/whatever-* | sort -Vr | head -1`
 $latest/whatever "$@"
 ```
+
+## TinySSHD (openssh/dropbear alternative)
+
+```
+systemctl daemon-reload
+systemctl enable tinysshd.socket
+```
