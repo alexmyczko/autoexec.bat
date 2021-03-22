@@ -4,7 +4,7 @@ Sometimes you want to know the performance of some things, or just test it. Here
 
 ## Network
 
-
+`speedtest-cli --simple`
 
 ## Disk
 
