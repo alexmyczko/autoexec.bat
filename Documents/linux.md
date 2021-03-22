@@ -44,7 +44,12 @@ http://www.rosettacode.org/wiki/Category:Programming_Languages
 
 `apt install nohang zram-config`
 
-`btrfs fi defragment -r -clzo .`   # compress existing data, needs btrfs and an option like compress=lzo 
+`btrfs fi defragment -r -clzo .`   # compress existing data, needs btrfs and an option like compress=lzo
+
+```
+$ cat /etc/initramfs-tools/conf.d/compress 
+COMPRESS=xz
+```
 
 ## Popularity of window managers
 
