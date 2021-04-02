@@ -7,8 +7,8 @@ my .dotfiles for linux and macOS
 
 `benchmark` for linux and macOS, outputs look like this:
 ```
-MEM [2.69"] (needs memtester)
-CPU [2.88"] (needs bc)
-DSK [5.36"] (needs dd)
-NET [21.32"] Download: 19.70 Mbyte/s Upload: 12.61 Mbyte/s (needs speedtest-cli)
+MEM [2.67"/8 GB]
+CPU [2.92"/8/arm64]
+DSK [4.75"/251 GB]
+NET [21.49"] Download: 20.96 Mbyte/s Upload: 12.40 Mbyte/s
 ```
