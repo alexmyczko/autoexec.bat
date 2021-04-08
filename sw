@@ -30,7 +30,7 @@ for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 bre
 	    	num=`echo ?`
 	    ;;
 	    brew)
-		num=`(brew list;brew cask list)| wc -l`
+		num=`brew list| wc -l`
 	    ;;
 	    pip2)
 		num=`pip2 list 2>/dev/null | wc -l`
