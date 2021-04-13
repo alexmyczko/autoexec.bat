@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# http://www.aiei.ch/linux/
+# report bugs to <alex@aiei.ch>
+
+SYS=`uname -s`
+
+case "$SYS" in
+    Linux)
+        STAT="-c %a %U:%G %n"
+    ;;
+    FreeBSD)
+	STAT="-f %p %g:%u %N"
+    ;;
+    *)
+    ;;
+esac
+
+case "$@" in
+    restore)
+	if [ -f .perms ]; then
+	    cat .perms | while read mode og f; do
+		chown $og "$f"
+		chmod $mode "$f"
+	    done
+	fi
+    ;;
+    -h|--help)
+	echo 'Usage: perms [restore]'
+	echo 'Print, save or restore file permissions recursively.'
+	echo 'Save the permissions to the current directory as .perms for restore.'
+	echo
+    ;;
+    *)
+	find `pwd` -exec stat "$STAT" {} \;
+    ;;
+esac
