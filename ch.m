@@ -4,6 +4,8 @@
    Copyright 2006-2021 by Alex Myczko <alex@aiei.ch>
 
    macos: clang -framework Foundation -framework AppKit ch.m -o ch
+   linux: gcc -I/usr/include/GNUstep -fconstant-string-class=NSConstantString ch.m -lgnustep-gui -lgnustep-base -lobjc -o ch
+   linux: clang -I/usr/lib/gcc/x86_64-linux-gnu/{9,10}/include -I/usr/include/GNUstep ch.m -lgnustep-gui -lgnustep-base -lobjc -o ch
 
    Released under the GNU GPL
 */
