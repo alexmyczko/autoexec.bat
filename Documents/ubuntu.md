@@ -5,7 +5,17 @@ lot of stuff that will be running, no matter if you need it or not.
 
 The stuff I get rid of first is all the task that waste precious CPU cycles:
 ```
-apt-get -uy --purge remove snapd kerneloops switcheroo-control modemmanager \
-                           whoopsie fwupd tracker unattended-upgrades \
-                           gnome-online-accounts
+apt-get -uy --purge remove snapd kerneloops switcheroo-control modemmanager fwupd \
+                           whoopsie tracker unattended-upgrades gnome-online-accounts
+```
+
+Disabling services you most likely do not need, if you prefer amiwm or wmaker over GNOME:
+```
+systemctl stop polkit
+systemctl disable polkit
+```
+
+Compressed memory and better OOM handling:
+```
+apt-get -uy install zram-config nohang; service zram-config start
 ```
