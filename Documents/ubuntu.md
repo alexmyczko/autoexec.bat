@@ -7,7 +7,7 @@ The stuff I get rid of first is all the task that waste precious CPU cycles:
 ```
 apt-get -uy --purge remove snapd kerneloops switcheroo-control modemmanager fwupd \
                            whoopsie tracker unattended-upgrades gnome-online-accounts \
-                           apport apport-symptoms
+                           apport apport-symptoms avahi-daemon
 ```
 
 Disabling services you most likely do not need, if you prefer amiwm or wmaker over GNOME:
