@@ -98,3 +98,19 @@ $latest/whatever "$@"
 systemctl daemon-reload
 systemctl enable tinysshd.socket
 ```
+
+## CPU Governor
+
+View the current settings
+`cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+
+If not on a laptop, or even then, if you need the extra CPU power change the governor
+`echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+
+Set it forever with `/etc/default/cpufrequtils`
+```
+ENABLE="true"
+GOVERNOR="performance"
+MAX_SPEED=0
+MIN_SPEED=0
+```
