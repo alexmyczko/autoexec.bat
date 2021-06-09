@@ -114,3 +114,11 @@ GOVERNOR="performance"
 MAX_SPEED=0
 MIN_SPEED=0
 ```
+
+## You don't like your browser or terminal
+
+Find alternatives with
+```
+aptitude search '?provides(^www-browser$)'
+aptitude search '?provides(^x-terminal-emulator$)'
+```
