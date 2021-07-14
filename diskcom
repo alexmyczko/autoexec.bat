@@ -1,0 +1,101 @@
+#!/bin/bash
+
+check="iselect cfdisk partprobe mdadm pvs lvs vgs disktype file badblocks screen lvmdiskscan"
+for a in $check; do
+    if ! which "$a" >/dev/null; then
+        echo "$a not found, please install it."
+        exit 1
+    fi
+done
+
+# menu entries to setup md raid
+# menu entries to setup lvm
+
+# menu entries to create installer from img links
+#  http://lemon.debian.net/debian-unofficial-kfreebsd-amd64-NETINST-1.iso
+#  https://releases.ubuntu.com/20.04.2.0/ubuntu-20.04.2.0-desktop-amd64.iso
+#  https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.10.0-amd64-netinst.iso
+#  https://reactos.org/download/
+#  https://www.microsoft.com/en-us/software-download/windows10ISO
+#  https://github.com/corpnewt/gibMacOS
+#  http://dosdude1.com/catalina/
+
+# menu entries to dump partition table (sfdisk)
+# menu entries to dump disk image (whole disks only)
+
+# integrate external file into script using say ##content
+
+menu=diskcom.mainmenu
+name="DISK COMMANDER"
+
+while (sleep 0.1); do
+    dskro=$(screen -ls |grep DSKRO |wc -l)
+    dskrw=$(screen -ls |grep DSKRW |wc -l)
+    r=$(cat $0|grep ^## |sed s,^##,,g |sed s,DISK,$d,g | sed s,DSKRO,$dskro,g | sed s,DSKRW,$dskrw,g | iselect -n "$name" -p 3)
+    case $r in
+	slct)
+	    d=`echo -e "Select disk.\n$(ls -1 /dev/sd? /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p2 -n "$name"`
+	;;
+	read)
+	    partprobe
+	    read -p "PRESS ENTER TO RETURN TO MENU"
+	;;
+	crea)
+	    cfdisk ${d}
+	;;
+	lvm2)
+	    lvmdiskscan
+	    echo
+	    pvs
+	    echo
+	    vgs
+	    echo
+	    lvs
+	    read
+	;;
+	md)
+	    if [ -f /proc/mdstat ]; then
+		echo MD found.
+		mdadm --detail $d
+	    else
+		echo No MD found.
+	    fi
+	    read
+	;;
+	info)
+	    clear
+	    disktype ${d}*
+	    echo
+	    file -s ${d}*
+	    read
+	;;
+	bbro)
+	    read -p "PRESS ENTER TO RUN badblocks RO on $d"
+	    screen -dmS DSKRO$(basename ${d}) badblocks -sv $d
+	;;
+	bbrw)
+	    read -p "PRESS ENTER TO RUN badblocks RW on $d"
+	    screen -dmS DSKRW$(basename ${d}) badblocks -nsv $d
+	;;
+	exit)
+	    exit;
+	;;
+    esac
+done
+
+exit 0
+
+##Main Menu.
+##
+##<s:slct>Select Disk to operate on. [DISK]
+##<s:crea>Create partitions on disk [DISK].
+##<s:read>Re-read partition table changes.
+##
+##<s:info>Information about disk [DISK].
+##<s:lvm2>Information about LVM2 (Logical Volume Manager).
+##<s:md>Information about Linux MD (multi disk) arrays.
+##
+##<s:bbro>Run RO (read only) check on disk [DISK]. [DSKRO]
+##<s:bbrw>Run RW (read write) check on disk [DISK]. [DSKRW]
+##
+##<s:exit>Exit.
