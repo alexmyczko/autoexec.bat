@@ -1,6 +1,7 @@
 #!/bin/bash
 
-check="iselect cfdisk partprobe mdadm pvs lvs vgs disktype file badblocks screen lvmdiskscan"
+# mdadm
+check="iselect cfdisk partprobe pvs lvs vgs disktype file badblocks screen lvmdiskscan"
 for a in $check; do
     if ! which "$a" >/dev/null; then
         echo "$a not found, please install it."
@@ -25,7 +26,6 @@ done
 
 # integrate external file into script using say ##content
 
-menu=diskcom.mainmenu
 name="DISK COMMANDER"
 
 while (sleep 0.1); do
