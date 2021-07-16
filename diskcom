@@ -26,15 +26,31 @@ done
 
 # integrate external file into script using say ##content
 
+menu=diskcom.mainmenu
 name="DISK COMMANDER"
 
 while (sleep 0.1); do
     dskro=$(screen -ls |grep DSKRO |wc -l)
     dskrw=$(screen -ls |grep DSKRW |wc -l)
-    r=$(cat $0|grep ^## |sed s,^##,,g |sed s,DISK,$d,g | sed s,DSKRO,$dskro,g | sed s,DSKRW,$dskrw,g | iselect -n "$name" -p 3)
+    r=$(cat $0|grep ^## |sed s,^##,,g |sed s,PART,$pt,g |sed s,DISK,$d,g | sed s,DSKRO,$dskro,g | sed s,DSKRW,$dskrw,g | iselect -n "$name" -p 3)
     case $r in
 	slct)
-	    d=`echo -e "Select disk.\n$(ls -1 /dev/sd? /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p2 -n "$name"`
+	    d=`echo -e "Select disk.\n\n$(ls -1 /dev/sd? /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p3 -n "$name"`
+	;;
+	s-pt)
+	    pt=`echo -e "Select partition.\n\n$(ls -1 /dev/sd??* /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p3 -n "$name"`
+	;;
+	m-slct)
+	    q="Select multiple disks with space.\n"
+	    selectables=$(ls /dev/sd? | sed -E "s,/dev,\n<s>&,g")
+	    md="`(echo -e $q;echo \"$selectables\") |iselect -m -p3`"
+	    #echo $md
+	    #read
+	;;
+	c-raid)
+	    rl=`echo -e "Select RAID level.\n\n0\n1\n4\n5\n6\n10" |iselect -a -p3 -n "$name"`
+	    echo $rl
+	    read
 	;;
 	read)
 	    partprobe
@@ -56,6 +72,9 @@ while (sleep 0.1); do
 	md)
 	    if [ -f /proc/mdstat ]; then
 		echo MD found.
+		echo
+		cat /proc/mdstat
+		echo
 		mdadm --detail $d
 	    else
 		echo No MD found.
@@ -77,6 +96,17 @@ while (sleep 0.1); do
 	    read -p "PRESS ENTER TO RUN badblocks RW on $d"
 	    screen -dmS DSKRW$(basename ${d}) badblocks -nsv $d
 	;;
+	mkfs)
+	    ls -1 /usr/*/mkfs.* /*bin/mkfs.* | while read a; do
+		echo $(whatis `basename $a`)
+		#printf "%-12s %s\n" $(whatis `basename $a`)
+	    done
+	    read
+	;;
+	mnts)
+	    cat /etc/fstab |grep -v ^# |column -t
+	    read
+	;;
 	exit)
 	    exit;
 	;;
@@ -87,10 +117,17 @@ exit 0
 
 ##Main Menu.
 ##
-##<s:slct>Select Disk to operate on. [DISK]
+##<s:slct>Select disk to operate on. [DISK]
 ##<s:crea>Create partitions on disk [DISK].
+##<s:s-pt>Select partition to operate on. [PART]
+##<s:c-fs>Create filesystem on partition [PART].
 ##<s:read>Re-read partition table changes.
 ##
+##<s:m-slct>Select multiple Disks to operate on. [MDSK]
+##<s:c-raid>Create RAID with multiple disks. [MDSK]
+##
+##<s:mkfs>List available filesystems.
+##<s:mnts>List configured filesystems with mount points (/etc/fstab).
 ##<s:info>Information about disk [DISK].
 ##<s:lvm2>Information about LVM2 (Logical Volume Manager).
 ##<s:md>Information about Linux MD (multi disk) arrays.
