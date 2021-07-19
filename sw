@@ -39,7 +39,7 @@ for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 bre
 		num=`pip3 list 2>/dev/null | wc -l`
 	    ;;
 	    spack)
-		num=`spack find |wc -l`
+		num=`spack find 2>/dev/null |wc -l`
 	    ;;
 	    snap)
 		num=`snap list |sed 1d |wc -l`
