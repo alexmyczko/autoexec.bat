@@ -89,12 +89,20 @@ while (sleep 0.1); do
 	    read
 	;;
 	bbro)
-	    read -p "PRESS ENTER TO RUN badblocks RO on $d"
-	    screen -dmS DSKRO$(basename ${d}) badblocks -sv $d
+	    if [ "${d}x" != x ]; then
+		read -p "PRESS ENTER TO RUN badblocks RO on $d"
+		screen -dmS DSKRO$(basename ${d}) badblocks -sv $d
+	    else
+		read -p "SELECT DISK FIRST"
+	    fi
 	;;
 	bbrw)
-	    read -p "PRESS ENTER TO RUN badblocks RW on $d"
-	    screen -dmS DSKRW$(basename ${d}) badblocks -nsv $d
+	    if [ "${d}x" != x ]; then
+		read -p "PRESS ENTER TO RUN badblocks RW on $d"
+		screen -dmS DSKRW$(basename ${d}) badblocks -nsv $d
+	    else
+		read -p "SELECT DISK FIRST"
+	    fi
 	;;
 	mkfs)
 	    ls -1 /usr/*/mkfs.* /*bin/mkfs.* | while read a; do
@@ -123,7 +131,7 @@ exit 0
 ##<s:c-fs>Create filesystem on partition [PART].
 ##<s:read>Re-read partition table changes.
 ##
-##<s:m-slct>Select multiple Disks to operate on. [MDSK]
+##<s:m-slct>Select multiple disks to operate on. [MDSK]
 ##<s:c-raid>Create RAID with multiple disks. [MDSK]
 ##
 ##<s:mkfs>List available filesystems.
@@ -134,5 +142,7 @@ exit 0
 ##
 ##<s:bbro>Run RO (read only) check on disk [DISK]. [DSKRO]
 ##<s:bbrw>Run RW (read write) check on disk [DISK]. [DSKRW]
+##
+##Convert filesystem live between jfs/xfs/reiser/ext2/ext3/ext4 using fstransform.
 ##
 ##<s:exit>Exit.
