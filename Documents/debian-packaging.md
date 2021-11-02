@@ -4,7 +4,7 @@
 # Debian Packaging
 pretty much the same with Ubuntu
 
-2003-2020 Gürkan Myczko <gurkan@phys.ethz.ch>
+2003-2021 Gürkan Myczko <tar@debian.org>
 
 ## Introduction
 
@@ -25,7 +25,7 @@ A development environment, some utilities and debhelper which we will install li
 Setting up the environment, see www.linuks.mine.nu/conf/. Of course you fill in your email address and your full name and choose your favourite editor, these settings is what I use:
 
 ```
-$ export DEBEMAIL="gurkan@phys.ethz.ch"
+$ export DEBEMAIL="tar@debian.org"
 $ export DEBFULLNAME="Gürkan Myczko"
 $ export EDITOR=mcedit
 ```
