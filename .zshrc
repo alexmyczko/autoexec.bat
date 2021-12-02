@@ -6,7 +6,7 @@ fi
 if [[ $(uname) == "Darwin" ]]; then
     alias setup='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     alias lsusb='ioreg -p IOUSB'
-    #brew install htop mc memtester ecm cmake lame lftp madplay ncdu tcc wget xz
+    #brew install htop mc memtester ecm cmake lame lftp madplay ncdu tcc wget xz coreutils
     # disable creating .DS_store files
     #defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
     # show all files in Finder
