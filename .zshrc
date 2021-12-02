@@ -13,6 +13,7 @@ if [[ $(uname) == "Darwin" ]]; then
     #defaults write com.apple.Finder AppleShowAllFiles true
     # Finder show file extensions
     #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+    #dpkg -L is brew list -v
 fi
 if [[ $(uname) == "Linux" ]]; then
     alias setup=''
