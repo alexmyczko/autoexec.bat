@@ -3,18 +3,18 @@
 Main Menu
 | Action | Windows/Linux | macOS |
 | ------ | ------------- | ----- |
-| File > New |<kbd>Ctrl</kbd>+<kbd>N</kbd> | <kbd>command</kbd>+<kbd>N</kbd> |
+| File > New | <kbd>Ctrl</kbd>+<kbd>N</kbd> | <kbd>command</kbd>+<kbd>N</kbd> |
+| File > Open	| Ctrl+O | command+<kbd>O</kbd> |
+| File > Open Other	| Ctrl+Shift+O | shift+command+<kbd>O</kbd> |
+| File > Save	| Ctrl+S | command+<kbd>S</kbd> |
+| File > Save As | Ctrl+Shift+S	| shift+command+<kbd>S</kbd> |
+| File > Export Video | Ctrl+E | command+<kbd>E</kbd> |
+| File > Export Frame | Ctrl+Shift+E | shift+command+<kbd>E</kbd> |
+| File > Close | Ctrl+W | command+<kbd>W</kbd> |
+| File > Quit | Ctrl+Q | command+<kbd>Q</kbd> |
+| Edit > Undo	| Ctrl+Z | command+<kbd>Z</kbd> |
+| Edit > Redo |	Ctrl+Y / Ctrl+Shift+Z | shift+command+<kbd>Z</kbd> |
 
-File > Open	Ctrl+O	command+O
-File > Open Other	Ctrl+Shift+O	shift+command+O
-File > Save	Ctrl+S	command+S
-File > Save As	Ctrl+Shift+S	shift+command+S
-File > Export Video	Ctrl+E	command+E
-File > Export Frame	Ctrl+Shift+E	shift+command+E
-File > Close	Ctrl+W	command+W
-File > Quit	Ctrl+Q	command+Q
-Edit > Undo	Ctrl+Z	command+Z
-Edit > Redo	Ctrl+Y / Ctrl+Shift+Z	shift+command+Z
 View > Fullscreen	F11 / Ctrl+Shift+F	control+command+F / F11
 View > Layout > Logging	Alt+1	option+1
 View > Layout > Editing	Alt+2	option+2
