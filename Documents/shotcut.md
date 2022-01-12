@@ -4,16 +4,16 @@ Main Menu
 | Action | Windows/Linux | macOS |
 | ------ | ------------- | ----- |
 | File > New | <kbd>Ctrl</kbd>+<kbd>N</kbd> | <kbd>command</kbd>+<kbd>N</kbd> |
-| File > Open	| Ctrl+O | command+<kbd>O</kbd> |
-| File > Open Other	| Ctrl+Shift+O | shift+command+<kbd>O</kbd> |
-| File > Save	| Ctrl+S | command+<kbd>S</kbd> |
-| File > Save As | Ctrl+Shift+S	| shift+command+<kbd>S</kbd> |
-| File > Export Video | Ctrl+E | command+<kbd>E</kbd> |
-| File > Export Frame | Ctrl+Shift+E | shift+command+<kbd>E</kbd> |
-| File > Close | Ctrl+W | command+<kbd>W</kbd> |
-| File > Quit | Ctrl+Q | command+<kbd>Q</kbd> |
-| Edit > Undo	| Ctrl+Z | command+<kbd>Z</kbd> |
-| Edit > Redo |	Ctrl+Y / Ctrl+Shift+Z | shift+command+<kbd>Z</kbd> |
+| File > Open	| <kbd>Ctrl</kbd>+<kbd>O | <kbd>command</kbd>+<kbd>O</kbd> |
+| File > Open Other	| <kbd>Ctrl</kbd>+Shift+O | <kbd>shift</kbd>+<kbd>command</kbd>+<kbd>O</kbd> |
+| File > Save	| <kbd>Ctrl</kbd>+S | <kbd>command+<kbd>S</kbd> |
+| File > Save As | <kbd>Ctrl</kbd>+Shift+S	| <kbd>shift+<kbd>command+<kbd>S</kbd> |
+| File > Export Video | <kbd>Ctrl</kbd>+<kbd>E</kbd> | c<kbd>ommand+<kbd>E</kbd> |
+| File > Export Frame | <kbd>Ctrl</kbd>+<kbd>Shift+<kbd>E</kbd> | <kbd>shift+command+<kbd>E</kbd> |
+| File > Close | <kbd>Ctrl</kbd>+<kbd>W</kbd> | <kbd>command</kbd>+<kbd>W</kbd> |
+| File > Quit | <kbd>Ctrl</kbd>+<kbd>Q</kbd> | <kbd>command</kbd>+<kbd>Q</kbd> |
+| Edit > Undo	| <kbd>Ctrl</kbd>+<kbd>Z</kbd> | <kbd>command</kbd>+<kbd>Z</kbd> |
+| Edit > Redo |	<kbd>Ctrl</kbd>+<kbd>Y</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift+<kbd>Z | shift+command+<kbd>Z</kbd> |
 
 View > Fullscreen	F11 / Ctrl+Shift+F	control+command+F / F11
 View > Layout > Logging	Alt+1	option+1
