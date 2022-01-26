@@ -14,7 +14,7 @@
 # module -V
 # pip* -V
 
-for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 brew; do
+for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 brew zypper; do
     which $a &>/dev/null && (
 	case $a in
 	    dpkg)
@@ -46,6 +46,9 @@ for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 bre
 	    ;;
 	    flatpak)
 		num=`flatpak list | wc -l`
+	    ;;
+	    zypper)
+	    	num=`zypper search --installed-only | grep package$ | wc -l`
 	    ;;
 	    # 0install is braindead
 	    #0install)
