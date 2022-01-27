@@ -17,6 +17,10 @@ pip2 not found...
 pip3 found... 248
 ```
 
+`deb2itp` prepares an RFP or ITP mail for Debian Bug Tracking System
+
+`git2deb` prepares an orig.tar.xz from a github.com repo of master
+
 `led-indicator` lets the numlock/scrollock/capslock leds blink like knight rider car
 
 `benchmark` for linux and macOS, outputs look like this:
