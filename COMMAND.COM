@@ -18,8 +18,9 @@ while (sleep 0); do
 	    echo "Drive $n does not exist."
 	    echo
 	;;
-	cd*)
-	    cd $n
+	cd\ *)
+	    $n
+	    export PS1="C:"$(echo $PWD | sed "s,/,\\\,g"|tr '[:lower:]' '[:upper:]')">"
 	;;
 	dir*)
 	    ls -1
@@ -45,8 +46,14 @@ while (sleep 0); do
 	exit)
 	    exit 0
 	;;
-	*)
+	ls*|pwd)
 	    echo Illegal command: $n.
 	;;
+	*)
+	    if [ ! "${n}x" = x ]; then
+		which $n &>/dev/null && $n || echo "Illegal command: $n."
+	    fi
+	;;
+
     esac
 done
