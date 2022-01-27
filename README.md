@@ -17,6 +17,10 @@ pip2 not found...
 pip3 found... 248
 ```
 
+`bashx` UPX for shell scripts
+
+`diskcom` disk commander, iselect menu for some disk operations
+
 `deb2itp` prepares an RFP or ITP mail for Debian Bug Tracking System
 
 `git2deb` prepares an orig.tar.xz from a github.com repo of master
