@@ -5,6 +5,18 @@ my .dotfiles for linux and macOS
 
 `chkreboot` is it safe to reboot? `chkreboot && reboot`
 
+```
+Users on system: 2
+   someone
+   otherone
+screen or tmux sessions of users on system: 1
+   me [SCREEN]
+CPU load: 4
+   64 cores
+Network filesystems: 0
+GPU load: 329
+```
+
 `diskcom` disk commander, iselect menu for some disk operations
 
 `deb2itp` prepares an RFP or ITP mail for Debian Bug Tracking System
