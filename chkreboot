@@ -53,12 +53,12 @@ r=$((r + $cpu))
 
 # remote moutns?
 echo -n "Network filesystems: "
-nfs=$(showmount -a | sed 1d)
+nfs=$(showmount -a | sed 1d| sed "s,^,&${f},g")
 nfsn=$(showmount -a | sed 1d | wc -l)
 color $nfsn
 echo -e $result
 if [ ! $nfsn = 0 ]; then
-   echo "   $nfs"
+   echo "$nfs"
 fi
 r=$((r + $nfsn))
 
