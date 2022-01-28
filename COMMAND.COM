@@ -4,10 +4,17 @@
 # and add to /etc/shells
 # use chsh to change the shell for users
 
-# rd/md/type/set
+# rd/md/set
+# rm > del
+# cat > type
+# mkfs > format
+# fsck > chkdsk
+# https://en.wikipedia.org/wiki/Abort,_Retry,_Fail%3F
+# https://en.wikipedia.org/wiki/List_of_DOS_commands
+# 
 
 export PS1="C:\\>"
-ver=0.1
+ver=3.30
 
 while (sleep 0); do
     echo -n $PS1
@@ -46,7 +53,7 @@ while (sleep 0); do
 	exit)
 	    exit 0
 	;;
-	ls*|pwd)
+	ls*|pwd|mem)
 	    echo Illegal command: $n.
 	;;
 	*)
