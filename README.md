@@ -3,6 +3,8 @@ my .dotfiles for linux and macOS
 
 `bashx` UPX for shell scripts
 
+`chkreboot` is it safe to reboot? `chkreboot && reboot`
+
 `diskcom` disk commander, iselect menu for some disk operations
 
 `deb2itp` prepares an RFP or ITP mail for Debian Bug Tracking System
