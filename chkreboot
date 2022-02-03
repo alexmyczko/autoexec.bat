@@ -25,51 +25,51 @@ color () {
 # logged in users
 echo -n "Users on system: "
 liun=$(who |grep -v root | awk '{print $1}' |sort -u|wc -l)
-color $liun
-echo -e $result
+color "$liun"
+echo -e "$result"
 who |grep -v root | awk '{print $1}' |sort -u | while read a; do
    echo "${f}${a}"
 done
-r=$((r + $liun))
+r=$((r + liun))
 
 # screen or tmux sessions
 echo -n "screen or tmux sessions of users on system: "
 sotn=$(ps -ef |grep -i 'screen\|tmux' |grep -v grep | awk '{print $1 " " $NF}' |sort -u|wc -l)
-color $sotn
-echo -e $result
+color "$sotn"
+echo -e "$result"
 ps -ef |grep -i 'screen\|tmux' |grep -v grep | awk '{$2=$3=$4=$5=$6=$7="";print}' |sort -u| while read a b; do
    echo "${f}${a} [${b}]"
 done
-r=$((r + $sotn))
+r=$((r + sotn))
 
 # something is running
 echo -n "CPU load: "
-cores=$(grep ^proc /proc/cpuinfo|wc -l)
+cores=$(grep -c ^proc /proc/cpuinfo)
 cpu=$(uptime | sed s,.*:,,g | sed s/,//g|awk '{printf("%.0f\n",$(NF-2))}')
-color $cpu
-echo -e $result
+color "$cpu"
+echo -e "$result"
 echo "${f}${cores} cores"
-r=$((r + $cpu))
+r=$((r + cpu))
 
 # remote moutns?
 echo -n "Network filesystems: "
 nfs=$(showmount -a | sed 1d| sed "s,^,&${f},g")
 nfsn=$(showmount -a | sed 1d | wc -l)
-color $nfsn
-echo -e $result
-if [ ! $nfsn = 0 ]; then
+color "$nfsn"
+echo -e "$result"
+if [ ! "$nfsn" = 0 ]; then
    echo "$nfs"
 fi
-r=$((r + $nfsn))
+r=$((r + nfsn))
 
 # check if there is GPU
 # check if nvidia gpus are doing something
 echo -n "GPU load: "
 gpu="0"
 dkms status | grep nvidia &>/dev/null && gpu=$(nvidia-smi dmon -c 1|sed 1,2d|awk '{$1=$2=$3=$4=$9=$10="";sum+=$5+$6+$7+$8;} END{print sum}')
-color $gpu
-echo -e $result
-r=$((r + $gpu))
+color "$gpu"
+echo -e "$result"
+r=$((r + gpu))
 
 # exit 0 means rebootable
 # the higher the return code the less reboot is recommended (1-255)
