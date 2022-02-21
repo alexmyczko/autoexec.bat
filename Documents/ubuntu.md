@@ -10,6 +10,11 @@ apt-get -uy --purge remove snapd kerneloops switcheroo-control modemmanager fwup
                            apport apport-symptoms avahi-daemon
 ```
 
+Fonts you are not likely to miss:
+```
+apt-get -uy --purge remove fonts-tlwg-.* fonts-smc-.* fonts-samyak-.* fonts-lohit-.* fonts-beng.* fonts-deva.*
+```
+
 Disabling services you most likely do not need, if you prefer amiwm or wmaker over GNOME:
 ```
 systemctl stop polkit
