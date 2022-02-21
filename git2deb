@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# this can be used to get orig.tar.xz from a github.com reop
+# useful for debian packaging
+
 if [ "${1}x" = x ]; then
     echo "Syntax: $0 gitrepo [baseversion]"
     #example: $0 git@github.com:NatronGitHub/Natron.git 2.4
