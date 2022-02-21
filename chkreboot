@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# can you just reboot a linux computer? sure you could
+# this does some checks giving you a hint about its usage
+# returns 0 if it's safe to reboot
+# returns 1-255 for the gore score you cause when rebooting
+
 ansi_bold="\033[1m"
 ansi_warn='\033[0;33m'${ansi_bold}
 ansi_err='\033[0;31m'${ansi_bold}
