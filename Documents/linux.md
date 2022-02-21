@@ -59,7 +59,7 @@ COMPRESS=xz
 
 `woff2_compress your.ttf|otf` saves a lot of bytes to transfer for custom fonts.
 
-Tools to further minimize traffic: `pngquant optipng jpegoptim convert heif-`<kbd>tab</kbd><kbd>tab</kbd>
+Tools to further minimize traffic: `pngquant optipng jpegoptim scour convert heif-`<kbd>tab</kbd><kbd>tab</kbd>
 
 ## Networking
 
