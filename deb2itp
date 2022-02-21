@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# usually when you want to package something officially for debian
+# you file an ITP: bug so others don't do the same, this will prepare
+# the mail for copy pasta after you already packaged it.
+
 if [ -d debian ]; then
     cd debian
 fi
