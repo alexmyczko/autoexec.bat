@@ -18,7 +18,7 @@ A development environment, some utilities and debhelper which we will install li
 # apt-get install binutils cpp cpio dpkg-dev file gcc make patch \
                   dh-make debhelper devscripts fakeroot lintian \
                   debian-policy developers-reference \
-		  man-db manpages reportbug dput-ng
+		  man-db manpages reportbug dput-ng decopy
 ```
 
 (or build-essential lintian debhelper dh-make devscripts fakeroot)
@@ -70,6 +70,8 @@ The most important files are probably `debian/changelog`, `debian/control`, `deb
 `debian/clean`	files to be removed that get generated at build time (make clean)
 `debian/install`	files to be installed
 `debian/manpages`	manpage(s) to be installed
+
+Try running `decopy` to get started with a `debian/copyright`
 
 You will find `licensecheck -r . | grep -v UNKNOWN` useful during the writing of `debian/copyright`.
 
