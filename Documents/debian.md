@@ -1,5 +1,5 @@
 %title: Debian Packaging - mdp presentation
-%author: Alex Myczko <gurkan@phys.ethz.ch>
+%author: Alex Myczko <tar@debian.org>
 %date: 2020-05-24
 
 -> Debian Packaging <-
@@ -105,12 +105,12 @@ Setting up your environment:
 Debian specific environment variables:
 
 ```
-$ export DEBEMAIL="gurkan@phys.ethz.ch"
-$ export DEBFULLNAME="Gürkan Myczko"
+$ export DEBEMAIL="tar@debian.org"
+$ export DEBFULLNAME="Alex Myczko"
 $ export EDITOR=mcedit
 ```
 
----
+-------------------------------------------------
 
 It's important to have the naming right, otherwise `debuild`
 will bail out with an error message.
@@ -131,7 +131,7 @@ For uploads `dput` is used, and can be used to create PPAs for Ubuntu.
 
 Creating updates to an existing package is done using `dch -i`.
 
----
+-------------------------------------------------
 
 Edit debian/*
 ```
@@ -152,7 +152,7 @@ There is a helper utility to package CPAN modules
 dh-make-perl --build --cpan astro::suntime
 ```
 
----
+-------------------------------------------------
 
 -> What we need, what we do <-
 
@@ -176,7 +176,7 @@ nfs-utils (nfs-utils-2-4-4-rc3+)
 FIRST
 kic (2007-2012)
 
----
+-------------------------------------------------
 
 -> Backports <-
 
@@ -193,7 +193,7 @@ line for sources.list, that would allow `apt-get source pkg/sid`)
 
 `apt build-dep pkg` would install build-depends of a package.
 
----
+-------------------------------------------------
 
 -> Quality Control, Lintian, Details <-
 
@@ -212,7 +212,7 @@ Details in afterwork are
 * check the lintian output at lintian.debian.org
 * put to salsa.debian.org (gitlab)
 
----
+-------------------------------------------------
 
 -> But why? <-
 
