@@ -218,7 +218,7 @@ Details in afterwork are
 
 Advantage, for the overview that you get and the control
 
-Disadvantage, maybe an initial effor that will only paid back
+Disadvantage, maybe an initial effort that will only paid back
 in the future. Depending on the developers and source (changes
 that require reworking debian/*) can cause some more work.
 
