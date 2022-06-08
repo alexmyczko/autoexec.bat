@@ -5,6 +5,9 @@
 # returns 0 if it's safe to reboot
 # returns 1-255 for the gore score you cause when rebooting
 
+# dkms should be installed
+# nfs-common for showmount
+
 ansi_bold="\033[1m"
 ansi_warn='\033[0;33m'${ansi_bold}
 ansi_err='\033[0;31m'${ansi_bold}
