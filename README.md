@@ -27,7 +27,7 @@ GPU load: 329
 
 `COMMAND.COM` $SHELL for April 1st
 
-`gray.png` best background image, least distracting works for day and night
+`gray.png` least distracting background image, works for day and night
 
 `benchmark` for linux and macOS, outputs look like this:
 ```
