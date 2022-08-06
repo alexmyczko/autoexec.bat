@@ -35,7 +35,7 @@ while (sleep 0.1); do
     r=$(cat $0|grep ^## |sed s,^##,,g |sed s,PART,$pt,g |sed s,DISK,$d,g | sed s,DSKRO,$dskro,g | sed s,DSKRW,$dskrw,g | iselect -n "$name" -p 3)
     case $r in
 	slct)
-	    d=`echo -e "Select disk.\n\n$(ls -1 /dev/nvme?n? /dev/sd? /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p3 -n "$name"`
+	    d=`echo -e "Select disk.\n\n$(ls -1 /dev/mmcblk? /dev/nvme?n? /dev/sd? /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p3 -n "$name"`
 	;;
 	s-pt)
 	    pt=`echo -e "Select partition.\n\n$(ls -1 /dev/sd??* /dev/md* 2>/dev/null | sed "s,.*,<s>&,g")" | iselect -p3 -n "$name"`
