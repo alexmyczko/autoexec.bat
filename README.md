@@ -23,6 +23,8 @@ GPU load: 329
 
 `git2deb` prepares an orig.tar.xz from a github.com repo of master
 
+`deb2salsa` update the salsa repository
+
 `led-indicator` lets the numlock/scrollock/capslock leds blink like knight rider car
 
 `COMMAND.COM` $SHELL for April 1st
