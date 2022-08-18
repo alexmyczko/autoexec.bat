@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# INPUT
+# $1 git@salsa.debian.org:tar/cadabra2.git
+# $2 cadabra2
+gbp clone $1 $2
+cd $2
+gbp import-dscs --debsnap $2
+git push origin master upstream pristine-tar;git push --tags;git push -u origin --all
