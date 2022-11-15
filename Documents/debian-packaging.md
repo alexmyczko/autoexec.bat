@@ -126,6 +126,7 @@ Other packaging systems (ports, pkg, rpm):
 - Solaris: https://docs.oracle.com/cd/E26505_01/html/E28550/ch2buildpkg-17051.html
 - RedHat: https://access.redhat.com/sites/default/files/attachments/rpm_building_practice_10082013.pdf
 - macOS: https://guide.macports.org/#project.contributing
+- macOS: https://docs.brew.sh/Formula-Cookbook
 - Spack: https://github.com/spack/spack
 - flatpak/flathub: https://flatpak.org/ / https://flathub.org/
 - Ubuntu Snap: https://snapcraft.io/
