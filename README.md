@@ -31,6 +31,8 @@ GPU load: 329
 
 `gray.png` least distracting background image, works for day and night
 
+`raidcalc` a cli raid calculator (0, 1, 5, 6)
+
 `benchmark` for linux and macOS, outputs look like this:
 ```
 MEM [2.67"/8 GB]
