@@ -5,6 +5,11 @@ if [ "x$2" = "x" ]; then
     exit 0
 fi
 
+#			0	1	5	6	10
+#Read performance	High	Medium	Low	Low	High
+#Write Performance	High	Medium	Low	Low	Medium
+#Fault tolerance	None	1	1	2	1/sub-array
+
 echo "Total capacity $(echo "$1 * $2"|bc -l) (disks $1, amount $2)"
 # no fault tolerance
 echo "RAID0          $(echo "$1 * $2"|bc -l)"
@@ -28,4 +33,11 @@ if [ "$1" -gt 3 ]; then
 echo "RAID6          $(echo "($2 * $1) * ($1 - 2) / $1"|bc)"
 else
 echo "RAID6          minimum 4 disks"
+fi
+
+# you figure
+if [ "$1" -gt 3 ]; then
+echo "RAID10         $(echo "($2 * $1) / 2"|bc)"
+else
+echo "RAID10         minimum 4 disks"
 fi
