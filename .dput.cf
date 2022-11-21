@@ -1,0 +1,21 @@
+[bp]
+fqdn = incoming.backports.org
+method = ftp
+incoming = /
+login = anonymous
+
+[home]
+method = local
+incoming = /home/me/incoming
+allow_unsigned_uploads = yes
+pre_upload_command = sed -i "s,unstable,stable,g;s,experimental,stable,g" *.changes
+post_upload_command =
+
+[mentors]
+fqdn = mentors.debian.net
+incoming = /upload
+method = https
+allow_unsigned_uploads = 0
+progress_indicator = 2
+# Allow uploads for UNRELEASED packages
+allowed_distributions = .*
