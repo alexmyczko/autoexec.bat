@@ -4,7 +4,7 @@
 # Debian Packaging
 pretty much the same with Ubuntu
 
-2003-2022 Gürkan Myczko <tar@debian.org>
+2003-2023 Gürkan Myczko <tar@debian.org>
 
 ## Introduction
 
@@ -76,6 +76,8 @@ Try running `decopy` to get started with a `debian/copyright`
 You will find `licensecheck -r . | grep -v UNKNOWN` useful during the writing of `debian/copyright`.
 
 `$ debuild`
+
+If you want to build without tests, prepend your command with `DEB_BUILD_OPTIONS=nocheck`. Use `-S` to only build the source package.
 
 When things are built you should check the package using
 
