@@ -118,6 +118,11 @@ I did not go into detail with `debian/watch`.
 Make sure it builds on as many architectures as possible: https://buildd.debian.org/
 If your software works with data files, that can be detected with the file(5) utility, send patches for its detection.
 
+## Github of Debian
+
+It's called https://salsa.debian.org and based on gitlab. You can download projects from there
+using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
+
 ## Links
 
 A good source for free software https://github.com
