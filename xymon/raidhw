@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# run this hourly to update the hw raid test
+# either use cron or in a screen `while (./raidhw); do sleep 1h; done`
+
+# try to read server and machine name from config file
+#. /etc/default/xymon-client    # or /etc/sysconfig/xymon-client
+#XYMSRV=$XYMONSERVERS
+#MACHINE=$CLIENTHOSTNAME
+
+#XYMSRV= or set ip directly
+MACHINE=$(hostname -s)
+
+COLUMN=raidhw	  # Name of the column
+COLOR=green	    # By default, everything is OK
+MSG="HW RAID status"
+
+# only install one of them, if you have multiple different ones, send a patch
+which cli64     >/dev/null && RAIDCHECK="(cli64 rsf info; cli64 disk info)"
+which perccli64 >/dev/null && RAIDCHECK="perccli64 /c0 show|grep -v Time"
+which storcli64 >/dev/null && RAIDCHECK="storcli64 /c0 show|grep -v Time"
+which arcconf   >/dev/null && RAIDCHECK="arcconf getconfig 1 pd |grep -v Temperature |grep -v deg\ C|grep -v Sectors| grep -v Service\ Hours"
+which mergacli  >/dev/null && RAIDCHECK="megacli -PDList -aall |grep -v Temperature"
+
+# bail out if no raidtool is found, send patch
+RAIDCHECK=$raidtool
+
+MSG=`diff -u /etc/raidhw.ref <(eval $RAIDCHECK)`
+if [ "$?" != 0 ]; then
+      COLOR=red
+      MSG="${MSG}
+
+      ``
+      "
+else
+      MSG="${MSG}
+      $(lspci |grep -i raid)
+      All is OK
+
+      $(eval $RAIDCHECK)
+
+      Create a new reference file with:
+      $RAIDCHECK > /etc/raidhw.ref
+      "
+fi
+
+# +70 is lifetime 60 minutes
+echo -e "status+70 $MACHINE.$COLUMN $COLOR `date`\n\n${MSG}" | nc -4 -t $XYMSRV 1984
+
+exit 0
