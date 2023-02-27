@@ -19,7 +19,7 @@ MSG="HW RAID status"
 which cli64     &>/dev/null && RAIDCHECK="(cli64 rsf info; cli64 disk info)"
 which perccli64 &>/dev/null && RAIDCHECK="perccli64 /c0 show|grep -v Time"
 which storcli64 &>/dev/null && RAIDCHECK="storcli64 /c0 show|grep -v Time"
-which arcconf   &>/dev/null && RAIDCHECK="arcconf getconfig 1 pd |grep -v Temperature |grep -v deg\ C|grep -v Sectors| grep -v Service\ Hours"
+which arcconf   &>/dev/null && RAIDCHECK="arcconf getconfig 1 pd |grep -v Temperature |grep -v deg\ C|grep -v Sectors| grep -v Service\ Hours|grep -v Estimated\ Life"
 which megacli64 &>/dev/null && RAIDCHECK="megacli64 -PDList -aall |grep -v Temperature"
 
 # bail out if no raidtool is found
