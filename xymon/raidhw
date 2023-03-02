@@ -24,6 +24,11 @@
 
 # run this hourly to update the hw raid test
 # either use cron or in a screen `while (./raidhw); do sleep 1h; done`
+# /etc/cron.d/raidhw
+#MAILTO=""
+#SHELL=/bin/bash
+#PATH=/usr/sbin:/usr/sbin:/usr/bin:/sbin:/bin
+#*/60 * * * *  root /usr/sbin/raidhw >/dev/null 2>&1
 
 # try to read server and machine name from config file
 if [ -e /etc/sysconfig/xymon-client ]; then . /etc/sysconfig/xymon-client; fi
