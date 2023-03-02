@@ -26,12 +26,14 @@
 # either use cron or in a screen `while (./raidhw); do sleep 1h; done`
 
 # try to read server and machine name from config file
-#. /etc/default/xymon-client    # or /etc/sysconfig/xymon-client
-#XYMSRV=$XYMONSERVERS
-#MACHINE=$CLIENTHOSTNAME
+if [ -e /etc/sysconfig/xymon-client ]; then . /etc/sysconfig/xymon-client; fi
+if [ -e /etc/default/xymon-client ]; then . /etc/default/xymon-client; fi
+XYMSRV=$XYMONSERVERS
+MACHINE=$CLIENTHOSTNAME
 
+# or set them right in here
 #XYMSRV= or set ip directly
-MACHINE=$(hostname -s)
+#MACHINE=$(hostname -s)
 
 COLUMN=raidhw	  # Name of the column
 COLOR=green	    # By default, everything is OK
