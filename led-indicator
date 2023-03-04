@@ -2,6 +2,12 @@
 
 # this one could make good use of trap
 
+# other interesting triggers are possible, see
+# grep LEDS_TRIGGER /boot/config-$(uname -r)
+# ls /lib/modules/$(uname -r)/kernel/drivers/leds/trigger/
+# modprobe what-you-want
+# echo what-you-want > /sys/class/leds/*capslock/trigger
+
 if [ ! 0 -eq `id -u` ]; then
     echo "must run as root"
     exit 1
