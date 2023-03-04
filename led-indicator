@@ -1,9 +1,16 @@
 #!/bin/bash
 
+# this one could make good use of trap
+# syncing the blinking to the full second would allow multiple keyboards on multiple computers to blink synchronous
+
 if [ ! 0 -eq `id -u` ]; then
     echo "must run as root"
     exit 1
 fi
+
+# if the keyboard has only one LED, blink only that
+lsusb |grep Apple.*Keyboard >/dev/null
+if [ $? = 0 ]; then CYCLOP=1; else CYCLOP=0; fi
 
 for a in setleds sleep; do
     hash $a >/dev/null
@@ -13,14 +20,22 @@ for a in setleds sleep; do
     fi
 done
 
-while (sleep 1); do
-    setleds -L +num < /dev/console
-    sleep 0.1
-    setleds -L -num < /dev/console
-    setleds -L +caps < /dev/console
-    sleep 0.1
-    setleds -L -caps < /dev/console
-    setleds -L +scroll < /dev/console
-    sleep 0.1
-    setleds -L -scroll < /dev/console
-done
+if [ $CYCLOP = 1 ]; then
+    while (sleep 1); do
+        setleds -L +caps < /dev/console
+        sleep 0.1
+        setleds -L -caps < /dev/console
+    done
+else 
+    while (sleep 1); do
+        setleds -L +num < /dev/console
+        sleep 0.1
+        setleds -L -num < /dev/console
+        setleds -L +caps < /dev/console
+        sleep 0.1
+        setleds -L -caps < /dev/console
+        setleds -L +scroll < /dev/console
+        sleep 0.1
+        setleds -L -scroll < /dev/console
+    done
+fi
