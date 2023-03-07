@@ -1,0 +1,3 @@
+grep AuthenticAMD /proc/cpuinfo >/dev/null && m=amd64-microcode
+grep Intel /proc/cpuinfo >/dev/null && m=intel-microcode
+echo $m
