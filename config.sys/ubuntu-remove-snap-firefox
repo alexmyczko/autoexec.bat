@@ -1,0 +1,16 @@
+snap remove snapd-desktop-integration
+snap remove snap-store
+snap remove gtk-common-themes
+snap remove gnome-3-38-2004
+snap remove firefox
+snap remove core20
+snap remove bare
+snap remove snapd
+apt-get -uy --purge remove snapd
+kill -9 $(echo $(ps -ef | pgrep snap))
+
+add-apt-repository -y ppa:mozillateam/ppa
+echo 'Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+apt-get -uy install firefox
