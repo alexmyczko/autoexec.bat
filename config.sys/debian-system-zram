@@ -1,0 +1,3 @@
+apt-get -uy install zram-tools
+sed -i "s,#PERCENT=,PERCENT=,g" /etc/default/zramswap
+service zramswap restart
