@@ -1,0 +1,2 @@
+if [ ! -e /etc/initramfs-tools/conf.d/compress ]; then echo COMPRESS=xz > /etc/initramfs-tools/conf.d/compress; fi
+update-initramfs -u
