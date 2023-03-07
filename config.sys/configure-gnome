@@ -1,0 +1,13 @@
+# /etc/X11/Xsession.d/95preconfigure-user-gnome-session
+
+if [ ! -e /usr/share/backgrounds/gray.png ]; then
+  cd /usr/share/backgrounds
+  wget https://github.com/alexmyczko/autoexec.bat/raw/master/gray.png
+  cp gray.png warty-final-ubuntu.png
+fi
+
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
+gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
+gnome-shell-extension-tool -e ubuntu-dock@ubuntu.com
+
+gsettings set org.gnome.desktop.interface monospace-font-name "Agave 12"
