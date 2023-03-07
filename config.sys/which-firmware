@@ -1,8 +1,9 @@
 grep AuthenticAMD /proc/cpuinfo >/dev/null && m=amd64-microcode
 grep Intel /proc/cpuinfo >/dev/null && m=intel-microcode
-echo $m
 
 grep ath10k /sys/class/net/*/device/uevent >/dev/null && m="$m firmware-atheros"
+
+echo $m
 
 # also check https://packages.debian.org/isenkram
 
