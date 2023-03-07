@@ -2,5 +2,7 @@ grep AuthenticAMD /proc/cpuinfo >/dev/null && m=amd64-microcode
 grep Intel /proc/cpuinfo >/dev/null && m=intel-microcode
 echo $m
 
+# also check https://packages.debian.org/isenkram
+
 # figure out which ones are needed or not, and remove the ones not needed, install the ones needed
 # aptitude search '~i ?section(non-free-firmware)' | awk '{print $2}' | while read a; do echo "$a $(apt-cache show $a|grep ^Installed-Size)"; done |sort -k3n
