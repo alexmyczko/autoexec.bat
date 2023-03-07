@@ -1,0 +1,1 @@
+apt-get -uy install zram-config nohang; service zram-config start
