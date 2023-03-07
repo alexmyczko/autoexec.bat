@@ -50,6 +50,7 @@ which perccli64 &>/dev/null && RAIDCHECK="perccli64 /call show|grep -v Time||gre
 which storcli64 &>/dev/null && RAIDCHECK="storcli64 /call show|grep -v Time"
 which arcconf   &>/dev/null && RAIDCHECK="arcconf getconfig 1 pd |grep -v Temperature |grep -v deg\ C|grep -v Sectors| grep -v Service\ Hours|grep -v Estimated\ Life"
 which megacli64 &>/dev/null && RAIDCHECK="megacli64 -PDList -aall |grep -v Temperature"
+which ssacli    &>/dev/null && RAIDCHECK="ssacli ctrl all show detail" # https://gist.github.com/mrpeardotnet/a9ce41da99936c0175600f484fa20d03
 
 # bail out if no raidtool is found
 if [ "x" = "$RAIDCHECK"x ]; then
