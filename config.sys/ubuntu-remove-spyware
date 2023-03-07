@@ -1,0 +1,2 @@
+apt-get -uy --purge remove whoopsie kerneloops modemmanager apport apport-symptoms unattended-upgrades gnome-online-accounts switcheroo-control
+apt-get -uy --purge remove update-notifier-common apport ipp-usb ubuntu-release-upgrader-gtk update-notifier
