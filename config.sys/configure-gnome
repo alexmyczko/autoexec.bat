@@ -8,6 +8,8 @@ fi
 
 gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 gsettings set org.gnome.shell.extensions.dash-to-dock background-opacity 0.5
+# see gnome-extensions list
 gnome-shell-extension-tool -e ubuntu-dock@ubuntu.com
 
 gsettings set org.gnome.desktop.interface monospace-font-name "Agave 12"
+# or use gnome-shell-extension-prefs
