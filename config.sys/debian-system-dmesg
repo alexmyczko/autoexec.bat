@@ -1,0 +1,2 @@
+if [ ! -e /etc/sysctl.d/61-dmesg.conf ]; then echo kernel.dmesg_restrict=0 > /etc/sysctl.d/61-dmesg.conf; fi
+sysctl -p /etc/sysctl.d/61-dmesg.conf
