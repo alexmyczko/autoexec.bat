@@ -1,5 +1,5 @@
 if [ ! -e /etc/apt/sources.list.d/nvidia.list ]; then
-  echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64 /" > /etc/apt/sources.list.d/nvidia.list
+  echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64 /" > /etc/apt/sources.list.d/nvidia.list
 fi
 
 if [ ! -e /etc/apt/trusted.gpg.d/nvidia.asc ]; then
@@ -36,5 +36,5 @@ iCUGy6cVI0Fq777X/ME1K6A/bzZ4vRYNx8rUmVE5
 EOF
 fi
 
-# apt install cuda-11-7 -uy
+# apt install cuda-11-7 nvtop -uy
 # apt-mark hold $(dpkg -l |grep  'libcudnn\|nvidia-\|cuda-\|xserver-xorg-video-nvidia-\|libnvidia-'|awk '{print $2}')
