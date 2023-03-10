@@ -38,3 +38,7 @@ fi
 
 # apt install cuda-11-7 nvtop -uy
 # apt-mark hold $(dpkg -l |grep  'libcudnn\|nvidia-\|cuda-\|xserver-xorg-video-nvidia-\|libnvidia-'|awk '{print $2}')
+# https://www.tensorflow.org/install/pip
+#    python3 -m pip install tensorflow
+# https://pytorch.org/get-started/locally/
+#    pip3 install torch torchvision torchaudio
