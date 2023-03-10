@@ -1,0 +1,5 @@
+if [ ! -e /etc/sysctl.d/60-memory.conf ]; then echo vm.swappiness=10 > /etc/sysctl.d/60-memory.conf; fi
+sysctl -p /etc/sysctl.d/60-memory.conf
+# you might want to go, if kernel oomd kills random processes, reboot to get into a clean state
+#vm.panic_on_oom=1
+#kernel.panic=3
