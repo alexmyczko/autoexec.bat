@@ -1,0 +1,7 @@
+cat << EOF > /etc/default/xymon-client
+XYMONSERVERS="$XYMONSERVER"
+CLIENTHOSTNAME="$(hostname -s)"
+EOF
+apt install xymon-client lm-sensors hobbit-plugins libfile-which-perl -uy
+sed -i "s,\tDISABLED,\t#DISABLED,g" /etc/xymon/clientlaunch.d/temp.cfg
+service xymon-client restart
