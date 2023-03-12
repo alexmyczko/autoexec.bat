@@ -1,0 +1,16 @@
+apt install merecat xymon-client xymon hobbit-plugins lm-sensors libfile-which-perl -uy
+cp -pr /usr/lib/xymon/cgi-secure /var/www/
+cp -pr /usr/lib/xymon/cgi-bin    /var/www/
+cd /var/www; ln -sf /var/lib/xymon/www xymon
+cd /var/www; ln -sf /var/www/cgi-bin xymon-cgi
+cat << EOF > /etc/merecat.conf
+port = 80
+username = xymon
+chroot = false
+check-symlinks = false
+directory = /var/www
+cgi "**.cgi|/cgi-bin/*|**.sh" {
+    enabled = true
+    limit   = 50
+}
+EOF
