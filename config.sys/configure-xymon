@@ -1,4 +1,4 @@
-apt install merecat xymon-client xymon hobbit-plugins lm-sensors libfile-which-perl -uy
+apt install merecat xymon-client xymon hobbit-plugins lm-sensors libfile-which-perl fonts-league-spartan fonts-agave -uy
 cp -pr /usr/lib/xymon/cgi-secure /var/www/
 cp -pr /usr/lib/xymon/cgi-bin    /var/www/
 cd /var/www; ln -sf /var/lib/xymon/www xymon
@@ -14,3 +14,19 @@ cgi "**.cgi|/cgi-bin/*|**.sh" {
     limit   = 50
 }
 EOF
+
+# patch for xymon/gifs/static/xymonbody.css
+#* {
+#        font-family: league-spartan,sans-serif;
+#}
+#pre {
+#        font-family: agave,mono;
+#}
+#@font-face {
+#font-family: league-spartan;
+#src: url('league-spartan.otf');
+#}
+#@font-face {
+#font-family: agave;
+#src: url('agave.ttf');
+#}
