@@ -26,7 +26,8 @@ case "$@" in
 	fi
     ;;
     -h|--help)
-	echo 'Usage: perms [restore]'
+	echo 'Usage: perms > .perms'
+	echo '       perms [restore]'
 	echo 'Print, save or restore file permissions recursively.'
 	echo 'Save the permissions to the current directory as .perms for restore.'
 	echo
