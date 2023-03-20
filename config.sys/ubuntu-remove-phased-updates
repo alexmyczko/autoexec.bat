@@ -1,0 +1,13 @@
+cat << EOF > /etc/apt/apt.conf.d/99-phased-updates
+# dont take part of phased updates
+# Disable phased updates: https://people.canonical.com/~ubuntu-archive/phased-updates.html
+# https://discourse.ubuntu.com/t/phased-updates-in-apt-in-21-04/20345
+# https://github.com/Debian/apt/blob/main/apt-pkg/upgrade.cc
+
+# see https://bugs.launchpad.net/ubuntu/+source/apt/+bug/1981672/comments/14
+APT::Get::Phase-Policy true;
+APT::Get::Always-Include-Phased-Updates "0";
+APT::Get::Never-Include-Phased-Updates "1";
+EOF
+# depending on your release of Ubuntu you'll need to run the following
+# apt-get --reinstall install `apt list --installed | grep installed,local|sed s,/.*,/jammy,|grep -v linux`
