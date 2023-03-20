@@ -1,1 +1,2 @@
 apt-get -uy install zram-config nohang; service zram-config start
+# alternatively go with debian-system-zram (also works on Ubuntu)
