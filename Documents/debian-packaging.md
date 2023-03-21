@@ -130,7 +130,7 @@ using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
 ## Links
 
 A good source for free software https://github.com
-All Debian project participants www.debian.org/devel/people
+All Debian project participants https://www.debian.org/devel/people
 
 Other packaging systems (ports, pkg, rpm):
 - Freebsd: https://www.freebsd.org/doc/en/books/porters-handbook/
