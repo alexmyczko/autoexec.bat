@@ -9,6 +9,9 @@ snap remove snapd
 apt-get -uy --purge remove snapd
 kill -9 $(echo $(ps -ef | pgrep snap))
 
+systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
+umount /var/snap/firefox/common/host-hunspell
+
 add-apt-repository -y ppa:mozillateam/ppa
 echo 'Package: *
 Pin: release o=LP-PPA-mozillateam
