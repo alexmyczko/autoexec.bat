@@ -1,3 +1,4 @@
 deborphan
 dpkg -l |grep transitional |awk '{print $2}'
 # dpigs -H
+# apt-forktracer
