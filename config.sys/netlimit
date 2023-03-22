@@ -1,0 +1,8 @@
+# netlimit like cpulimit
+#                       down up
+#wondershaper interface 5000 5000 (0.5 mb/s)
+#wondershaper interface 50000 50000 (5 mb/s)
+#wondershaper interface 500000 500000 (50 mb/s)
+#wondershaper interface 5000000 5000000 (500 mb/s)
+#wondershaper clear interface
+#tc qdisc list
