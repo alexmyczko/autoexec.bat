@@ -1,0 +1,1 @@
+zgrep Install: /var/log/apt/history.log* |sed "s,:amd64 , ,g;s,.*Install: ,,;s/, automatic/AUTO/g;s/, /\n/g" | grep -v AUTO |tac
