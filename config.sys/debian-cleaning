@@ -1,0 +1,2 @@
+deborphan
+dpkg -l |grep transitional |awk '{print $2}'
