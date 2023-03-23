@@ -1,0 +1,4 @@
+cat << EOF > /etc/profile.d/pip.sh
+# this prevents pip to cache installations in $HOME/.cache/pip (pip cache dir)
+export PIP_NO_CACHE_DIR=1
+EOF
