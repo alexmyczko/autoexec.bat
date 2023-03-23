@@ -161,7 +161,7 @@ lie (ITP, 2006-2018), form (ITP, 2016-2023), foremost (hardware, 2006-2010),
 memtester (hardware, 2006-2008), flashrom (hardware, 2019-2023),
 coreboot, pynpoint (ASTRO),
 rclone-browser (ASTRO, 2019), hpx (noch nicht drin), cadabra (ITP, 2009-2010),
-cadabra2, gnudatalanguage (ASTRO, 2007-2011, 2019), kokkos, ffcv, callisto, drs4eb, csaps, nusolve
+cadabra2, gnudatalanguage (ASTRO, 2007-2011, 2019), kokkos, ffcv, callisto, drs4eb, csaps, nusolve,
 liblhapdf-dev (ITP, 2007), goaccess (dual-bin Version, 2019-2020), geant4, root-system, nohang, mimalloc, qvge, zfp, unuran, vdt, mfem, uftrace, guider
 
 D-BAUG
@@ -170,7 +170,7 @@ labelme (2019-2020), meshlab (2019-2020)
 libpointmatcher & libnabo (2018, pf-pc15), groops
 
 D-BIOL
-ctffind
+ctffind, coot
 
 D-INFK
 libnfsidmap-regex (2019-2020), got merged upstream in
