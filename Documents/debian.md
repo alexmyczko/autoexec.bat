@@ -157,20 +157,23 @@ dh-make-perl --build --cpan astro::suntime
 -> What we need, what we do <-
 
 D-PHYS
-lie (ITP, 2006-2018), form (ITP, 2016-2020), foremost (hardware, 2006-2010),
-memtester (hardware, 2006-2008), flashrom (hardware, 2019-2020),
-coreboot (hardware, noch nicht drin), pynpoint (fast) (ASTRO),
+lie (ITP, 2006-2018), form (ITP, 2016-2023), foremost (hardware, 2006-2010),
+memtester (hardware, 2006-2008), flashrom (hardware, 2019-2023),
+coreboot, pynpoint (ASTRO),
 rclone-browser (ASTRO, 2019), hpx (noch nicht drin), cadabra (ITP, 2009-2010),
-cadabra2 (noch nicht drin), gnudatalanguage (ASTRO, 2007-2011, 2019),
-liblhapdf-dev (ITP, 2007), goaccess (dual-bin Version, 2019-2020)
+cadabra2, gnudatalanguage (ASTRO, 2007-2011, 2019), kokkos, ffcv
+liblhapdf-dev (ITP, 2007), goaccess (dual-bin Version, 2019-2020), geant4, root-system
 
 D-BAUG
 colmap (2018-2020), cloudcompare (2018-2020),
 labelme (2019-2020), meshlab (2019-2020)
 libpointmatcher & libnabo (2018, pf-pc15)
 
+D-BIOL
+ctffind
+
 D-INFK
-libnfsidmap-regex (2019-2020), will be merged upstream in
+libnfsidmap-regex (2019-2020), got merged upstream in
 nfs-utils (nfs-utils-2-4-4-rc3+)
 
 FIRST
