@@ -1,6 +1,10 @@
 # autoexec.bat
 my .dotfiles for linux and macOS
 
+[Documents](Documents)
+
+[xymon HW raid check](xymon)
+
 `bashx` UPX for shell scripts
 
 `diskcom` disk commander, iselect menu for some disk operations
@@ -21,7 +25,7 @@ my .dotfiles for linux and macOS
 
 `perms` store uid:gid and UNIX file permissions to a file, and restore them
 
-the following tools are integrated into `ruptime`, https://github.com/alexmyczko/ruptime
+the following tools are integrated into [ruptime](https://github.com/alexmyczko/ruptime)
 
 `chkreboot` is it safe to reboot? `chkreboot && reboot`
 
