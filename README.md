@@ -3,6 +3,8 @@ my .dotfiles for linux and macOS
 
 [Documents](Documents)
 
+[ansible not ansible](config.sys)
+
 [xymon HW raid check](xymon)
 
 `bashx` UPX for shell scripts
