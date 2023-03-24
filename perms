@@ -7,7 +7,8 @@ SYS=`uname -s`
 
 case "$SYS" in
     Linux)
-        STAT="-c %a %U:%G %n"
+        #STAT="-c %a %U:%G %n"
+	STAT="-c %a %u:%g %n"
     ;;
     FreeBSD)
 	STAT="-f %p %g:%u %N"
