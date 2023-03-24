@@ -3,20 +3,6 @@ my .dotfiles for linux and macOS
 
 `bashx` UPX for shell scripts
 
-`chkreboot` is it safe to reboot? `chkreboot && reboot`
-
-```
-Users on system: 2
-   someone
-   otherone
-screen or tmux sessions of users on system: 1
-   me [SCREEN]
-CPU load: 4
-   64 cores
-Network filesystems: 0
-GPU load: 329
-```
-
 `diskcom` disk commander, iselect menu for some disk operations
 
 `deb2itp` prepares an RFP or ITP mail for Debian Bug Tracking System
@@ -32,6 +18,24 @@ GPU load: 329
 `gray.png` least distracting background image, works for day and night
 
 `raidcalc` a cli raid calculator (0, 1, 5, 6)
+
+`perms` store uid:gid and UNIX file permissions to a file, and restore them
+
+the following tools are integrated into `ruptime`, https://github.com/alexmyczko/ruptime
+
+`chkreboot` is it safe to reboot? `chkreboot && reboot`
+
+```
+Users on system: 2
+   someone
+   otherone
+screen or tmux sessions of users on system: 1
+   me [SCREEN]
+CPU load: 4
+   64 cores
+Network filesystems: 0
+GPU load: 329
+```
 
 `benchmark` for linux and macOS, outputs look like this:
 ```
