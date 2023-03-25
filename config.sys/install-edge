@@ -1,3 +1,7 @@
+cat << EOF > /etc/default/microsoft-edge
+repo_add_once="false"
+repo_reenable_on_distupgrade="false"
+EOF
 v=$(links2 -dump https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/ |grep deb | sort -V | tail -1 | awk '{print $1}')
 wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/$v
 dpkg -i $v
