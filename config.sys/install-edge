@@ -1,3 +1,4 @@
 v=$(links2 -dump https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/ |grep deb | sort -V | tail -1 | awk '{print $1}')
 wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/$v
 dpkg -i $v
+rm /etc/apt/sources.list.d/microsoft-edge.list
