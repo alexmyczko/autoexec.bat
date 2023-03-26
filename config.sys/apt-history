@@ -1,1 +1,3 @@
 zgrep Install: /var/log/apt/history.log* |sed "s,:amd64 , ,g;s,.*Install: ,,;s/, automatic/AUTO/g;s/, /\n/g" | grep -v AUTO |tac
+# list with section prepended
+# zgrep Install: /var/log/apt/history.log* |sed "s,:amd64 , ,g;s,.*Install: ,,;s/, automatic/AUTO/g;s/, /\n/g" | grep -v AUTO |tac |sort|awk '{print $1}'|while read a; do echo $(apt-cache show $a|grep Section|awk '{print $2}') $a; done
