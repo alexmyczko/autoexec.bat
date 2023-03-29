@@ -4,3 +4,4 @@ apt-get -uy install zram-config nohang; service zram-config start
 # https://docs.kernel.org/admin-guide/blockdev/zram.html
 # https://unix.stackexchange.com/questions/594817/why-does-zram-occupy-much-more-memory-compared-to-its-compressed-value
 # https://lore.kernel.org/lkml/20160606194836.3624-2-hannes@cmpxchg.org/
+# https://unix.stackexchange.com/questions/32333/what-does-the-vm-swappiness-parameter-really-control
