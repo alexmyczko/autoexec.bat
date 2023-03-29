@@ -1,0 +1,2 @@
+upx podman rclone git-annex blender pandoc
+# see https://wiki.debian.org/ReduceDebian
