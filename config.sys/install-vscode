@@ -1,0 +1,4 @@
+v=$(links2 -dump https://packages.microsoft.com/repos/vscode/pool/main/c/code/ |grep deb | sort -V | tail -1 | awk '{print $1}')
+wget https://packages.microsoft.com/repos/vscode/pool/main/c/code/$v
+dpkg -i $v
+rm /etc/apt/sources.list.d/vscode.list
