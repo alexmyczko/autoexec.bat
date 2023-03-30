@@ -1,4 +1,6 @@
 deborphan
 dpkg -l |grep transitional |awk '{print $2}'
+# dpkg -l |grep -v ^ii
+# apt autoremove
 # dpigs -H
 # apt-forktracer
