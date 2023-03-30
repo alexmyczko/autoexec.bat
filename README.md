@@ -7,6 +7,8 @@ my .dotfiles for linux and macOS
 
 [xymon HW raid check](xymon)
 
+/etc/apt/`sources.list` for Debian with unstable and experimental
+
 `bashx` UPX for shell scripts
 
 `diskcom` disk commander, iselect menu for some disk operations
