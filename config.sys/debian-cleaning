@@ -4,3 +4,5 @@ dpkg -l |grep transitional |awk '{print $2}'
 # apt autoremove
 # dpigs -H
 # apt-forktracer
+# debian-distro-info -fay
+# ubuntu-distro-info -fay
