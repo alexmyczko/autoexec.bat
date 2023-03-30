@@ -20,6 +20,12 @@ gsettings set org.gnome.desktop.interface monospace-font-name "Agave 12"
 # dconf dump /org/gnome/terminal/legacy/
 # dconf write /org/gnome/terminal/legacy/profiles:/:random-string-from-above/font "'Agave Bold 12'"
 
+# a cursor which is better to spot
+#cursor-background-color='rgb(233,173,12)'
+#cursor-blink-mode='on'
+#cursor-colors-set=true
+#cursor-foreground-color='rgb(0,0,0)'
+
 # disable annoying gnome sound effects
 gsettings set org.gnome.desktop.sound event-sounds false
 # gsettings reset org.gnome.desktop.sound event-sounds
