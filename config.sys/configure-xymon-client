@@ -9,3 +9,4 @@ modprobe drivetemp
 service xymon-client restart
 # debug xymon checks as xymon user
 #su - xymon -s /bin/bash
+#tail -f /var/log/xymon/xymonclient.log
