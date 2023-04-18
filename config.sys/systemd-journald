@@ -1,0 +1,6 @@
+systemctl disable systemd-journald.service
+systemctl mask systemd-journald.service
+systemctl stop systemd-journald
+journalctl --vacuum-size=1M
+rm -rf /var/log/journal
+#rm /usr/bin/journalctl
