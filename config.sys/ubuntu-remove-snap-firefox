@@ -9,6 +9,7 @@ snap remove snapd
 apt-get -uy --purge remove snapd
 kill -9 $(echo $(ps -ef | pgrep snap))
 
+# https://forum.snapcraft.io/t/sdb5-mounted-on-firefox/31897
 systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
 umount /var/snap/firefox/common/host-hunspell
 
