@@ -1,3 +1,4 @@
 # https://bugs.debian.org/cgi-bin/pkgreport.cgi?dist=unstable;package=tracker-miner-fs
 rm /usr/libexec/tracker-miner-fs-3
 pkill -9 tracker-miner
+rm /etc/xdg/autostart/tracker-miner-fs-3.desktop
