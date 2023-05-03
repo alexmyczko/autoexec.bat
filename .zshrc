@@ -33,6 +33,9 @@ EDITOR=mcedit; export EDITOR
 export PS1='%n@%m:%~%(!.#.$) '
 unset RPS1
 
+# if you don't want to see any deprecation warnings from Python
+export PYTHONWARNINGS='ignore::PendingDeprecationWarning,ignore::DeprecationWarning'
+
 # history
 HISTSIZE=100000
 SAVEHIST=100000
