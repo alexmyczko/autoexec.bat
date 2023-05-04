@@ -1,5 +1,5 @@
-apt-get install debian-keyring debian-archive-keyring
-apt-key update
+# BEWARE. HERE BE DRAGONS. IF YOU CONTINUE YOU WILL GET UBUNTU DELUXE
+# better known as debian.
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 0E98404D386FA1D9
 cat > /etc/apt/sources.list << EOF
 deb http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-firmware
