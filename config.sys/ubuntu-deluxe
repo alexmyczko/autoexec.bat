@@ -12,6 +12,7 @@ deb-src http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-fi
 deb http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
 deb-src http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
 EOF
+rm /etc/profile.d/01-locale-fix.sh
 apt-get update
 eatmydata apt-get upgrade -uy
 eatmydata apt-get dist-upgrade
