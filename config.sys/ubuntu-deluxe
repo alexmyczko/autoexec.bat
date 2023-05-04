@@ -1,0 +1,80 @@
+apt-get install debian-keyring debian-archive-keyring
+apt-key update
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 0E98404D386FA1D9
+cat > /etc/apt/sources.list << EOF
+deb http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-firmware
+deb-src http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-firmware
+# enable following two lines on 10/06/2023
+#deb http://security.debian.org/debian-security bookworm-security main
+#deb-src http://security.debian.org/debian-security bookworm-security main
+# bookworm-updates, to get updates before a point release is made;
+# see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
+deb http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb-src http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
+EOF
+apt-get update
+eatmydata apt-get upgrade -uy
+eatmydata apt-get dist-upgrade
+# might need a few apt --fix-broken install
+# together with dpkg -P --force-all
+# dpkg -P --force-all libjpeg-turbo8-dev
+# dpkg -P --force-all libgstreamer-plugins-good1.0-0
+# dpkg -P --force-all gconf-service-backend
+# dpkg -P --force-all grilo-plugins-0.3-base
+# dpkg -P --force-all plymouth-theme-spinner
+# dpkg -P --force-all libsgutils2-2
+# dpkg -P --force-all libkf5baloowidgets-data
+#
+# apt-get --purge remove ess
+# apt-get --purge remove nautilus-sendto
+# apt-get --purge remove libwhoopsie0
+# apt-get --purge remove libruby3.0
+# apt --purge remove `deborphan |grep ^lib`
+# apt-get --purge remove libfmt8
+# apt-get --purge remove gcc-11-doc
+# apt-get --purge remove libstd-rust-1.65 libperl5.34 
+# apt-get --purge remove perl-modules-5.34
+# apt --purge remove qemu
+# apt --purge remove unity telepathy-mission-control-5 
+# apt-get --purge remove zram-config
+# apt-get --purge remove finalrd
+# apt-get --purge remove dpatch
+# apt-get --purge remove microsoft-edge-stable
+# apt-get --purge remove smartmontools
+# apt-get --purge remove hw-probe smartmontools
+# apt-get --purge remove guile-g-wrap guile-gnome2-glib guile-gnome2-gtk
+# apt-get --purge remove linux-sound-base
+# apt-get --purge remove libprocps8
+# apt-get --purge remove guile-cairo libgwrap-runtime2
+# apt-get --purge remove indicator-messages indicator-common
+# apt-get --purge remove libreoffice-style-yaru
+# apt-get --purge remove fusesmb
+# apt-get --purge remove denef ctop
+#
+# list obsolete or local packages
+# apt list '~o'
+apt-get install linux-image-amd64 firmware-linux-free
+
+# removing ubuntu only packages
+apt-get --purge remove whoopsie-preferences
+apt-get --purge remove fonts-khmeros-core fonts-takao-pgothic mknfonts.tool xfonts-cyrillic
+apt-get --purge remove `dpkg -l |grep ubuntu- |awk '{print $2}'`
+apt-get --purge remove `dpkg -l |grep unity- |awk '{print $2}'`
+apt-get --purge remove `dpkg -l |grep curtin|awk '{print $2}'`
+apt-get --purge remove `deborphan |grep libpcl` # 6x
+apt-get --purge remove `deborphan |grep opencv` # 6x
+apt-get --purge remove openjdk-8.* openjdk-11.*
+apt-get --purge remove llvm-11.*
+apt-get --purge remove python3.10.*
+apt-get --purge remove gcc-9.*
+apt-get --purge remove `deborphan |grep ^lib` # 6x
+apt-get --purge remove language-selector-.*
+
+apt install --reinstall eatmydata/bookworm
+apt install --reinstall filters/bookworm
+apt --reinstall install lzop/bookworm make/bookworm
+apt-get --reinstall install lightdm/bookworm
+apt-get --reinstall install members/bookworm patch/bookworm
+apt-get --reinstall install auctex/bookworm elinks-data/bookworm gdis/bookworm
+
+#for a in $(apt-forktracer  |grep ^lib |awk '{print $1}' |sort); do apt reinstall $a/bookworm;done
