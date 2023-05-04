@@ -14,6 +14,7 @@ deb-src http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non
 EOF
 rm /etc/profile.d/01-locale-fix.sh
 apt-get update
+export DEBIAN_FRONTEND=noninteractive
 eatmydata apt-get upgrade -uy
 eatmydata apt-get dist-upgrade
 # might need a few apt --fix-broken install
