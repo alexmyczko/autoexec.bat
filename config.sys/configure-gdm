@@ -2,5 +2,6 @@
 grep ^disable-user-list=true /etc/gdm3/greeter.dconf-defaults | echo "disable-user-list=true" >> /etc/gdm3/greeter.dconf-defaults
 grep ^disable-restart-buttons=true /etc/gdm3/greeter.dconf-defaults | echo "disable-restart-buttons=true" >> /etc/gdm3/greeter.dconf-defaults
 grep ^sleep-inactive-ac-timeout=0 | echo "sleep-inactive-ac-timeout=0" >> /etc/gdm3/greeter.dconf-defaults
-grep ^sleep-inactive-battery-type='suspend' /etc/gdm3/greeter.dconf-defaults | echo "sleep-inactive-battery-type='nothing'" >> /etc/gdm3/greeter.dconf-defaults
+grep ^sleep-inactive-ac-type='nothing' | echo "sleep-inactive-ac-type='nothing'" >> /etc/gdm3/greeter.dconf-defaults
+grep ^sleep-inactive-battery-type='nothing' /etc/gdm3/greeter.dconf-defaults | echo "sleep-inactive-battery-type='nothing'" >> /etc/gdm3/greeter.dconf-defaults
 # set your own logo with cp yourlogo.png /usr/share/images/vendor-logos/logo-text-version-64.png
