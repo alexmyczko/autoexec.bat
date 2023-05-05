@@ -2,8 +2,8 @@
 # better known as debian.
 
 # we assume you already got rid of:
-# - snap
-# - external repos
+# - snap, https://github.com/alexmyczko/autoexec.bat/blob/master/config.sys/ubuntu-remove-snap-firefox
+# - external repos, mv /etc/apt/sources.list.d/* /usr/src/
 
 # install debian repo keys and debian repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 0E98404D386FA1D9
