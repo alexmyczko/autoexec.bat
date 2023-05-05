@@ -56,4 +56,6 @@ apt-get --purge remove openjdk-8.* openjdk-11.* llvm-11.* python3.10.* gcc-9.*
 apt-get --purge remove `deborphan |grep ^lib` # 6x
 apt-get --purge remove language-selector-.*
 
+# try to upgrade all packages (libs first, the not libs) that are not from debian sources.list to debian ones
 for a in $(apt-forktracer  |grep ^lib |awk '{print $1}' |sort); do apt reinstall $a/bookworm -uy --allow-downgrades;done
+for a in $(apt-forktracer |awk '{print $1}' |sort); do apt reinstall $a/bookworm -uy --allow-downgrades;done
