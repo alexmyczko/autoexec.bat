@@ -1,4 +1,5 @@
 # WARNING of course due to [sections] of ini file format this will not work (depending on ini file parser)
+# apt install crudini # and use crudini for Microsoft INI file
 # users can set their profile picture with cp avatar.png ~/.face
 grep ^disable-user-list=true /etc/gdm3/greeter.dconf-defaults | echo "disable-user-list=true" >> /etc/gdm3/greeter.dconf-defaults
 grep ^disable-restart-buttons=true /etc/gdm3/greeter.dconf-defaults | echo "disable-restart-buttons=true" >> /etc/gdm3/greeter.dconf-defaults
