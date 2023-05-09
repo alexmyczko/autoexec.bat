@@ -17,9 +17,9 @@ sake of us all:  Go bravely and send back patches!
 
 Obviously this doesn't help, so here's a short description about what these things are for
 
-`ubuntu-remove-snap-firefox` remove snap from your Ubunut, and install the Firefox Mozilla PPA repository
+`ubuntu-remove-snap-firefox` remove snap from your Ubuntu, and install the Firefox Mozilla PPA repository
 
-`ubuntu-remove-phased-updates` getting rid of phased updates of Ubunut (useful if you turn off automatic error reporting, which is not publicly accessible anymore). See comments for reference.
+`ubuntu-remove-phased-updates` getting rid of phased updates of Ubuntu (useful if you turn off automatic error reporting, which is not publicly accessible anymore). See comments for reference.
 
 # Ubuntu is Debian-based the same way milk is grass-based
 
