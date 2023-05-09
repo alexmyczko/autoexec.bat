@@ -24,3 +24,7 @@ Obviously this doesn't help, so here's a short description about what these thin
 # Ubuntu is Debian-based the same way milk is grass-based
 
 `ubuntu-deluxe` kind of Ubuntu Pro, without the Ubuntu, makes a Debian 12 from your Ubuntu 22.04 (WIP)
+
+# Next.
+
+Another happy customer leaves the building.
