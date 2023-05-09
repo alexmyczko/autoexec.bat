@@ -1,4 +1,3 @@
-# WARNING of course due to [sections] of ini file format this will not work (depending on ini file parser)
 # apt install gdm3 crudini # and use crudini for Microsoft INI file
 # users can set their profile picture with cp avatar.png ~/.face
 crudini --ini-options=nospace --set /etc/gdm3/greeter.dconf-defaults org/gnome/login-screen disable-user-list true
