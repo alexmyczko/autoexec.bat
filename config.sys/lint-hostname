@@ -1,0 +1,9 @@
+IP=$(ifconfig | grep ^.*inet |awk '{print $2}' |head -1)
+FQDN=$(host $IP |awk '{print $NF}' | sed s,.$,,)
+
+echo "hostname -s   $(hostname -s)"
+echo "hostname -f   $(hostname -f)"
+echo "/etc/hostname $(cat /etc/hostname)"
+echo "dnsdomainname $(dnsdomainname)"
+echo "IP            $IP"
+echo "DNS           $FQDN"
