@@ -16,12 +16,12 @@ else
     ver=$2
 fi
 
-v=$(date +%Y%m%d)
+v="$(date +%Y%m%d ).$(git log  --format=%h | head -1)"
 git clone --recursive $1
 n=$(basename $1|sed "s,.git$,,")
 nnormalized=$(echo $n| tr '[:upper:]' '[:lower:]')
-dir=$(echo ${nnormalized}-${ver}+git${v}+ds)
-tar=$(echo ${nnormalized}_${ver}+git${v}+ds.orig.tar)
+dir=$(echo ${nnormalized}-${ver}+git${v})
+tar=$(echo ${nnormalized}_${ver}+git${v}.orig.tar)
 echo $dir
 echo $tar
 mv ${n}*/ $dir
