@@ -16,7 +16,7 @@ else
     ver=$2
 fi
 
-v=$(date +%Y%m%d ).$(git log  --format=%h | head -1)
+v="$(date +%Y%m%d ).$(git log  --format=%h | head -1)"
 git clone --recursive $1
 n=$(basename $1|sed "s,.git$,,")
 nnormalized=$(echo $n| tr '[:upper:]' '[:lower:]')
