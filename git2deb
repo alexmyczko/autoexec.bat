@@ -1,34 +1,20 @@
-#!/bin/bash
+#!/bin/sh
 
-# this can be used to get orig.tar.xz from a github.com reop
-# useful for debian packaging
+# Original author: tar@debian.org
+# Improved upon by werdahias
+# License: GPL-3+
+# Used to get a .orig.tar.xz from an upstream without tags/releases.
+# Usage: ./git2deb https://some-git-repo.git
 
-if [ "${1}x" = x ]; then
-    echo "Syntax: $0 gitrepo [baseversion]"
-    #example: $0 git@github.com:NatronGitHub/Natron.git 2.4
-    echo
-    exit 1
-fi
+set -e
 
-if [ "${2}x" = x ]; then
-    ver=0
-else
-    ver=$2
-fi
-
-v=$(date +%Y%m%d)
-git clone --recursive $1
-n=$(basename $1|sed "s,.git$,,")
-nnormalized=$(echo $n| tr '[:upper:]' '[:lower:]')
-dir=$(echo ${nnormalized}-${ver}+git${v}+ds)
-tar=$(echo ${nnormalized}_${ver}+git${v}+ds.orig.tar)
-echo $dir
-echo $tar
-mv ${n}*/ $dir
-rm -rf $dir/.git
-# also remove *.dll *.exe *.DLL *.EXE .DS_Store recursively
-for a in *.dll *.exe *.DLL *.EXE .DS_Store; do
-    find . -name $a -exec rm {} \;
-done
-tar cf $tar $dir
-xz -T0 -v $tar
+git clone -q --recursive "$1"
+name="$(basename "$1" | sed 's/.git$//')"
+name_norm=$(echo "$name" | tr '[:upper:]' '[:lower:]')
+mv "$name" "$name_norm" && cd "$name_norm" || exit
+v="0.0~git$(git log -1 --format=%as | sed  's/-//g').$(git log -1 --format=%h)"
+mv "$(pwd)" "$(pwd)-$v"
+rm -rf .git && cd ../ || exit
+tar -cf "$name_norm-$v".orig.tar "$name_norm-$v"
+xz -T0 -q "$name_norm-$v".orig.tar
+echo "Successfully created $name_norm-$v.orig.tar.xz"
