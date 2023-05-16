@@ -1,3 +1,4 @@
+# apt install kexec-tools
 latest=$(ls -1 /boot/vmlinuz-* |sed s,.*z-,, |sort -r |head -1)
 kexec --initrd=/boot/initrd.img-$latest --command-line="$(cat /proc/cmdline) overlayroot=tmpfs" /boot/vmlinuz-$latest -l
 kexec -e
