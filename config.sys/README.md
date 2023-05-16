@@ -25,6 +25,8 @@ Obviously this doesn't help, so here's a short description about what these thin
 
 `debian-system-dmesg` give users a chance to run `dmesg` to check if some of their processes did OOM
 
+`debian-system-initramfs` enable compression of initramfs, makeing space in /boot
+
 # Ubuntu is Debian-based the same way milk is grass-based
 
 `ubuntu-deluxe` kind of Ubuntu Pro, without the Ubuntu, makes a Debian 12 from your Ubuntu 22.04 (WIP)
