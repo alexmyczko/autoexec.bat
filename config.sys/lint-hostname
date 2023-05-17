@@ -1,9 +1,23 @@
 IP=$(ifconfig | grep "^.*inet" |awk '{print $2}' |head -1)
 FQDN=$(host $IP |awk '{print $NF}' | sed s,.$,,)
+HS=$(hostname -s)
+HF=$(hostname -f)
+EH=$(cat /etc/hostname)
+DOMAIN=$(dnsdomainname)
 
-echo "hostname -s   $(hostname -s)"
-echo "hostname -f   $(hostname -f)"
-echo "/etc/hostname $(cat /etc/hostname)"
-echo "dnsdomainname $(dnsdomainname)"
+echo "hostname -s   $HS"
+echo "hostname -f   $HF"
+echo "/etc/hostname $EH"
+echo "dnsdomainname $DOMAIN"
 echo "IP            $IP"
 echo "DNS           $FQDN"
+
+if [ ! $HS = $EH ]; then
+    echo hostname -s does not match /etc/hostname
+fi
+if [ ! $HF = $EH.$DOMAIN ]; then
+    echo hostname -f does not match hostname -s with dnsdomainname attached
+fi
+if [ ! $FQDN = $HF ]; then
+    echo DNS entry does not match hostname -f
+fi
