@@ -27,11 +27,23 @@ Obviously this doesn't help, so here's a short description about what these thin
 
 `debian-system-initramfs` enable compression of initramfs, makeing space in /boot
 
-`kexec-reboot` try to reboot to the latest installed kernel (if kexec-tools is installed)
-
 # Ubuntu is Debian-based the same way milk is grass-based
 
 `ubuntu-deluxe` kind of Ubuntu Pro, without the Ubuntu, makes a Debian 12 from your Ubuntu 22.04 (WIP)
+
+# Helpers
+
+`apt-history` check which packages have been installed with apt
+
+`kexec-reboot` try to reboot to the latest installed kernel (if kexec-tools is installed)
+
+`lint-hostname` lint your hostname
+
+`reduce-bin` use UPX (compression) on known huge binaries
+
+`netlimit` limit upload/download speeds on a interface
+
+`which-firmware` check which firmware packages should get installed
 
 # Next.
 
