@@ -1,0 +1,3 @@
+v=$(links2 -dump https://download.virtualbox.org/virtualbox/debian/pool/contrib/v/virtualbox-7.0/ |grep "\.deb " | sort -V | tail -1 | awk '{print $1}')
+wget https://download.virtualbox.org/virtualbox/debian/pool/contrib/v/virtualbox-7.0/$v
+dpkg -i $v
