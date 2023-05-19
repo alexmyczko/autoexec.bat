@@ -3,3 +3,6 @@
 cd /usr/bin
 upx podman rclone git-annex blender pandoc
 # see https://wiki.debian.org/ReduceDebian
+
+# -doc packages that can also save some space
+apt-get --purge remove $(dpkg -l |grep -- "-doc "|awk '{print $2}')
