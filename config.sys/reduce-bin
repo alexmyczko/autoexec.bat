@@ -1,2 +1,5 @@
+# apparently Debian 12 comes without UPX, but fear not
+# http://sid.ethz.ch/debian/upx-ucl/4.0.2/
+cd /usr/bin
 upx podman rclone git-annex blender pandoc
 # see https://wiki.debian.org/ReduceDebian
