@@ -5,6 +5,8 @@
 # - snap, https://github.com/alexmyczko/autoexec.bat/blob/master/config.sys/ubuntu-remove-snap-firefox
 # - external repos, mv /etc/apt/sources.list.d/* /usr/src/
 
+# before the upgrade/dist-upgrade
+# remove all -dev+-dev:amd64 packages, stash the list somewhere, at the end install them again
 dpkg -l |grep ^ii|grep -- -dev| awk '{print $2}' > /root/dev.pkgs
 apt-get --purge remove `cat /root/dev.pkgs`
 
@@ -23,11 +25,11 @@ deb-src http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non
 EOF
 # remove ubuntu hack
 rm /etc/profile.d/01-locale-fix.sh
+
 # update pkg index
 apt-get update
-# before the upgrade/dist-upgrade
-# remove all -dev+-dev:amd64 packages, stash the list somewhere, at the end install them again
-export DEBIAN_FRONTEND=noninteractive
+#
+#export DEBIAN_FRONTEND=noninteractive
 eatmydata apt-get upgrade -uy
 eatmydata apt-get dist-upgrade
 
