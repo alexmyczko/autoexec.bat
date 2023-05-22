@@ -29,6 +29,24 @@ Obviously this doesn't help, so here's a short description about what these thin
 
 `ubuntu-remove-fonts` removes fonts you are not likely to ever need (if you're in Europe)
 
+# Installer scripts
+
+These are so self explanatory, I will not comment them.
+
+`install-edge`
+
+`install-google-chrome`
+
+`install-google-earth-pro`
+
+`install-slack-desktop`
+
+`install-virtualbox`
+
+`install-vscode`
+
+`install-zoom`
+
 # Ubuntu is Debian-based the same way milk is grass-based
 
 `ubuntu-deluxe` kind of Ubuntu Pro, without the Ubuntu, makes a Debian 12 from your Ubuntu 22.04 (WIP)
