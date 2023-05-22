@@ -5,8 +5,9 @@
 # - snap, https://github.com/alexmyczko/autoexec.bat/blob/master/config.sys/ubuntu-remove-snap-firefox
 # - external repos, mv /etc/apt/sources.list.d/* /usr/src/
 
-#dpkg -l |grep ^ii|grep -- -dev| awk '{print $2}'  > /root/dev.pkgs
-#apt-get --purge remove `dpkg -l |grep ^ii|grep -- -dev| awk '{print $2}'`
+dpkg -l |grep ^ii|grep -- -dev| awk '{print $2}' > /root/dev.pkgs
+apt-get --purge remove `cat /root/dev.pkgs`
+
 # install debian repo keys and debian repo
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 0E98404D386FA1D9
 cat > /etc/apt/sources.list << EOF
@@ -61,3 +62,6 @@ apt-get --purge remove language-selector-.*
 # try to upgrade all packages (libs first, the not libs) that are not from debian sources.list to debian ones
 for a in $(apt-forktracer  |grep ^lib |awk '{print $1}' |sort); do apt reinstall $a/bookworm -uy --allow-downgrades;done
 for a in $(apt-forktracer |awk '{print $1}' |sort); do apt reinstall $a/bookworm -uy --allow-downgrades;done
+
+apt-get install -uy `cat /root/dev.pkgs`
+rm /root/dev.pkgs
