@@ -1,6 +1,9 @@
 # BEWARE. HERE BE DRAGONS. IF YOU CONTINUE YOU WILL GET UBUNTU DELUXE
 # better known as debian.
 
+# alternative would be
+#https://wiki.debian.org/DebianTakeover
+
 # we assume you already got rid of:
 # - snap, https://github.com/alexmyczko/autoexec.bat/blob/master/config.sys/ubuntu-remove-snap-firefox
 # - external repos, mv /etc/apt/sources.list.d/* /usr/src/
