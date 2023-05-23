@@ -70,3 +70,7 @@ for a in $(apt-forktracer |awk '{print $1}' |sort); do apt reinstall $a/bookworm
 
 apt-get install -uy `cat /root/dev.pkgs`
 rm /root/dev.pkgs
+
+# list packages not installe from repos
+apt list --installed 2>/dev/null | grep installed,local 
+# apt-get --purge remove $(apt list --installed 2>/dev/null | grep installed,local  |awk '{print $1}' |sed "s,/now,,g")
