@@ -6,3 +6,7 @@ upx podman rclone git-annex blender pandoc
 
 # -doc packages that can also save some space
 apt-get --purge remove $(dpkg -l |grep -- "-doc "|awk '{print $2}')
+
+# -dev packages can save a lot of space too
+apt-get --purge remove $(dpkg -l |grep -- "-dev:"|awk '{print $2}')
+apt-get --purge remove $(dpkg -l |grep -- "-dev "|awk '{print $2}')
