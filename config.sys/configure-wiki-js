@@ -1,0 +1,10 @@
+# https://docs.requarks.io/install/linux
+wget https://github.com/Requarks/wiki/releases/latest/download/wiki-js.tar.gz
+mkdir wiki
+tar xzf wiki-js.tar.gz -C wiki
+
+cd wiki
+mv config.sample.yml config.yml
+# see https://github.com/requarks/wiki/discussions/5483
+npm rebuild sqlite3
+node server
