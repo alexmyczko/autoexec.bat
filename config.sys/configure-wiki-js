@@ -1,6 +1,7 @@
 # https://docs.requarks.io/install/linux
+mkdir -p /var/www/wiki
+cd /var/www
 wget https://github.com/Requarks/wiki/releases/latest/download/wiki-js.tar.gz
-mkdir wiki
 tar xzf wiki-js.tar.gz -C wiki
 
 cd wiki
