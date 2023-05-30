@@ -1,0 +1,3 @@
+v=$(lynx -dump https://julialang.org/downloads/ | html-beautify-js |grep linux-x86_64 |head -1 |sed "s,.*https://,https://,1")
+wget $v
+tar xzvf julia*.tar.gz
