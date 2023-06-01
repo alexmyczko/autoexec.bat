@@ -1,0 +1,3 @@
+v=$(lynx -dump https://rustdesk.com/ |grep deb |awk '{print $2}')
+wget $v
+dpkg -i rustdesk*.deb
