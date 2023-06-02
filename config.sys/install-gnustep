@@ -4,3 +4,4 @@ apt-get -uy install wmnd wmhdplop bubblefishymon
 ln -s /usr/lib/GNUstep/Applications /Applications
 ln -s /home /Users
 ln -s /mnt /Volumes
+echo "exec wmaker" > /etc/skel/.xsession
