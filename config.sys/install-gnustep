@@ -1,5 +1,6 @@
 # basically the GNUSTEP live cd based on Debian
 apt-get -uy install wmaker gnustep-devel gnustep gnustep-games gnustep-icons gnustep-examples menu
+apt-get -uy install wmnd wmhdplop bubblefishymon
 ln -s /usr/lib/GNUstep/Applications /Applications
 ln -s /home /Users
 ln -s /mnt /Volumes
