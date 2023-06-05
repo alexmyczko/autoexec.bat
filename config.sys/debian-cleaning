@@ -7,3 +7,4 @@ dpkg -l |grep transitional |awk '{print $2}'
 # debian-distro-info -fay
 # ubuntu-distro-info -fay
 # apt list --installed 2>/dev/null | grep installed,local
+# dpkg -l |grep "^[a-z]. "|awk '{print $1}' | awk '{i[$NF]++} END {for (n in i) print i[n] " " n}' | sort -nr
