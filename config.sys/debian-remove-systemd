@@ -1,1 +1,3 @@
+# wc -l /etc/network/interfaces
+# ls -la /etc/resolv.conf
 apt install sysvinit-core sysvinit systemd-sysv- -uy
