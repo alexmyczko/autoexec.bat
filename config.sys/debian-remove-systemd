@@ -1,3 +1,10 @@
+# make sure you have dhclient, apt install isc-dhcp-client
 # wc -l /etc/network/interfaces
+# auto lo
+# iface lo inet loopback
+# auto eth0
+# iface eth0 inet dhcp
 # ls -la /etc/resolv.conf
-apt install sysvinit-core sysvinit systemd-sysv- -uy
+# nameserver 1.1.1.1
+# search $(dnsdomainname)
+apt install sysvinit-core systemd-sysv- -uy
