@@ -8,3 +8,17 @@
 # nameserver 1.1.1.1
 # search $(dnsdomainname)
 apt install sysvinit-core systemd-sysv- -uy
+
+# or maybe try
+
+apt update
+apt dist-upgrade
+apt --purge install sysvinit-core
+# maybe modify /etc/network/interfaces to change "predictable naming" to eth0
+# if so, don't forget net.ifnames=0
+apt purge systemd libnss-systemd elogind
+apt install libelogind0
+apt dist-upgrade
+update-grub
+update-initramfs -c -k all
+reboot
