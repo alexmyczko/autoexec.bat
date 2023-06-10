@@ -18,6 +18,7 @@ apt --purge install sysvinit-core
 # if so, don't forget net.ifnames=0
 apt purge systemd libnss-systemd elogind
 apt install libelogind0
+apt install orphan-sysvinit-scripts -uy
 apt dist-upgrade
 update-grub
 update-initramfs -c -k all
