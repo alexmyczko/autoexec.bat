@@ -1,4 +1,5 @@
-IP=$(ifconfig | grep "^.*inet" |awk '{print $2}' |head -1)
+#which ifconfig &>dev/null && IP=$(ifconfig | grep "^.*inet" |awk '{print $2}' |head -1)
+IP=$(hostname -I|awk '{print $1}'|head -1)
 FQDN=$(host $IP |awk '{print $NF}' | sed s,.$,,)
 HS=$(hostname -s)
 HF=$(hostname -f)
