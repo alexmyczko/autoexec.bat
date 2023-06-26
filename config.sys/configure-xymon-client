@@ -4,6 +4,7 @@ CLIENTHOSTNAME="$(hostname -s)"
 EOF
 apt install xymon-client lm-sensors hobbit-plugins libfile-which-perl libsort-naturally-perl libyaml-tiny-perl -uy
 sed -i "s,\tDISABLED,\t#DISABLED,g" /etc/xymon/clientlaunch.d/temp.cfg
+# see https://docs.kernel.org/hwmon/drivetemp.html
 echo drivetemp > /etc/modules-load.d/drivetemp.conf 
 modprobe drivetemp
 service xymon-client restart
