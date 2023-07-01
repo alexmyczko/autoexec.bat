@@ -1,0 +1,9 @@
+#xset dpms force off
+#xbindkeys --defaults > $HOME/.xbindkeysrc
+#chmod 666 /sys/class/backlight/acpi_video0/brightness
+# see xbindkeys -k
+"bash -c 'echo $(echo $(cat /sys/class/backlight/acpi_video0/brightness)+1|bc) > /sys/class/backlight/acpi_video0/brightness'"
+  m:0x10 + c:233
+
+"bash -c 'echo $(echo $(cat /sys/class/backlight/acpi_video0/brightness)-1|bc) > /sys/class/backlight/acpi_video0/brightness'"
+  m:0x11 + c:233
