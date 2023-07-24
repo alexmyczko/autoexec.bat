@@ -1,3 +1,8 @@
+# apt install dput-ng
+# debsign -k B60A1BF363DC1319FF0A8E89116852BCDF7515C0 the.changes
+# dput -u ftp-master the.changes
+# see /etc/dput.d/profiles/ftp-master.json
+
 [bp]
 fqdn = incoming.backports.org
 method = ftp
