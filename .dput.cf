@@ -3,12 +3,6 @@
 # dput -u ftp-master the.changes
 # see /etc/dput.d/profiles/ftp-master.json
 
-[bp]
-fqdn = incoming.backports.org
-method = ftp
-incoming = /
-login = anonymous
-
 [home]
 method = local
 incoming = /home/me/incoming
