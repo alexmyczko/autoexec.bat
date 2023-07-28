@@ -24,7 +24,7 @@ fi
 
 pkg=$(head -1 control|awk '{print $2}')
 shortdesc=$(grep ^Description: control|head -1|awk '{$1="";print}')
-ver=$(head -1 changelog|awk '{print $2}' |sed 's,(,,g;s,-.*,,g')
+ver=$(head -1 changelog|awk '{print $2}' |sed 's,(,,g;s,\(.*\)-[^/]*,\1,g')
 auth=$(grep ^Upstream-Contact copyright | head -1|awk '{$1="";print}')
 url=$(grep ^Homepage: control | head -1|awk '{$1="";print}')
 lic=$(grep ^License: copyright | head -1|awk '{$1="";print}')
