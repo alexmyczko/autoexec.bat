@@ -1,0 +1,3 @@
+# if /sbin/reboot is a symlink, it keeps failing
+# install proper /sbin/init from https://packages.debian.org/bookworm/sysvinit-core
+# to avoid reboot problems
