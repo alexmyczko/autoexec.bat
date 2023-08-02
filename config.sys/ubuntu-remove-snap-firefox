@@ -17,4 +17,5 @@ add-apt-repository -y ppa:mozillateam/ppa
 echo 'Package: *
 Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+apt-get update
 apt-get -uy install firefox
