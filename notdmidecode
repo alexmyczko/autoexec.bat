@@ -3,4 +3,5 @@
 # this is not dmidecode
 
 # see https://endoflife.date/raspberry-pi
+# or better here https://opensource.com/resources/raspberry-pi
 # cat /sys/firmware/devicetree/base/model
