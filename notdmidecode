@@ -7,4 +7,5 @@
 # Raspberry Pi 4 Model B Rev 1.1 2020
 # Raspberry Pi 3 Model B Rev 1.2 2016/2018?
 # apple,j274apple,t8103apple,arm-platform M1 Apple Mac Mini (2020)
+# also see https://github.com/torvalds/linux/tree/master/arch/arm64/boot/dts/apple
 # cat /sys/firmware/devicetree/base/model
