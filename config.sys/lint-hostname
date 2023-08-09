@@ -17,3 +17,5 @@ if [ ! $HS = $EH ]; then echo hostname -s does not match /etc/hostname; fi
 if [ ! $HF = $EH.$DOMAIN ]; then echo hostname -f does not match hostname -s with dnsdomainname attached; fi
 if [ ! $FQDN = $HF ]; then echo DNS entry does not match hostname -f; fi
 grep "$IP.*$FQDN.*$HS" /etc/hosts >/dev/null || echo "$IP\t$FQDN\t$HS entry not found in /etc/hosts"
+
+# hostnamectl set-hostname whatever --static
