@@ -112,7 +112,6 @@ Now test your packages with:
 ## After Work
 
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
-Tagging the package is also a good idea: https://debtags.debian.org/
 Check Lintian output: https://lintian.debian.org/
 I did not go into detail with `debian/watch`.
 Make sure it builds on as many architectures as possible: https://buildd.debian.org/
