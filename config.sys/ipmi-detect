@@ -1,0 +1,2 @@
+dmidecode --type 38|grep -v ^$ |grep -v "SMBIOS"|grep -v ^#
+ipmi-locate |grep -v FAILED |grep -v ^$    # freeipmi-tools
