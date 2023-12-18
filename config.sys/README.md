@@ -59,6 +59,8 @@ These are so self explanatory, I will not comment them.
 
 `lint-hostname` lint your hostname
 
+`ipmi-detect` check if computer has IPMI and what version of it
+
 `reduce-bin` use UPX (compression) on known huge binaries
 
 `netlimit` limit upload/download speeds on a interface
