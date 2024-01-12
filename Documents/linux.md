@@ -122,3 +122,4 @@ Find alternatives with
 aptitude search '?provides(^www-browser$)'
 aptitude search '?provides(^x-terminal-emulator$)'
 ```
+you can also try x-display-manager, x-session-manager, x-window-manager.
