@@ -1,0 +1,9 @@
+# https://docs.kernel.org/admin-guide/pm/cpufreq.html
+# view current settings cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+apt-get -uy install cpufrequtils
+cat > /etc/default/cpufrequtils << EOF
+ENABLE="true"
+GOVERNOR="performance"
+MAX_SPEED=0
+MIN_SPEED=0
+EOF
