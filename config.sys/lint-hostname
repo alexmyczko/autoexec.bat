@@ -4,7 +4,7 @@ FQDN=$(host $IP |awk '{print $NF}' | sed s,.$,,)
 HS=$(hostname -s)
 HF=$(hostname -f)
 EH=$(cat /etc/hostname)
-DOMAIN=$(dnsdomainname)
+DOMAIN=$(hostname -d)
 
 echo "hostname -s     $HS"
 echo "hostname -f     $HF"
