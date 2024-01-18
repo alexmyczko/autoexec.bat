@@ -11,6 +11,7 @@ The project is published here, maybe if it is of some use to you.
 The details:
 You will need the package `pm-utils` from your distribution, which is
 a command line interface to https://www.kernel.org/doc/Documentation/power/.
+See what your system supports with `cat /sys/power/state`.
 Some conditions are checked if it is feasible to let the computer sleep.
 `/etc/pm/sleep.d/99-energysaving`
 
