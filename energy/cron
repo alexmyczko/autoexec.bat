@@ -1,0 +1,9 @@
+# cronjob for power saving mo-fr 21-06, sa-su all day
+#
+# consider using rtcwake instead
+# rtcwake -s NUMBER_OF_SECONDS -m mem
+#
+# m h  dom mon dow   user command
+SHELL=/bin/bash
+*/15 21-6 * * 1-5 root /usr/sbin/pm-suspend
+*/15 * * * 6-7 root /usr/sbin/pm-suspend
