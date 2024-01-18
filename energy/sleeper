@@ -1,0 +1,3 @@
+# list of machines to actively go to suspend (pm) mode
+# mo-fr 21:00-06:00, sa-su all day
+somehostname
