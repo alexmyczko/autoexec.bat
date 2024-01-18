@@ -1,0 +1,73 @@
+#!/bin/bash
+
+#http://askubuntu.com/questions/64933/prevent-temporally-suspend-hibernate-from-script
+# already supported by /usr/lib/pm-utils/sleep.d/000kernel-change
+# touch /var/run/do-not-hibernate
+
+# for debugging see /var/log/pm-*.log
+
+hn=`hostname`
+# any remote mounts active
+remotemounts=$(showmount -a | wc -l)
+# don't sleep if there's cronjobs installed
+usercrons=$(echo `find /var/spool/cron/crontabs/ |grep -v root| wc -l`-1|bc -l)
+# don't sleep if there's important root cronjobs installed
+rootcrons=$(grep -v suspend /var/spool/cron/crontabs/root |grep -v ^# |grep -v ^$ |wc -l)
+# don't sleep if there's backups enabled (query your backup system for a host and return non 0 value)
+backups=`echo 0`
+# don't sleep if there's a user logged in
+loggedin=`who | grep -v ":0" |grep -v root | wc -l`
+# check the load?
+load=`uptime | sed s,.*:,,g | sed s/,//g`
+
+# maybe enable wakeup by keyboard and mouse (echo enabled into the following files)
+# /sys/bus/usb/devices/*/power/wakeup
+
+case "$1" in
+suspend|hibernate)
+    # make sure all usb mouse and keyboards wake up the machine
+    for a in `ls /sys/bus/usb/devices/*/power/wakeup`; do echo "enabled" > $a; done
+
+    # if the machine is in /etc/sleeper it may go to sleep, otherwise not
+    grep ^${hn} /etc/sleeper >/dev/null || exit 1
+    if [[ "x${remotemounts}" != "x1" ]]; then
+	showmount -a
+	exit 2
+    fi
+    if [[ "x${usercrons}" != "x0" ]]; then
+	echo $usercrons user cronjobs found:
+	find /var/spool/cron/crontabs/ |sed 1d |grep -v root
+	exit 3
+    fi
+    if [[ "x${rootcrons}" != "x0" ]]; then
+	echo $rootcrons root cronjobs found:
+	cat /var/spool/cron/crontabs/root | grep -v suspend |grep -v ^#
+	exit 4
+    fi
+#    if [[ "x${backups}" != "x2" ]]; then
+#	echo the machine is configured for backups:
+#	echo site specific implementation needed
+#	exit 5
+#    fi
+    if [[ "x${loggedin}" != "x0" ]]; then
+	echo "${loggedin} remote user(s) detected:"
+	who | grep -v ":0" | grep -v root
+	exit 6
+    fi
+    # FORYOU here is the best place to tell your monitoring system the host is going to energy saving mode
+    sleep 1
+    ;;
+resume|thaw)
+    #echo trigger $backups?
+    sleep 1
+    # pcspkr module needed
+    modprobe pcspkr
+    echo -ne "\a" > /dev/tty5
+    # FORYOU here is the best place to tell your monitoring system the host is back from energy saving mode
+    rpcbind
+    ypbind
+    service autofs restart
+    # FORYOU you might want to restart your monitoring system client side here
+    sleep 1
+    ;;
+esac
