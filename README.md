@@ -5,6 +5,8 @@ my .dotfiles for linux and macOS
 
 [ansible not ansible](config.sys)
 
+[Energy saving](energy)
+
 [xymon HW raid check](xymon)
 
 /etc/apt/`sources.list` for Debian with unstable and experimental
