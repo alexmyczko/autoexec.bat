@@ -1,0 +1,1 @@
+ls -lad /root/ /root/.ssh/ /root/.ssh/authorized_keys
