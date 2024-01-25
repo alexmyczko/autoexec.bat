@@ -1,1 +1,5 @@
 ls -lad /root/ /root/.ssh/ /root/.ssh/authorized_keys
+# fix if wrong
+# chmod 700 /root /root/.ssh/
+# chown root:root /root /root/.ssh /root/.ssh/authorized_keys
+# chmod 600 /root/.ssh/authorized_keys
