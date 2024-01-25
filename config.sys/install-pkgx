@@ -1,0 +1,4 @@
+wget https://github.com/pkgxdev/pkgx/releases/download/v1.1.5/pkgx-1.1.5+linux+x86-64.tar.xz
+tar xf pkgx-1.1.5+linux+x86-64.tar.xz
+chown root:root pkgx
+rm pkgx-1.1.5+linux+x86-64.tar.xz
