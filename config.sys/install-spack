@@ -1,0 +1,18 @@
+# alternatively try the debian packaging at https://sid.ethz.ch/debian/spack/2024/
+# Getting started:
+#spack compiler find
+#spack external find
+# Show directed acyclic graph (DAG) of a package:
+#spack graph hdfview
+# Example to install visit (#395573):
+#spack install visit
+# Finding installation information:
+#spack info visit
+# Finding the install location:
+#spack location --install-dir gcc@8
+# Load the environemnt:
+#eval `./spack load --sh gcc@8`
+# List installed packages:
+#spack find
+git clone -c feature.manyFiles=true https://github.com/spack/spack.git
+cd spack/bin
