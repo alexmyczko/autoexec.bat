@@ -1,0 +1,21 @@
+# automatic simple sid backport
+
+# check if called binaries are available
+for a in dget dpkg-source debuild dpkg apt-mark lynx; do
+    hash $a >/dev/null
+    if [ ! $? -eq 0 ]; then
+        echo $a not found
+        exit 1
+    fi
+done
+
+#lynx -dump https://packages.debian.org/sid/gpu-burn|grep dsc |tail -1|awk '{print $2}'
+
+#cd /usr/src/
+#dget http://deb.debian.org/debian/pool/contrib/n/nvtop/nvtop_3.0.2-1.dsc
+#dpkg-source -x nvtop_*3.0.2*.dsc
+#cd nvtop-*3.0.2*/
+#debuild
+#cd ..
+#apt install ./nvtop*3.0.2*.deb
+#apt-mark hold nvtop
