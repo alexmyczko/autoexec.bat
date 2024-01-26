@@ -19,6 +19,8 @@ for a in dget dpkg-source debuild dpkg apt-mark; do
     fi
 done
 
+# basically a simple sid backport
+# TODO lynx -dump https://packages.debian.org/sid/gpu-burn|grep dsc |tail -1|awk '{print $2}'
 cd /usr/src/
 dget http://deb.debian.org/debian/pool/contrib/n/nvtop/nvtop_3.0.2-1.dsc
 dpkg-source -x nvtop_*3.0.2*.dsc
