@@ -70,3 +70,7 @@ module not found...
 pip2 not found...
 pip3 found... 248
 ```
+
+## Interesting Links
+
+https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
