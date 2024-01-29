@@ -45,6 +45,9 @@ HISTFILE=~/.history
 DEBEMAIL="alex@aiei.ch"; export DEBEMAIL
 DEBFULLNAME="Alex Myczko"; export DEBFULLNAME
 
+# blank and lock screen
+alias xlock='xset s blank; xset s 600; xset dpms force off; i3lock -c000000'
+
 # trim whitespaces
 alias rtrim="sed -i 's/[ \t]*$//'"
 
