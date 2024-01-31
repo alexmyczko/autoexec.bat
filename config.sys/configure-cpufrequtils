@@ -7,3 +7,4 @@ GOVERNOR="performance"
 MAX_SPEED=0
 MIN_SPEED=0
 EOF
+/etc/init.d/cpufrequtils reload
