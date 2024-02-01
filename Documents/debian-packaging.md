@@ -55,6 +55,10 @@ Plenty more to check out at https://en.wikipedia.org/wiki/List_of_build_automati
 
 https://github.com/alexmyczko/autoexec.bat/blob/master/deb2itp
 
+## Software without release
+
+https://github.com/alexmyczko/autoexec.bat/blob/master/git2deb
+
 ## Packaging the software
 
 First you need to get the source of the software. Then put it in some directory. There you unpack the software, usually
