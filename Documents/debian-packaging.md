@@ -139,6 +139,10 @@ using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
 Send a mail to non-free@buildd.debian.org
 explaining the license allows distributing binary packages.
 
+## Everything else
+
+https://www.debian.org/doc/manuals/developers-reference/index.en.html
+
 ## Links
 
 A good source for free software https://github.com
