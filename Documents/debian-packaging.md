@@ -1,6 +1,3 @@
-#### markdown conversion of
-#### https://www.icloud.com/pages/0LWQ2LkV15Hvi49zYRwzS1AcA#Debian-Packaging
-
 # Debian Packaging
 pretty much the same with Ubuntu
 
