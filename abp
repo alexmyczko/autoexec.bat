@@ -9,13 +9,26 @@ for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     fi
 done
 
-#lynx -dump https://packages.debian.org/sid/gpu-burn|grep dsc |tail -1|awk '{print $2}'
+dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 
+# if root user
 #cd /usr/src/
 #dget http://deb.debian.org/debian/pool/contrib/n/nvtop/nvtop_3.0.2-1.dsc
 #dpkg-source -x nvtop_*3.0.2*.dsc
 #cd nvtop-*3.0.2*/
+#apt-get build-dep -y $1
 #debuild
 #cd ..
 #apt install ./nvtop*3.0.2*.deb
 #apt-mark hold nvtop
+
+# echo $dsclink
+#thedsc=$(basename $dsclink)
+#thename=$(echo $thedsc | sed "s,_.*,,")
+# if not root user
+#mkdir -p $HOME/src/
+#cd $HOME/src/
+#dget $dsclink
+#dpkg-source -x $thedsc
+#cd ${thename}*/
+#debuild
