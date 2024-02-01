@@ -51,6 +51,10 @@ There are plenty of build systems. The most classical ones are
 `bazel`
 Plenty more to check out at https://en.wikipedia.org/wiki/List_of_build_automation_software
 
+## Write an ITP bug report
+
+https://github.com/alexmyczko/autoexec.bat/blob/master/deb2itp
+
 ## Packaging the software
 
 First you need to get the source of the software. Then put it in some directory. There you unpack the software, usually
