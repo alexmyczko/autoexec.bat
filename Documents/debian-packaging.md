@@ -143,4 +143,5 @@ Other packaging systems (ports, pkg, rpm):
 - macOS: https://guide.macports.org/#project.contributing
 - macOS: https://docs.brew.sh/Formula-Cookbook
 - Spack: https://github.com/spack/spack
-
+- pkgx: https://pkgx.sh
+- Alpinelinux: https://www.alpinelinux.org
