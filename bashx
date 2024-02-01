@@ -5,3 +5,6 @@ echo '#!/bin/sh' > ${1}xz
 echo '(sed -n 2q; exec unxz)<"$0"|bash -s -- "$@";exit' >> ${1}xz
 xz -c -6 $1 >> ${1}xz
 chmod +x ${1}xz
+
+# smaller? 
+#cp $0 /tmp/M;(sed 1d $0|xzcat)>$_;$_;exit
