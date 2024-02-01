@@ -142,7 +142,7 @@ https://www.debian.org/doc/manuals/developers-reference/index.en.html
 
 ## Links
 
-A good source for free software https://github.com
+A good source for free software https://github.com, and https://codeberg.org/.
 All Debian project participants https://www.debian.org/devel/people
 
 Other packaging systems (ports, pkg, rpm):
