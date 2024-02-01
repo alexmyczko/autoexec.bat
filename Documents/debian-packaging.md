@@ -126,6 +126,11 @@ You can either use `apt-get build-dep . # or pkg name` or `mk-build-deps`
 It's called https://salsa.debian.org and based on gitlab. You can download projects from there
 using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
 
+## Enabling auto building for non-free/contrib
+
+Send a mail to non-free@buildd.debian.org
+explaining the license allows distributing binary packages.
+
 ## Links
 
 A good source for free software https://github.com
