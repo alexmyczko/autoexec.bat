@@ -25,6 +25,10 @@ gsettings set org.gnome.desktop.interface monospace-font-name "Agave 12"
 # dconf dump /org/gnome/terminal/legacy/
 # dconf write /org/gnome/terminal/legacy/profiles:/:random-string-from-above/font "'Agave Bold 12'"
 
+# nautilus thumbnails
+# dconf read /org/gnome/nautilus/preferences/show-image-thumbnails
+# can be local-only, always, never
+
 # a cursor which is better to spot
 #cursor-background-color='rgb(233,173,12)'
 #cursor-blink-mode='on'
