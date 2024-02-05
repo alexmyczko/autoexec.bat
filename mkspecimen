@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# mkspecimen font-normal font-italic color-light color-dark fontname favouriteword
+
+convert \
+-size 396x486 \
+xc:'#'${3} \
+-font ${1} \
+-pointsize 60 \
+-draw 'fill #'${4}' rectangle 0,486 486,300' \
+-fill black \
+-annotate +20+74 "${5}" \
+-annotate +20+140 "Aa Ee Rr" \
+-font ${2} \
+-annotate +20+205 "Bb Gg Jj" \
+-font ${1} \
+-pointsize 60 \
+-annotate +20+270 "${6}" \
+-fill white \
+-pointsize 50 \
+-annotate +20+456 "0123456789" \
+-pointsize 130 \
+-annotate +285+200 "A" \
+-fill black \
+-pointsize 40 \
+-annotate +20+350 "abcdefghijklm" \
+-annotate +20+395 "nopqrstuvwxyz" \
+${7}
+#-kerning 4 \
