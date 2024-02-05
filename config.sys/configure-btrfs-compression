@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# enable/disable compression for btrfs
+# THIS IS NOT TESTED FOR EVERY POSSIBLE CASE OF /etc/fstab
+# USE WITH CARE (maybe backup /etc/fstab before running it)
+#
+# you might want to convert old ext2/3/4 file systems to btrfs
+# see https://btrfs.wiki.kernel.org/index.php/Manpage/btrfs-convert
+#
+# btrfs fi defragment -r -clzo .   # compress existing data
+#
+# install btrfs-compsize to see performance
+
+with=`grep -v "^#" /etc/fstab |grep btrfs |grep compress`
+without=`grep -v "^#" /etc/fstab |grep btrfs |grep -v compress`
+
+case $1 in
+    status)
+	# list btrfs filesystems
+	echo BTRFS FILESYSTEMS WITH COMPRESSION
+	echo "$with"
+	echo
+	# check if it already has compress option
+	#cat /etc/fstab |grep -v ^# |grep btrfs |grep -v compress
+	echo BTRFS FILESYSTEMS WITHOUT COMPRESSION
+	echo "$without"
+    ;;
+    start|enable)
+	echo ENABLING BTRFS COMPRESSION
+	grep "compress=lzo" /etc/fstab &>/dev/null || sed -i "s/btrfs.*defaults/\0,compress=lzo/g" /etc/fstab
+	#mount -o remount,rw mountpoint
+    ;;
+    remount)
+	echo REMOUNTING ALL BTRFS FILESYSTEMS
+	grep -v "^#" /etc/fstab  |grep btrfs |awk '{print $1}' | while read a; do mount -o remount $a; done
+    ;;
+    stop|disable)
+	echo DISABLING BTRFS COMPRESSION
+	grep "compress=lzo" /etc/fstab &>/dev/null && sed -i "s/,compress=lzo//g" /etc/fstab
+	#mount -o remount,rw mountpoint
+    ;;
+    *)
+	echo "Syntax: $0 [status|start|enable|stop|disable|remount]"
+    ;;
+esac
