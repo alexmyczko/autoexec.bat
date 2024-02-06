@@ -19,7 +19,7 @@ A development environment, some utilities and debhelper which we will install li
 ```
 
 (or build-essential lintian debhelper dh-make devscripts fakeroot)
-Setting up the environment, see www.linuks.mine.nu/conf/. Of course you fill in your email address and your full name and choose your favourite editor, these settings is what I use:
+Setting up the environment. Of course you fill in your email address and your full name and choose your favourite editor, these settings is what I use:
 
 ```
 $ export DEBEMAIL="tar@debian.org"
