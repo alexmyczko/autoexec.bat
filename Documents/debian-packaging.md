@@ -78,6 +78,8 @@ The most important files are probably `debian/changelog`, `debian/control`, `deb
 
 Try running `decopy` to get started with a `debian/copyright`
 
+Installing build dependencies can be easily done with `apt build-dep .`
+
 You will find `licensecheck -r . | grep -v UNKNOWN` useful during the writing of `debian/copyright`.
 
 `$ debuild`
