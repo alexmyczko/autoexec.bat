@@ -51,6 +51,8 @@ done
 
 if [ `uname` = Linux ]; then
     if [ 0 -eq `id -u` ]; then
+        # drop filesystem caches
+        echo 3 > /proc/sys/vm/drop_caches
 	echo "Filesystem:" `file -bLs $(df -h . | tail -1 | awk '{print $1}')`
     fi
 fi
