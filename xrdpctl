@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ "${1}x" = "x" ]; then
+    echo "Syntax: $0 [list|kill]"
+    exit 0
+fi
+
+if [ "${1}x" = "listx" ]; then
+    loginctl --no-pager --no-legend | awk '{print $1}' | while read a; do
+	loginctl session-status --no-pager --no-legend $a -n0 |grep Leader: |grep xrdp >/dev/null
+	if [ $? = 0 ]; then
+	    #echo -n "$a "
+	    loginctl session-status --no-pager --no-legend $a -n0 |sed -n '1,/Unit:/p'
+	fi
+    done
+    exit 0
+fi
+
+if [ "${1}x" = "killx" ]; then
+    if [ "${2}x" = "x" ]; then
+	s=$((loginctl --no-pager --no-legend | awk '{print $1}' | while read a; do
+	    loginctl session-status --no-pager --no-legend $a -n0 |grep Leader: |grep xrdp >/dev/null
+	    if [ $? = 0 ]; then
+		#echo -n "$a "
+		loginctl session-status --no-pager --no-legend $a -n0 |head -1
+	    fi
+	done) | iselect -af | awk '{print $1}')
+	loginctl terminate-session $s
+	exit 0
+    fi
+    if [ "${2}x" != "x" ]; then
+	loginctl terminate-session $2
+	exit 0
+    fi
+fi
