@@ -1,0 +1,9 @@
+# this is only for x86/amd64 hardware
+# some info https://web.archive.org/web/20111209041013/http://www-ivs.cs.uni-magdeburg.de/~zbrog/asm/cmos.html
+modprobe nvram
+echo Dump of /proc/driver/rtc
+cat /proc/driver/rtc
+echo Dump of /proc/driver/nvram
+cat /proc/driver/nvram
+echo Dump of /dev/nram
+xxd -g1 /dev/nvram
