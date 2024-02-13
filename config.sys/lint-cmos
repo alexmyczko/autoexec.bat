@@ -1,5 +1,6 @@
 # this is only for x86/amd64 hardware
 # some info https://web.archive.org/web/20111209041013/http://www-ivs.cs.uni-magdeburg.de/~zbrog/asm/cmos.html
+# https://bochs.sourceforge.io/techspec/CMOS-reference.txt
 modprobe nvram
 echo Dump of /proc/driver/rtc
 cat /proc/driver/rtc
