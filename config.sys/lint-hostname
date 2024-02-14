@@ -20,6 +20,11 @@ grep "$IP.*$FQDN.*$HS" /etc/hosts >/dev/null || echo "$IP\t$FQDN\t$HS entry not 
 
 # hostnamectl set-hostname whatever --static
 
+# also check DNS with
+# /etc/resolv.conf
+# resolvectl
+# systemctl status systemd-resolved
+
 #host -t soa $DOMAIN
 #host -t ns $DOMAIN
 #host -t mx $DOMAIN
