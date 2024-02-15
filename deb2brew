@@ -7,3 +7,8 @@
 #    404 or not 404: https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/a/a2psasdfasdf.rb
 # decide if to run this on debian sid or macOS... hm
 #    run on debian so we have apt-cache show for a package
+
+# do it for the whole debian archive, on a sid machine
+# apt-cache pkgnames|sort |wc -l
+#74959
+# create a list of packages not yet in brew
