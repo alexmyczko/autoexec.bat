@@ -4,4 +4,6 @@
 # please report with RFP to BTS if package exists on linux brew but not debian native packaging
 # answer https://superuser.com/questions/857081/how-to-convert-a-debian-package-into-a-homebrew-formula
 # check if the brew already exists in official brew
+#    404 or not 404: https://raw.githubusercontent.com/Homebrew/homebrew-core/master/Formula/a/a2psasdfasdf.rb
 # decide if to run this on debian sid or macOS... hm
+#    run on debian so we have apt-cache show for a package
