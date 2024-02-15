@@ -1,3 +1,6 @@
 #!/bin/bash
 
-# easily create brew packages using debian
+# easily create brew packages using debian (only for macOS)
+# please report with RFP to BTS if package exists on linux brew but not debian native packaging
+# answer https://superuser.com/questions/857081/how-to-convert-a-debian-package-into-a-homebrew-formula
+# check if the brew already exists in official brew
