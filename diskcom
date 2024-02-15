@@ -144,5 +144,7 @@ exit 0
 ##<s:bbrw>Run RW (read write) check on disk [DISK]. [DSKRW]
 ##
 ##Convert filesystem live between jfs/xfs/reiser/ext2/ext3/ext4 using fstransform.
+##Convert filesystem ntfs2btrfs using ntfs2btrfs.
+##Defrag filesystem. https://github.com/vbmacher/defrag
 ##
 ##<s:exit>Exit.
