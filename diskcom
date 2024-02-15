@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# nvme-cli for ssd/nvme
+# openseachest support
+
 # mdadm
 check="iselect cfdisk partprobe pvs lvs vgs disktype file badblocks screen lvmdiskscan"
 for a in $check; do
