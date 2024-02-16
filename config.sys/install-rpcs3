@@ -1,0 +1,44 @@
+#!/bin/sh
+read -p "[Installing dependencies] Press enter"
+sudo dnf --skip-broken install alsa-lib-devel cmake glew glew-devel libatomic libevdev-devel libudev-devel openal-devel qt6-qtbase-devel qt6-qtbase-private-devel vulkan-devel qt6-qtmultimedia-devel qt6-qtsvg-devel vulkan-validation-layers-devel vulkan-tools mesa-vulkan-drivers 
+
+read -p "[Cloning sources] Press enter"
+mkdir rpcs3-files
+cd rpcs3-files
+wget http://dus01.ps3.update.playstation.net/update/ps3/image/us/2023_0228_05fe32f5dc8c78acbcd84d36ee7fdc5b/PS3UPDAT.PUP
+git clone https://github.com/RPCS3/rpcs3.git
+
+read -p "[Updating submodules] Press enter"
+cd rpcs3
+git submodule update --init
+cd ..
+
+read -p "[Preparing build] Press enter"
+mkdir --parents rpcs3_build
+cd rpcs3_build
+BAD_FLAG="-Wp,-D_GLIBCXX_ASSERTIONS"
+CXXFLAGS="${CXXFLAGS//$BAD_FLAG/}"
+
+CC=clang CXX=clang++ cmake -S ../rpcs3 -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_SKIP_RPATH=ON \
+    -DUSE_NATIVE_INSTRUCTIONS=OFF \
+    -DUSE_SYSTEM_FFMPEG=ON \
+    -DUSE_SYSTEM_LIBPNG=ON \
+    -DUSE_SYSTEM_ZLIB=ON \
+    -DUSE_SYSTEM_CURL=ON \
+    -DUSE_SYSTEM_FLATBUFFERS=OFF \
+    -DUSE_SYSTEM_PUGIXML=OFF \
+    -DBUILD_LLVM=ON \
+    -DUSE_SYSTEM_WOLFSSL=OFF
+
+read -p "[Building RPCS3] Press enter"
+make -C build -j100
+
+read -p "[Installing RPCS3] Press enter"
+sudo make -C build install
+
+read -p "[Starting RPCS3 and installing PS3 firmware] Press enter"
+cd ..
+rpcs3 --installfw PS3UPDAT.PUP
