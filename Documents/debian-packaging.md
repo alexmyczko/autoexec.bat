@@ -140,7 +140,14 @@ explaining the license allows distributing binary packages.
 
 ## Everything else
 
-https://www.debian.org/doc/manuals/developers-reference/index.en.html
+- https://www.debian.org/doc/manuals/developers-reference/index.en.html
+- https://db.debian.org/machines.cgi
+- https://release.debian.org/transitions/index.html
+- http://packages.debian.org/unstable/main/newpkg
+- http://buildd.debian.org/quinn-diff/Packages-arch-specific
+- http://www.debian.org/Bugs/Developer#severities
+- http://www.debian.org/Bugs/pseudo-packages
+- http://bugs.debian.org/release-critical/
 
 ## Links
 
