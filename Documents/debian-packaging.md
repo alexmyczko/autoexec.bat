@@ -138,6 +138,10 @@ using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
 Send a mail to non-free@buildd.debian.org
 explaining the license allows distributing binary packages.
 
+## When packages.debian.org or tracker.debian.org is slow
+
+Use https://incoming.debian.org for `dget`.
+
 ## Everything else
 
 - https://www.debian.org/doc/manuals/developers-reference/index.en.html
