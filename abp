@@ -9,6 +9,8 @@ for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     fi
 done
 
+# get some storage and do it for the whole archive, prefer leaf packages
+
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 
 # if root user
