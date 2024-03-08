@@ -1,1 +1,2 @@
 stat /|grep -i birth |awk '{print $2 " " $3}'
+# stat /|grep -i birth |awk '{print $2}'|sed s,-,/,g
