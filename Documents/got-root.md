@@ -33,3 +33,11 @@ If you do not have the source. You can find out with ldd which libraries the bin
 
 ## Fonts
 Just put them in `~/.fonts`
+
+## PKGX
+
+https://pkgx.sh
+
+## Spack
+
+https://github.com/spack/spack
