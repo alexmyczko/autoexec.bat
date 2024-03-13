@@ -142,6 +142,12 @@ explaining the license allows distributing binary packages.
 
 Use https://incoming.debian.org for `dget`.
 
+## Help Debian
+
+Get listed at https://www.debian.org/users/
+
+Install `popularity-contest` and visit https://popcon.debian.org
+
 ## Everything else
 
 - https://www.debian.org/doc/manuals/developers-reference/index.en.html
