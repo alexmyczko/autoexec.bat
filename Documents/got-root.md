@@ -29,7 +29,7 @@ Try to run `dosbox .`, and then your software in there
 Try to with `wine your.exe`
 
 ## Precompiled Binaries
-If you do not have the source. You can find out with ldd which libraries the binary is linked against. And use `$LD_LIBRARY_PATH` to provide your own libraries.
+If you do not have the source. You can find out with `ldd` which libraries the binary is linked against. And use `$LD_LIBRARY_PATH` to provide your own libraries.
 
 ## Fonts
 Just put them in `~/.fonts`
