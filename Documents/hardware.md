@@ -1,6 +1,6 @@
 # Testing Hardware
 
-= [badblocks](https://en.wikipedia.org/wiki/Badblocks) - RO/RW test disk drives (-nsv or just -sv)
+- [badblocks](https://en.wikipedia.org/wiki/Badblocks) - RO/RW test disk drives (-nsv or just -sv)
 - [memtester](https://pyropus.ca./software/memtester/) - test system memory
 - [tinymembench](https://github.com/ssvb/tinymembench/wiki) - test memory speed
 - [gpu-burn](https://github.com/wilicc/gpu-burn) - test GPU
