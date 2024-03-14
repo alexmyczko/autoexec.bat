@@ -142,6 +142,12 @@ explaining the license allows distributing binary packages.
 
 Use https://incoming.debian.org for `dget`.
 
+## Other useful links
+
+http://snapshot.debian.org/
+
+http://archive.debian.org/
+
 ## Help Debian
 
 Get listed at https://www.debian.org/users/
