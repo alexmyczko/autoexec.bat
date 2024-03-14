@@ -6,3 +6,9 @@ apt-get install -uy xorgxrdp xrdp
 adduser xrdp ssl-cert
 crudini --get --list xrdp.ini
 crudini --get --list xrdp.ini Globals
+#tls_ciphers=HIGH # set to high
+#ssl_protocols=TLSv1.2,TLSv1.3
+#key_file=/etc/xrdp/key.pem # add your SSL key path
+#certificate=/etc/xrdp/cert.pem # add your SSL crt path
+#crypt_level=high # set to High
+#security_layer=tls # You can use tls,rdp or tls
