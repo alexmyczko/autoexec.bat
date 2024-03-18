@@ -1,4 +1,4 @@
-apt-get install -uy xorgxrdp xrdp
+apt-get install -uy xorgxrdp xrdp crudini
 # apt-get install -uy freerdp2-x11
 # xfreerdp /dynamic-resolution /bpp:24 /v:HOSTNAME /u:$USER +fonts
 # https://go.microsoft.com/fwlink/?linkid=868963&WT.mc_id=DT-MVP-5003202
