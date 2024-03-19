@@ -11,6 +11,10 @@ done
 
 # get some storage and do it for the whole archive, prefer leaf packages
 
+# optional version selection
+# salsa experimental sid testing stable
+# archive? 
+
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 
 # while we rebuild software, can as well
