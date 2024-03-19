@@ -13,6 +13,10 @@ done
 
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 
+# while we rebuild software, can as well
+# optimize them for stuff, see optimization
+# notes
+
 # if root user
 #cd /usr/src/
 #dget http://deb.debian.org/debian/pool/contrib/n/nvtop/nvtop_3.0.2-1.dsc
