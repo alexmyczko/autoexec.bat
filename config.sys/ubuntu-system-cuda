@@ -37,7 +37,7 @@ EOF
 fi
 
 apt-get update
-apt install cuda-11-7 nvtop -uy
+apt install cuda-12-2 nvtop -uy
 apt-mark hold $(dpkg -l |grep  'libcudnn\|nvidia-\|cuda-\|xserver-xorg-video-nvidia-\|libnvidia-'|awk '{print $2}')
 # https://www.tensorflow.org/install/pip
 #    python3 -m pip install tensorflow
