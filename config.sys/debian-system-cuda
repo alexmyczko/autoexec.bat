@@ -1,5 +1,5 @@
 if [ ! -e /etc/apt/sources.list.d/nvidia.list ]; then
-  echo "deb http://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/ /" > /etc/apt/sources.list.d/nvidia.list
+  echo "deb http://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/ /" > /etc/apt/sources.list.d/nvidia.list
 fi
 
 if [ ! -e /etc/apt/trusted.gpg.d/nvidia.asc ]; then
