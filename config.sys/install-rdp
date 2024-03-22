@@ -6,8 +6,8 @@ apt-get install -uy xorgxrdp xrdp crudini
 # https://go.microsoft.com/fwlink/?linkid=868963&WT.mc_id=DT-MVP-5003202
 
 adduser xrdp ssl-cert
-#crudini --get --list xrdp.ini
-#crudini --get --list xrdp.ini Globals
+#crudini --get --list /etc/xrdp/xrdp.ini
+#crudini --get --list /etc/xrdp/xrdp.ini Globals
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals tls_ciphers HIGH
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals ssl_protocols "TLSv1.2, TLSv1.3"
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals key_file /etc/xrdp/key.pem
