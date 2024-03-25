@@ -23,3 +23,6 @@ crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals security_layer tl
 # you might want to consult
 # https://wiki.debian.org/Self-Signed_Certificate
 # https://ubuntu.com/server/docs/security-certificates
+
+# keytool -printcert -file /etc/xrdp/cert.pem
+# openssl x509 -in /etc/xrdp/cert.pem -text
