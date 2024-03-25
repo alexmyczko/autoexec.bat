@@ -14,3 +14,9 @@ crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals key_file /etc/xrd
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals certificate /etc/xrdp/cert.pem
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals crypt_level high
 crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals security_layer tls
+
+# to reset the certificate, or customize it, see the ssl-cert package for details
+# this here just makes sure the certificate if ssl-cert is installed before hostname set
+# the cert doesn't end up with unassigned-hostname
+#rm /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/ssl/private/ssl-cert-snakeoil.key
+#dpkg-reconfigure ssl-cert
