@@ -20,3 +20,6 @@ crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals security_layer tl
 # the cert doesn't end up with unassigned-hostname
 #rm /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/ssl/private/ssl-cert-snakeoil.key
 #dpkg-reconfigure ssl-cert
+# you might want to consult
+# https://wiki.debian.org/Self-Signed_Certificate
+# https://ubuntu.com/server/docs/security-certificates
