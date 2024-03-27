@@ -1,0 +1,13 @@
+cat > /etc/systemd/network/host.network << EOF
+[Match]
+Name=e*
+
+[Network]
+DHCP=ipv4
+Domains=$(hostname -d)
+IPv6AcceptRA=false
+
+[DHCPv4]
+UseDomains=true
+UseNTP=true
+EOF
