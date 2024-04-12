@@ -26,3 +26,6 @@ crudini --ini-options=nospace --set /etc/xrdp/xrdp.ini Globals security_layer tl
 
 # keytool -printcert -file /etc/xrdp/cert.pem
 # openssl x509 -in /etc/xrdp/cert.pem -text
+
+# also see
+# https://c-nergy.be/blog/?p=18536
