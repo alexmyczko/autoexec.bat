@@ -1,7 +1,7 @@
 # Debian Packaging
 pretty much the same with Ubuntu
 
-2003-2024 Gürkan Myczko <tar@debian.org>
+2003-2024 Alex Myczko <tar@debian.org>
 
 ## Introduction
 
