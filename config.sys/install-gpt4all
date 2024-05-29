@@ -1,3 +1,5 @@
+cd /usr/src
 pip3 install gpt4all typer --break-system-packages
+# if above fails, some older pip3, drop the --parameter and retry
 wget https://raw.githubusercontent.com/nomic-ai/gpt4all/main/gpt4all-bindings/cli/app.py
 python3 app.py repl
