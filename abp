@@ -9,6 +9,8 @@ for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     fi
 done
 
+# check DEBNAME/DEBFULLNAME and set them to robot names if not found
+
 # get some storage and do it for the whole archive, prefer leaf packages
 
 # optional version selection
@@ -16,6 +18,11 @@ done
 # archive.d.o snapshot.d.o
 
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
+dscname=$(basename $dsclink)
+dscdir=$(echo $dscname | sed s,-.*,,g)
+
+echo $dsclink
+echo $dscname
 
 # while we rebuild software, can as well
 # optimize them for stuff, see optimization
@@ -23,12 +30,15 @@ dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{
 
 # if root user
 #cd /usr/src/
-#dget http://deb.debian.org/debian/pool/contrib/n/nvtop/nvtop_3.0.2-1.dsc
-#dpkg-source -x nvtop_*3.0.2*.dsc
-#cd nvtop-*3.0.2*/
-#apt-get build-dep -y $1
-#debuild
-#cd ..
+if [ ! -f $dscname ]; then
+    dget $dsclink
+fi
+dpkg-source -x $dscname
+cd $dscdir*/
+dch --bpo ""
+apt build-dep -y .
+debuild
+cd ..
 #apt install ./nvtop*3.0.2*.deb
 #apt-mark hold nvtop
 
