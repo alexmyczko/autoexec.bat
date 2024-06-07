@@ -19,10 +19,11 @@ done
 
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 dscname=$(basename $dsclink)
-dscdir=$(echo $dscname | sed s,-.*,,g)
+dscdir=$(echo $dscname | sed s,_.*,,g)
 
 echo $dsclink
 echo $dscname
+echo $dscdir
 
 # while we rebuild software, can as well
 # optimize them for stuff, see optimization
