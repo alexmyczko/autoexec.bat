@@ -32,6 +32,14 @@ echo $dscdir
 # optimize them for stuff, see optimization
 # notes
 
+# time to download
+# time to unpack
+# time to install build-deps
+# time to build
+# diskspace src, unpacked, built
+# number of files
+# sloc
+
 # if root user
 #cd /usr/src/
 if [ ! -f $dscname ]; then
