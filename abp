@@ -33,7 +33,9 @@ echo $dscdir
 
 # while we rebuild software, can as well
 # optimize them for stuff, see optimization
-# notes
+# notes, http://sid.ethz.ch/debian/OPTIMIZE.txt
+# binaries and shell scripts: upx and bashx
+# image size optimizations, see http://sid.ethz.ch/debian/jpeg/
 
 # time to download
 # time to unpack
