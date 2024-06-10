@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # automatic simple sid backport
 
 # check if called binaries are available
