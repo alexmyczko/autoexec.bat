@@ -22,6 +22,7 @@ export DEBEMAIL="me@aiei.ch"
 # salsa experimental sid testing stable
 # archive.d.o snapshot.d.o
 
+# packages.d.o very unreliable replace it
 dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
 dscname=$(basename $dsclink)
 dscdir=$(echo $dscname | sed s,_.*,,g)
