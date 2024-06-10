@@ -16,6 +16,8 @@ export DEBEMAIL="me@aiei.ch"
 
 # get some storage and do it for the whole archive, prefer leaf packages
 
+# see https://wiki.debian.org/ReduceDebian
+
 # optional version selection
 # salsa experimental sid testing stable
 # archive.d.o snapshot.d.o
