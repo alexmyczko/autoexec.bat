@@ -1,2 +1,2 @@
 # install amiga like environment
-apt install amiwm worker fonts-topaz-unicode
+apt install -uy amiwm worker fonts-topaz-unicode
