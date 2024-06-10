@@ -63,6 +63,7 @@ cd ..
 #apt-mark hold nvtop
 
 # echo $dsclink
+# maybe also look at sbuild? ask josch
 #thedsc=$(basename $dsclink)
 #thename=$(echo $thedsc | sed "s,_.*,,")
 # if not root user
