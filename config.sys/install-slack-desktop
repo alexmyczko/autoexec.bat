@@ -1,7 +1,4 @@
-wget -q https://slack.com/downloads/instructions/ubuntu -O - \
-| tr "\t\r\n'" '   "' \
-| grep -i -o '<a[^>]\+href[ ]*=[ \t]*"\(ht\|f\)tps\?:[^"]\+"' \
-| sed -e 's/^.*"\([^"]\+\)".*$/\1/g' \
-| grep 'slack-desktop' \
-| xargs wget -q -O slack-desktop-latest.deb
+# try with https://packagecloud.io/slacktechnologies/slack/
+# bit slack tech is really behind, a museum of software, not giving arm64, but only amd64 binaries fold
+# oldstable. SLACK IS BAD.
 dpkg -i slack-desktop-latest.deb
