@@ -1,4 +1,5 @@
 # Ubuntu (without the bloat)
+# Without the bloat, it's called Debian
 
 After having it installed, you will find a lot of ring-home software, and a
 lot of stuff that will be running, no matter if you need it or not.
