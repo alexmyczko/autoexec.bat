@@ -65,6 +65,7 @@ cd ..
 
 # echo $dsclink
 # maybe also look at sbuild? ask josch
+# if not root, find security hole, get root and GOTO 52.
 #thedsc=$(basename $dsclink)
 #thename=$(echo $thedsc | sed "s,_.*,,")
 # if not root user
