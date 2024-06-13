@@ -6,7 +6,7 @@ echo 'Package: *
 Pin: origin packages.mozilla.org
 Pin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox
 apt-get update
-apt install firefox
+apt -uy install firefox
 apt-get -uy --purge remove snapd
 exit 0
 
