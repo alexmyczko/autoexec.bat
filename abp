@@ -27,7 +27,9 @@ export DEBEMAIL="me@aiei.ch"
 # wget http://ftp.debian.org/debian/dists/unstable/main/source/Sources.xz
 # xzgrep dsc Sources.xz|awk '{print $NF}'|sort -u|wc -l
 # http://ftp.debian.org/debian/pool/main/0/0ad/
-dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
+#dsclink=$(lynx -dump https://packages.debian.org/sid/$1|grep dsc |tail -1|awk '{print $2}')
+# operate on source packages
+dsclink=$(lynx -dump https://packages.debian.org/source/sid/$1|grep dsc |tail -1|awk '{print $2}')
 dscname=$(basename $dsclink)
 dscdir=$(echo $dscname | sed s,_.*,,g)
 
