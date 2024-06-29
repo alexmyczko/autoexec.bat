@@ -1,2 +1,4 @@
 apt -uy install usbtop
 modprobe usbmon
+# lsusb
+# usb-devices
