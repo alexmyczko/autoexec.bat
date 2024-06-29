@@ -1,0 +1,2 @@
+apt -uy install usbtop
+modprobe usbmon
