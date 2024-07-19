@@ -1,3 +1,5 @@
 if [ ! -e /etc/initramfs-tools/conf.d/compress ]; then echo COMPRESS=xz > /etc/initramfs-tools/conf.d/compress; fi
 sed -i s,MODULES=most,MODULES=dep,g /etc/initramfs-tools/initramfs.conf
 update-initramfs -u
+# ^ 19917656 Jul 19 09:17 /boot/initrd.img-6.8.11-amd64
+# dracut --hostonly --xz initrd.img gives 17832096 initrd.img-6.9.9-amd64
