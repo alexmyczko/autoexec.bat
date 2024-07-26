@@ -2,7 +2,6 @@
 # automatic simple sid backport
 
 # check if called binaries are available
-# might want to check for upx, woff2
 for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     hash $a >/dev/null
     if [ ! $? -eq 0 ]; then
@@ -78,7 +77,7 @@ apt build-dep -y .
 dt=date
 which gdate >/dev/null && dt=$(which gdate)
 start=$($dt +%s.%N)
-debuild
+DEB_BUILD_OPTIONS=nocheck debuild --no-lintian -us -uc
 end=$($dt +%s.%N)
 #time=$(printf "TIME %.2f\n" $(echo $end - $start | bc))
 buildtime=$(echo $end - $start | bc)
@@ -100,7 +99,8 @@ upx debian/*/usr/games/*
 # woff2_compress debian/*/usr/share/fonts/*/*/*.ttf
 # woff2_compress debian/*/usr/share/fonts/*/*/*.otf
 sed -i s,bpo12,bpo12+upx,g debian/*/DEBIAN/control
-dh_builddeb #-- -Zxz
+# Allowed values are gzip, xz (since dpkg 1.15.6), zstd (since dpkg 1.21.18) and none (default is xz).
+dh_builddeb #-- -Zzstd
 
 cd ..
 #apt install ./nvtop*3.0.2*.deb
