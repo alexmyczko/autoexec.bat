@@ -100,7 +100,7 @@ upx debian/*/usr/games/*
 # woff2_compress debian/*/usr/share/fonts/*/*/*.ttf
 # woff2_compress debian/*/usr/share/fonts/*/*/*.otf
 sed -i s,bpo12,bpo12+upx,g debian/*/DEBIAN/control
-dh_builddeb
+dh_builddeb #-- -Zxz
 
 cd ..
 #apt install ./nvtop*3.0.2*.deb
