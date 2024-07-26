@@ -2,6 +2,7 @@
 # automatic simple sid backport
 
 # check if called binaries are available
+# might want to check for upx, woff2
 for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     hash $a >/dev/null
     if [ ! $? -eq 0 ]; then
