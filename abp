@@ -15,8 +15,10 @@ if [ x$1 = x ]; then
     echo
     exit 0
 fi
-if [ x$DEBFULLNAME = x ]; then export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"; fi
-if [ x$DEBEMAIL = x ]; then export DEBEMAIL="me@aiei.ch"; fi
+# check DEBNAME/DEBFULLNAME and set them to robot names if not found
+# http://1bm.aiei.ch
+export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"
+export DEBEMAIL="me@aiei.ch"
 
 # get some storage and do it for the whole archive, prefer leaf packages
 
@@ -26,6 +28,7 @@ if [ x$DEBEMAIL = x ]; then export DEBEMAIL="me@aiei.ch"; fi
 # salsa experimental sid testing stable
 # archive.d.o snapshot.d.o
 
+# packages.d.o very unreliable replace it
 # wget http://ftp.debian.org/debian/dists/unstable/main/source/Sources.xz
 # xzgrep dsc Sources.xz|awk '{print $NF}'|sort -u|wc -l
 # http://ftp.debian.org/debian/pool/main/0/0ad/
@@ -67,12 +70,47 @@ if [ ! -f $dscname ]; then
 fi
 dpkg-source -x $dscname
 cd $dscdir*/
+numfiles=$(find . | wc -l)
+srcsize=$(du -sk|awk '{print $1}')
 dch --bpo ""
 apt build-dep -y .
+dt=date
+which gdate >/dev/null && dt=$(which gdate)
+start=$($dt +%s.%N)
 debuild
+end=$($dt +%s.%N)
+#time=$(printf "TIME %.2f\n" $(echo $end - $start | bc))
+buildtime=$(echo $end - $start | bc)
+numbldfiles=$(find . | wc -l)
+bldsize=$(du -sk|awk '{print $1}')
+
+# upx can be used on binaries (upx)
+upx debian/*/usr/bin/*
+upx debian/*/usr/sbin/*
+upx debian/*/bin/*
+upx debian/*/sbin/*
+upx debian/*/usr/games/*
+# removing documentation
+# rm -rf debian/*/usr/share/doc/
+# rm -rf debian/*/usr/share/info/
+# rm -rf debian/*/usr/share/man/
+# rm -rf debian/*/usr/share/menu/
+# compressing fonts (woff2) [only operates on single files]
+# woff2_compress debian/*/usr/share/fonts/*/*/*.ttf
+# woff2_compress debian/*/usr/share/fonts/*/*/*.otf
+sed -i s,bpo12,bpo12+upx,g debian/*/DEBIAN/control
+dh_builddeb
+
 cd ..
 #apt install ./nvtop*3.0.2*.deb
 #apt-mark hold nvtop
+
+echo
+echo "SRC FILES $numfiles"
+echo "SRC SIZE  $srcsize KB"
+echo "BLD FILES $numbldfiles"
+echo "BLD SIZE  $bldsize KB"
+echo "BLD TIME  $(printf "%.2f" $buildtime)\""
 
 # echo $dsclink
 # maybe also look at sbuild? ask josch
