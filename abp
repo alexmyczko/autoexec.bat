@@ -26,7 +26,6 @@ if [ x$DEBEMAIL = x ]; then export DEBEMAIL="me@aiei.ch"; fi
 # salsa experimental sid testing stable
 # archive.d.o snapshot.d.o
 
-# packages.d.o very unreliable replace it
 # wget http://ftp.debian.org/debian/dists/unstable/main/source/Sources.xz
 # xzgrep dsc Sources.xz|awk '{print $NF}'|sort -u|wc -l
 # http://ftp.debian.org/debian/pool/main/0/0ad/
