@@ -77,6 +77,7 @@ apt build-dep -y .
 dt=date
 which gdate >/dev/null && dt=$(which gdate)
 start=$($dt +%s.%N)
+#export LD_PRELOAD=$(dpkg -L libmimalloc2.0 |grep so. |tail -1)
 DEB_BUILD_OPTIONS=nocheck debuild --no-lintian -us -uc
 end=$($dt +%s.%N)
 #time=$(printf "TIME %.2f\n" $(echo $end - $start | bc))
