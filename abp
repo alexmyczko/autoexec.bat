@@ -92,11 +92,7 @@ numbldfiles=$(find . | wc -l)
 bldsize=$(du -sk|awk '{print $1}')
 
 # upx can be used on binaries (upx)
-upx debian/*/usr/bin/*
-upx debian/*/usr/sbin/*
-upx debian/*/bin/*
-upx debian/*/sbin/*
-upx debian/*/usr/games/*
+upx debian/*/usr/bin/* debian/*/usr/sbin/* debian/*/bin/* debian/*/sbin/* debian/*/usr/games/*
 # removing documentation
 # rm -rf debian/*/usr/share/doc/
 # rm -rf debian/*/usr/share/info/
