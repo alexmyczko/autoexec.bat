@@ -18,8 +18,8 @@ if [ $# -ne 1 ]; then
 fi
 # check DEBNAME/DEBFULLNAME and set them to robot names if not found
 # http://1bm.aiei.ch
-export DEBFULLNAME="${DEBFULLNAME:="ARTIFICIAL INTELLIGENCE BACKPORT"}"
-export DEBEMAIL="${DEBEMAIL:="me@aiei.ch"}"
+export DEBFULLNAME=${DEBFULLNAME:=ARTIFICIAL INTELLIGENCE BACKPORT}
+export DEBEMAIL=${DEBEMAIL:=me@aiei.ch}
 pkg="$1"
 # get some storage and do it for the whole archive, prefer leaf packages
 
@@ -118,7 +118,7 @@ echo "SRC FILES $numfiles"
 echo "SRC SIZE  $srcsize KB"
 echo "BLD FILES $numbldfiles"
 echo "BLD SIZE  $bldsize KB"
-echo "BLD TIME  $(printf "%.2f" $buildtime)"
+echo "BLD TIME  $(printf "%.2f" $buildtime)\""
 
 # echo $dsclink
 # maybe also look at sbuild? ask josch
