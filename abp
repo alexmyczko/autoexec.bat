@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # automatic simple sid backport
 
-((APBDEBUG)) && cd $(mktemp -d)
+test -z $APBDEBUG || cd $(mktemp -d)
 # check if called binaries are available
 for a in dget dpkg-source debuild dpkg apt-mark curl upx; do
     if ! hash $a 2>/dev/null; then
@@ -9,7 +9,7 @@ for a in dget dpkg-source debuild dpkg apt-mark curl upx; do
       pkgmissing=1
     fi
 done
-((pkgmissing)) && exit 1
+test -z $pkgmissing || exit 1
 
 if [ $# -ne 1 ]; then
     echo "syntax: ${BASH_SOURCE[0]} pkg | linktodsc"
