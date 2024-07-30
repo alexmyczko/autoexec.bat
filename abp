@@ -76,6 +76,9 @@ cd $dscdir/
 numfiles=$(find . | wc -l)
 srcsize=$(du -sk|cut -f1)
 dch --bpo ""
+# remove build dep after install
+PKGS=()
+PKGS=( ${PKGS[@]} $(sudo apt-get --assume-no --download-only --mark-auto -u build-dep . | sed '0,/The following NEW packages will be installed/d;/^[^ ]/,$d') )
 sudo apt-get build-dep -y .
 gdate=$(which gdate >/dev/null)
 dt=${gdate:=$(which date)}
@@ -129,3 +132,5 @@ echo "BLD TIME  $(printf "%.2f" $buildtime)"
 #dpkg-source -x $thedsc
 #cd ${thename}*/
 #debuild
+# Remove build-dep from system
+sudo apt-get --yes --purge --autoremove remove "${PKGS[@]}" >/dev/null
