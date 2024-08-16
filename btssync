@@ -1,0 +1,14 @@
+#!/bin/bash
+ 
+# cronjob
+#0 * * * * /var/www/bts/sync
+ 
+#cd /home/me/public_html/bts
+cd /var/www/bts
+ 
+#rsync rsync://bugs-mirror.debian.org
+/usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-db bts-spool-db
+/usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-archive bts-spool-archive
+/usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-index bts-spool-index
+/usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-versions bts-versions
+echo `date -uR` > timestamp
