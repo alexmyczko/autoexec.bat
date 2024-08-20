@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+pkgs=$(ls -la /usr/share/doc/*/changelog.Debian.gz |wc -l)
+pkgupdates=$(zcat /usr/share/doc/*/changelog.Debian.gz |grep -- " -- "|wc -l)
+
+echo "Number of packages with changelog.Debian.gz $pkgs"
+echo "Number of changelog entries in all of them  $pkgupdates"
