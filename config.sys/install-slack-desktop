@@ -1,4 +1,4 @@
 # try with https://packagecloud.io/slacktechnologies/slack/
-# bit slack tech is really behind, a museum of software, not giving arm64, but only amd64 binaries fold
+# but slack tech is really behind, a museum of software, not giving arm64, but only amd64 binaries fold
 # oldstable. SLACK IS BAD.
 dpkg -i slack-desktop-latest.deb
