@@ -1,0 +1,29 @@
+cat > /etc/polkit-1/localauthority/90-mandatory.d/nopowersave.pkla << EOF
+[user suspend (logind)]
+Identity=unix-user:*
+Action=org.freedesktop.login1.suspend;org.freedesktop.login1.suspend-multiple-sessions
+ResultActive=no
+ResultInactive=no
+ResultAny=no
+
+[user hibernate]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.hibernate-multiple-sessions
+ResultAny=no
+ResultInactive=no
+ResultActive=no
+
+[user reboot]
+Identity=unix-user:*
+Action=org.freedesktop.login1.reboot;org.freedesktop.login1.reboot-multiple-sessions
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
+
+[user shutdown]
+Identity=unix-user:*
+Action=org.freedesktop.login1.power-off;org.freedesktop.login1.power-off-multiple-sessions
+ResultAny=no
+ResultInactive=no
+ResultActive=no
+EOF
