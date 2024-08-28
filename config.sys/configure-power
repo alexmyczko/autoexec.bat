@@ -1,4 +1,4 @@
-cat > /etc/polkit-1/localauthority/90-mandatory.d/nopowersave.pkla << EOF
+cat << EOF > /etc/polkit-1/localauthority/90-mandatory.d/nopowersave.pkla
 [user suspend (logind)]
 Identity=unix-user:*
 Action=org.freedesktop.login1.suspend;org.freedesktop.login1.suspend-multiple-sessions
