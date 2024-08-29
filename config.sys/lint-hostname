@@ -1,4 +1,5 @@
 #which ifconfig &>dev/null && IP=$(ifconfig | grep "^.*inet" |awk '{print $2}' |head -1)
+#dnsdomainname can be as domain in resolv.conf depending on nsswitch.conf
 IP=$(hostname -I|awk '{print $1}'|head -1)
 FQDN=$(host $IP |awk '{print $NF}' | sed s,.$,,)
 HS=$(hostname -s)
