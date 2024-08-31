@@ -18,7 +18,8 @@ for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 bre
     which $a &>/dev/null && (
 	case $a in
             apk)
-                num=$(spk info | wc -l)
+                num=$(apk info | wc -l)
+            ;;
 	    dpkg)
 		num=`dpkg -l |grep ^ii |wc -l`
 		#num="${num}\n"
