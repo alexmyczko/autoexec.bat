@@ -14,7 +14,7 @@
 # module -V
 # pip* -V
 
-for a in dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 brew zypper; do
+for a in apk dpkg rpm nix snap spack 0install flatpak opam cpan module pip2 pip3 brew zypper; do
     which $a &>/dev/null && (
 	case $a in
             apk)
