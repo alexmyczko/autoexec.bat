@@ -5,6 +5,11 @@ echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://package
 echo 'Package: *
 Pin: origin packages.mozilla.org
 Pin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+cat << EOF | sudo tee -a /etc/apt/preferences.d/no-snap.pref
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF
 apt-get update
 apt -uy install firefox
 apt-get -uy --purge remove snapd
