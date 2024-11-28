@@ -11,7 +11,7 @@ Pin: release a=*
 Pin-Priority: -10
 EOF
 apt-get update
-apt -uy install firefox
+apt -uy install --allow-downgrades firefox
 apt-get -uy --purge remove snapd
 apt-mark hold snapd
 exit 0
