@@ -7,3 +7,4 @@
 - [stress](https://github.com/resurrecting-open-source-projects/stress) - test CPU
 - [openseachest](https://github.com/Seagate/openSeaChest) - test Seagate storage devices
 - [nvme-cli](https://github.com/linux-nvme/nvme-cli) - run NVME tests nfswatch
+- [ethtool](https://www.kernel.org/pub/software/network/ethtool/) - identify nic, check link speed, flash firmware
