@@ -6,5 +6,5 @@
 - [gpu-burn](https://github.com/wilicc/gpu-burn) - test GPU
 - [stress](https://github.com/resurrecting-open-source-projects/stress) - test CPU
 - [openseachest](https://github.com/Seagate/openSeaChest) - test Seagate storage devices
-- [nvme-cli](https://github.com/linux-nvme/nvme-cli) - run NVME tests nfswatch
+- [nvme-cli](https://github.com/linux-nvme/nvme-cli) - run NVME
 - [ethtool](https://www.kernel.org/pub/software/network/ethtool/) - identify nic, check link speed, WOL setting
