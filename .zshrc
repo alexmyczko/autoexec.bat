@@ -26,6 +26,9 @@ if [[ $(uname) == "Linux" ]]; then
     if [ -f /usr/share/GNUstep/Makefiles/GNUstep.sh ]; then source /usr/share/GNUstep/Makefiles/GNUstep.sh; fi
 fi
 
+# far2l default arguments
+FAR2L_ARGS="-an --tty"; export FAR2L_ARGS
+
 # set favourite editor, emacs is an alternative
 EDITOR=mcedit; export EDITOR
 
