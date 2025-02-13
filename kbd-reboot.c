@@ -2,7 +2,7 @@
 https://www.basicinputoutput.com/2024/11/the-keyboard-controller-interface.html
 apt install ioport; outb 0x64 0xFE
 
-rmmos usbhid # disable kbd input
+rmmod usbhid # disable kbd input
 */
 
 #include <unistd.h>
