@@ -1,0 +1,3 @@
+# efivar to backup and restore uefi settings
+# check if system is uefi capable
+# check if sustem is running uefi
