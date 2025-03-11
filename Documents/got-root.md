@@ -32,7 +32,7 @@ Try to with `wine your.exe`
 If you do not have the source. You can find out with `ldd` which libraries the binary is linked against. And use `$LD_LIBRARY_PATH` to provide your own libraries.
 
 ## Fonts
-Just put them in `~/.fonts`
+Just put them in `~/.fonts` or use https://github.com/alexmyczko/fnt
 
 ## PKGX
 
