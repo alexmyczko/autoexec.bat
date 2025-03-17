@@ -1,3 +1,5 @@
 #!/bin/bash
 lsmod |grep pcspkr >/dev/null || (echo "pcspkr module not loaded";exit)
 echo -ne "\a"
+# want to run it remotely, > /dev/tty1
+# why? detect the computer in the room with 20 machines
