@@ -1,0 +1,3 @@
+#!/bin/bash
+lsmod |grep pcspkr >/dev/null || (echo "pcspkr module not loaded";exit)
+echo -ne "\a"
