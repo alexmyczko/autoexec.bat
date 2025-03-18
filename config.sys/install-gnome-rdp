@@ -1,0 +1,7 @@
+apt install gnome-remote-desktop
+grdctl rdp set-tls-key /etc/xrdp/key.pem
+grdctl rdp set-tls-cert /etc/xrdp/cert.pem
+grdctl rdp set-credentials USERNAME PASSWORD # Object does not exist at path ?/org/freedesktop/secrets/collection/login?
+grdctl rdp disable-view-only
+grdctl rdp enable
+grdctl status
