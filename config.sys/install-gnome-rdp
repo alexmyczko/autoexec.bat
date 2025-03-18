@@ -1,3 +1,4 @@
+# https://gitlab.gnome.org/GNOME/gnome-remote-desktop/-/issues
 apt install gnome-remote-desktop
 grdctl rdp set-tls-key /etc/xrdp/key.pem
 grdctl rdp set-tls-cert /etc/xrdp/cert.pem
