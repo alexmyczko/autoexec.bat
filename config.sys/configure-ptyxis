@@ -1,0 +1,1 @@
+dconf write /org/gnome/Ptyxis/Profiles/$(dconf read /org/gnome/Ptyxis/default-profile-uuid | sed "s,',,g")/opacity 0.8
