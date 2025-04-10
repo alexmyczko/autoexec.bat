@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#gbp clone git@salsa.debian.org:debian/${1}.git
+#gbp clone git@salsa.debian.org:deeplearning-team/${1}.git
+#gbp clone git@salsa.debian.org:debian-astro-team/${1}.git
+#gbp clone git@salsa.debian.org:debian-phototools-team/${1}.git
+#gbp clone git@salsa.debian.org:debian-hamradio-team/${1}.git
+#gbp clone git@salsa.debian.org:debian-remote-team/${1}.git
+#gbp clone git@salsa.debian.org:pkg-security-team/${1}.git
+#gbp clone git@salsa.debian.org:java-team/${1}.git
+gbp clone git@salsa.debian.org:multimedia-team/${1}.git
+#gbp clone git@salsa.debian.org:fonts-team/${1}.git
+#gbp clone git@salsa.debian.org:math-team/${1}.git
+#gbp clone git@salsa.debian.org:games-team/${1}.git
+#gbp clone git@salsa.debian.org:bananas-team/${1}.git
+#gbp clone git@salsa.debian.org:med-team/${1}.git
+#gbp clone git@salsa.debian.org:science-team/${1}.git
+#gbp clone git@salsa.debian.org:gnome-team/${1}.git
+#gbp clone git@salsa.debian.org:gnustep-team/${1}.git
+cd $1
+gbp import-dscs --debsnap $1
+git push origin master upstream pristine-tar;git push --tags;git push -u origin --all
