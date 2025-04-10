@@ -5,5 +5,5 @@
 # $2 cadabra2
 gbp clone $1 $2
 cd $2
-gbp import-dscs --debsnap $2
+gbp import-dscs --create-missing-branches --debsnap $2
 git push origin master upstream pristine-tar;git push --tags;git push -u origin --all
