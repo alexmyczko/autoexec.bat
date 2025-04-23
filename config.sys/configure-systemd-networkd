@@ -12,3 +12,8 @@ IPv6AcceptRA=false
 UseDomains=true
 UseNTP=true
 EOF
+# systemctl enable systemd-networkd
+# apt-get --purge remove netplan.io netplan-generator libnetplan0 python3-netplan -uy; networkctl
+# if networkctl shows unmanaged: systemctl restart systemd-networkd
+# apt-get --purge remove network-manager.*
+ 
