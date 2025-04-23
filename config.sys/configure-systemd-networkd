@@ -1,6 +1,7 @@
 cat > /etc/systemd/network/host.network << EOF
 [Match]
 Name=e*
+Type=ether
 
 [Network]
 DHCP=ipv4
