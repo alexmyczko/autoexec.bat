@@ -8,3 +8,8 @@ APT::Install-Recommends "false";
 APT::Install-Suggests "false";
 Acquire::PDiffs "false";
 EOF
+
+cat > /etc/apt/apt.conf.d/10sourceslist << EOF
+# Keep apt shut about preferring the "deb822" sources file format
+APT::Get::Update::SourceListWarnings "false";
+EOF
