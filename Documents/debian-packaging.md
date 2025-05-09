@@ -23,7 +23,7 @@ Setting up the environment. Of course you fill in your email address and your fu
 
 ```
 $ export DEBEMAIL="tar@debian.org"
-$ export DEBFULLNAME="Gürkan Myczko"
+$ export DEBFULLNAME="Alex Myczko"
 $ export EDITOR=mcedit
 ```
 
