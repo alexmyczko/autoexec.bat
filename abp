@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # automatic simple sid backport
+# maybe add URL support for ssh://user@host:/the.dsc using dcmd
 
 # check if called binaries are available
 for a in dget dpkg-source debuild dpkg apt-mark lynx; do
