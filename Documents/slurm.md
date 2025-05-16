@@ -16,7 +16,7 @@ You might want to add more plugins, see `apt-cache search ^slurm-wlm |grep "plug
 ## Usage
 
 There are different ways to submit jobs:
-- `srun` (runs attached, ctrl-c ctrl-c to abort)
+- `srun` (runs attached, ctrl-c ctrl-c to abort), for example https://explainshell.com/explain?cmd=srun+-l+-n4+-N2+-pmain+.%2Fpi.sh+3000
 - `srun -w prefereddestination--pty $SHELL` to login to a node and use it interactively
 - `sbatch` (runs detached)
 
