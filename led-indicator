@@ -2,6 +2,7 @@
 
 # this one could make good use of trap
 
+# needs usbutils kbd installed
 # other interesting triggers are possible, see
 # grep LEDS_TRIGGER /boot/config-$(uname -r)
 # ls /lib/modules/$(uname -r)/kernel/drivers/leds/trigger/
