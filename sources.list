@@ -1,4 +1,4 @@
-deb http://debian.ethz.ch/debian sid main contrib non-free non-free-firmware
-deb http://debian.ethz.ch/debian experimental main contrib non-free
-deb-src http://debian.ethz.ch/debian sid main contrib non-free
-deb-src http://debian.ethz.ch/debian experimental main contrib non-free
+deb http://deb.debian.org/debian sid main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian experimental main contrib non-free
+deb-src http://deb.debian.org/debian sid main contrib non-free
+deb-src http://deb.debian.org/debian experimental main contrib non-free
