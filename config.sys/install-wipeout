@@ -1,0 +1,7 @@
+git2deb https://github.com/phoboslab/wipeout-rewrite.git
+wget https://github.com/mdqinc/SDL_GameControllerDB/blob/master/gamecontrollerdb.txt
+wget https://phoboslab.org/files/wipeout-data-v01.zip
+unzip wipeout-data-v01.zip
+make
+echo "Type ./wipegame to run..."
+# settings are saved in $HOME/.local/share/phoboslab/wipeout/save.dat
