@@ -2,25 +2,26 @@
 # automatic simple sid backport
 # maybe add URL support for ssh://user@host:/the.dsc using dcmd
 
+test -z $APBDEBUG || cd $(mktemp -d)
 # check if called binaries are available
-for a in dget dpkg-source debuild dpkg apt-mark lynx; do
-    hash $a >/dev/null
-    if [ ! $? -eq 0 ]; then
-        echo $a not found
-        exit 1
+for a in dget dpkg-source debuild dpkg apt-mark curl upx; do
+    if ! hash $a 2>/dev/null; then
+      echo $a not found
+      pkgmissing=1
     fi
 done
+test -z $pkgmissing || exit 1
 
-if [ x$1 = x ]; then
-    echo "syntax: $0 pkg | linktodsc"
+if [ $# -ne 1 ]; then
+    echo "syntax: ${BASH_SOURCE[0]} pkg | linktodsc"
     echo
     exit 0
 fi
 # check DEBNAME/DEBFULLNAME and set them to robot names if not found
 # http://1bm.aiei.ch
-export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"
-export DEBEMAIL="me@aiei.ch"
-
+export DEBFULLNAME=${DEBFULLNAME:=ARTIFICIAL INTELLIGENCE BACKPORT}
+export DEBEMAIL=${DEBEMAIL:=me@aiei.ch}
+pkg="$1"
 # get some storage and do it for the whole archive, prefer leaf packages
 
 # see https://wiki.debian.org/ReduceDebian
@@ -40,11 +41,12 @@ case $1 in
 	dsclink=$1
     ;;
     *)
-	dsclink=$(lynx -dump https://packages.debian.org/source/sid/$1|grep dsc |tail -1|awk '{print $2}')
+	dsclink=$(curl -s "https://packages.debian.org/source/sid/$pkg" |
+    grep -Po 'href="\K.*?\.dsc')
     ;;
 esac
-dscname=$(basename $dsclink)
-dscdir=$(echo $dscname | sed s,_.*,,g)
+dscname=${dsclink##*/}
+dscdir=$(sed 's/-.*$//;s/_/-/' <<< $dscname)
 
 echo $dsclink
 echo $dscname
@@ -66,17 +68,21 @@ echo $dscdir
 
 # if root user
 #cd /usr/src/
-if [ ! -f $dscname ]; then
+if [ ! -r $dscname ]; then
     dget $dsclink
 fi
+#if [ ! -d 
 dpkg-source -x $dscname
-cd $dscdir*/
+cd $dscdir/
 numfiles=$(find . | wc -l)
-srcsize=$(du -sk|awk '{print $1}')
+srcsize=$(du -sk|cut -f1)
 dch --bpo ""
-apt build-dep -y .
-dt=date
-which gdate >/dev/null && dt=$(which gdate)
+# remove build dep after install
+PKGS=()
+PKGS=( ${PKGS[@]} $(sudo apt-get --assume-no --download-only --mark-auto -u build-dep . | sed '0,/The following NEW packages will be installed/d;/^[^ ]/,$d') )
+sudo apt-get build-dep -y .
+gdate=$(which gdate >/dev/null)
+dt=${gdate:=$(which date)}
 start=$($dt +%s.%N)
 #export LD_PRELOAD=$(dpkg -L libmimalloc2.0 |grep so. |tail -1)
 DEB_BUILD_OPTIONS=nocheck debuild --no-lintian -us -uc
@@ -123,3 +129,5 @@ echo "BLD TIME  $(printf "%.2f" $buildtime)\""
 #dpkg-source -x $thedsc
 #cd ${thename}*/
 #debuild
+# Remove build-dep from system
+sudo apt-get --yes --purge --autoremove remove "${PKGS[@]}" >/dev/null
