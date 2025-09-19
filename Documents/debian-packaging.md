@@ -52,6 +52,8 @@ Plenty more to check out at https://en.wikipedia.org/wiki/List_of_build_automati
 
 https://github.com/alexmyczko/autoexec.bat/blob/master/deb2itp
 
+`mail -r $DEBEMAIL -s "ITP: pkg -- shortdescription" submit@bugs.debian.org`
+
 ## Software without release
 
 https://github.com/alexmyczko/autoexec.bat/blob/master/git2deb
