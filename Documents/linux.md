@@ -123,3 +123,13 @@ aptitude search '?provides(^www-browser$)'
 aptitude search '?provides(^x-terminal-emulator$)'
 ```
 you can also try x-display-manager, x-session-manager, x-window-manager.
+
+## RTL-SDR
+
+Visualizing ADS-B signals from aircrafts
+```
+dump1090-mutability --net
+viz1090 --fullscreen --lat 47.5 --lon 8.2 --metric --uiscale 3
+```
+
+`rtl_433` and `rtl_ais` are also interesting.
