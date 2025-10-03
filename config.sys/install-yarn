@@ -1,0 +1,3 @@
+apt install yarnpkg
+ln -s /usr/bin/yarnpkg /usr/bin/yarn
+yarn config set --home enableTelemetry 0
