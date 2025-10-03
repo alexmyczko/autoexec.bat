@@ -1,0 +1,9 @@
+[core]
+    editor = mcedit
+
+[init]
+    defaultBranch = main
+
+[user]
+    name = Alex Myczko
+    email = tar@debian.org
