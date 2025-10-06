@@ -1,3 +1,4 @@
+# apt install git wget libsdl2-dev unzip
 git clone -q --recursive https://github.com/phoboslab/wipeout-rewrite.git
 cd wipeout-rewrite
 wget https://raw.githubusercontent.com/mdqinc/SDL_GameControllerDB/refs/heads/master/gamecontrollerdb.txt
