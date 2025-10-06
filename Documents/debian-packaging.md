@@ -178,7 +178,7 @@ A good source for free software https://github.com, and https://codeberg.org/.
 All Debian project participants https://www.debian.org/devel/people
 
 Other packaging systems (ports, pkg, rpm):
-- Freebsd: https://www.freebsd.org/doc/en/books/porters-handbook/
+- FreeBSD: https://www.freebsd.org/doc/en/books/porters-handbook/
 - Solaris: https://docs.oracle.com/cd/E26505_01/html/E28550/ch2buildpkg-17051.html
 - RedHat: https://access.redhat.com/sites/default/files/attachments/rpm_building_practice_10082013.pdf
 - Fedora: https://docs.fedoraproject.org/en-US/package-maintainers/
