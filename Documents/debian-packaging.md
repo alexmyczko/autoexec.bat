@@ -1,7 +1,7 @@
 # Debian Packaging
 pretty much the same with Ubuntu
 
-2003-2024 Alex Myczko <tar@debian.org>
+2003-2025 Alex Myczko <tar@debian.org>
 
 ## Introduction
 
@@ -15,7 +15,7 @@ A development environment, some utilities and debhelper which we will install li
 # apt-get install binutils cpp cpio dpkg-dev file gcc make patch \
                   dh-make debhelper devscripts fakeroot lintian \
                   debian-policy developers-reference \
-		  man-db manpages reportbug dput-ng decopy
+                  man-db manpages reportbug dput-ng decopy
 ```
 
 (or build-essential lintian debhelper dh-make devscripts fakeroot)
