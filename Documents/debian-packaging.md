@@ -54,6 +54,13 @@ https://github.com/alexmyczko/autoexec.bat/blob/master/deb2itp
 
 `mail -r $DEBEMAIL -s "ITP: pkg -- shortdescription" submit@bugs.debian.org`
 
+## Ask for XS-Autobuild: yes
+
+non-free and contrib packages are not built by default, if the license allows you can request them to be white listed
+for building using an email to
+
+`mail -r $DEBEMAIL -s "non-free/pkgname XS-Autobuild: yes activation" non-free@buildd.debian.org`
+
 ## Software without release
 
 https://github.com/alexmyczko/autoexec.bat/blob/master/git2deb
