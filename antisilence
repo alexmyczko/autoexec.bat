@@ -1,0 +1,48 @@
+#!/bin/bash
+# headless/invisible player
+# needs: yt-dlp screen opencubicplayer
+
+while (sleep 0.1); do
+    read -n1 -s search
+    case $search in
+	r)
+	    song="$(ls *.mp3 | shuf | head -1)"
+	;;
+	R)
+	    if [ ! -f allmods.txt ]; then wget https://modland.com/allmods.zip; fi
+	    file="$(shuf allmods.txt | head -1 | cut -f2-)"
+	    song="https://modland.com/pub/modules/${file}"
+	    if [ ! -f "$song" ]; then wget "$song"; fi
+	    song="$(basename "$file")"
+	;;
+	s)
+	    echo -n "search> "
+	    read search
+	    yt-dlp --audio-format=mp3 -x --no-overwrites ytsearch:"${search}"
+	    if [ "$?" != 0 ]; then
+		song="$(ls -c *.mp3 | head -1)"
+	    fi
+	;;
+	l)
+	    ls -1 *.mp3
+	    continue
+	;;
+	i)
+	    echo "$(ls *.mp3|wc -l) songs ($(du -sm | awk '{print $1}') MB)"
+	    continue
+	;;
+	'?')
+	    echo r play random mp3
+	    echo R play random mod
+	    echo s search and download
+	    echo i info
+	    echo l list
+	    echo ? this help
+	    continue
+	;;
+    esac
+
+    echo "play $song"
+    pkill -9 ocp
+    screen -dmS PLAY ocp -dcurses "$song"
+done
