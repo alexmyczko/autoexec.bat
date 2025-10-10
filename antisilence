@@ -5,6 +5,14 @@
 while (sleep 0.1); do
     read -n1 -s search
     case $search in
+        +)
+            amixer sset PCM 2dB+
+            continue
+        ;;
+        -)
+            amixer sset PCM 2dB-
+            continue
+        ;;
 	r)
 	    song="$(ls *.mp3 | shuf | head -1)"
 	;;
