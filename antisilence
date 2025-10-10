@@ -7,10 +7,12 @@ while (sleep 0.1); do
     case $search in
         +)
             amixer sset PCM 2dB+
+			osascript -e "set volume output volume ((output volume of (get volume settings)) + 10)"
             continue
         ;;
         -)
             amixer sset PCM 2dB-
+			osascript -e "set volume output volume ((output volume of (get volume settings)) - 10)"
             continue
         ;;
 	r)
