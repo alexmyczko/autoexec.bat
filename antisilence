@@ -1,6 +1,6 @@
 #!/bin/bash
 # headless/invisible player
-# needs: yt-dlp screen opencubicplayer unzip wget
+# needs: yt-dlp screen opencubicplayer unzip wget alsa-utils
 
 while (sleep 0.1); do
     read -n1 -s search
