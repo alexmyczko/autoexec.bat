@@ -6,13 +6,15 @@ while (sleep 0.1); do
     read -n1 -s search
     case $search in
         +)
-            amixer sset PCM 2dB+
-			osascript -e "set volume output volume ((output volume of (get volume settings)) + 10)"
+            which amixer >/dev/null && amixer sset PCM 2dB+
+            which amixer >/dev/null && amixer sset Master 5%+
+	        which osascript >/dev/null && osascript -e "set volume output volume ((output volume of (get volume settings)) + 10)"
             continue
         ;;
-        -)
-            amixer sset PCM 2dB-
-			osascript -e "set volume output volume ((output volume of (get volume settings)) - 10)"
+        -)            
+			which amixer >/dev/null && amixer sset PCM 2dB-
+            which amixer >/dev/null && amixer sset Master 5%-
+	    	which osascript >/dev/null && osascript -e "set volume output volume ((output volume of (get volume settings)) - 10)"
             continue
         ;;
 	r)
