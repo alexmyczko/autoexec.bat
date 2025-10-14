@@ -18,11 +18,11 @@ while (sleep 0.1); do
             continue
         ;;
 	r)
-	    song="$(ls *.mp3 | shuf | head -1)"
+	    song="$(ls *.mp3 | shuf -n1)"
 	;;
 	R)
 	    if [ ! -f allmods.txt ]; then wget https://modland.com/allmods.zip; unzip allmods.zip; fi
-	    file="$(shuf allmods.txt | head -1 | cut -f2-)"
+	    file="$(shuf -n1 allmods.txt | cut -f2-)"
 	    song="https://modland.com/pub/modules/${file}"
 	    if [ ! -f "$song" ]; then wget "$song"; fi
 	    song="$(basename "$file")"
