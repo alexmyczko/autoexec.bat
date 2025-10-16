@@ -131,5 +131,10 @@ Visualizing ADS-B signals from aircrafts
 dump1090-mutability --net
 viz1090 --fullscreen --lat 47.5 --lon 8.2 --metric --uiscale 3
 ```
+or
+```
+viz1090 --server adsb.1090mhz.uk --port 30005 --metric --uiscale 2
+```
+Maybe useful to have: https://github.com/alexmyczko/autoexec.bat/blob/master/mapdata.bin
 
 `rtl_433` and `rtl_ais` are also interesting.
