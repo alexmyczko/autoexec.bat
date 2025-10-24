@@ -1,5 +1,5 @@
 # apt install kernel-hardening-checker
 echo You might want to set the following via /etc/sysctl.d/
-kernel-hardening-checker -a|grep sysctl|sed 1d|grep -v OK$|while read a; do b=$(echo $a|awk '{print $1}');c=$(echo $a|awk '{print $NF}'); echo sysctl $b=$c; done
+kernel-hardening-checker -a|grep sysctl|sed 1d|grep -v OK$|while read a; do b=$(echo $a|awk '{print $1}');c=$(echo $a|awk -F '|' '{print $(NF-1)}'); echo sysctl $b=$(echo $c); done
 echo The following settings are via cmdline and kconfig
 kernel-hardening-checker -a |grep -v sysctl |grep -v OK:
