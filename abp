@@ -2,6 +2,9 @@
 # automatic simple sid backport
 # maybe add URL support for ssh://user@host:/the.dsc using dcmd
 
+# installed leaf packages: aptitude search '~i !~Rdepends:~i'
+# installed packages: dpkg -l|grep ^ii
+
 # check if called binaries are available
 for a in dget dpkg-source debuild dpkg apt-mark lynx; do
     hash $a >/dev/null
@@ -16,10 +19,8 @@ if [ x$1 = x ]; then
     echo
     exit 0
 fi
-# check DEBNAME/DEBFULLNAME and set them to robot names if not found
-# http://1bm.aiei.ch
-export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"
-export DEBEMAIL="me@aiei.ch"
+if [ ! -n "$DEBFULLNAME" ]; then export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"; fi
+if [ ! -n "$DEBEMAIL" ]; thene xport DEBEMAIL="me@somewhere.lol"; fi
 
 # get some storage and do it for the whole archive, prefer leaf packages
 
