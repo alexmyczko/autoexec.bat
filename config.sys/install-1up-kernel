@@ -1,0 +1,11 @@
+# apt install lynx wget make gcc
+cd /usr/src
+k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
+wget $k
+tar xf $(basename $k)
+cd $(basename $k .tar.xz)
+cp /boot/config-$(uname -r) .config
+# now might want to play with
+# kernel-hardening-checker -g $(arch|tr '[:lower:]' '[:upper:]')
+yes "" | make oldconfig
+make bindeb-pkg
