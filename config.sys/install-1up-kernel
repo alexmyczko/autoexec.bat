@@ -1,4 +1,4 @@
-# apt install lynx wget make gcc
+# apt install lynx wget make gcc crudini
 cd /usr/src
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
 wget $k
@@ -9,4 +9,12 @@ cp /boot/config-$(uname -r) .config
 # kernel-hardening-checker -g $(arch|tr '[:lower:]' '[:upper:]')
 yes "" | make oldconfig
 # yes "" | make localmodconfig
+
+# crudini --get .config "" CONFIG_DEBUG_KERNEL
+crudini --set .config "" CONFIG_DEBUG_KERNEL n
+crudini --set .config "" CONFIG_DEBUG_INFO n
+crudini --set .config "" CONFIG_FTRACE n
+crudini --set .config "" CONFIG_KALLSYMS n
+crudini --set .config "" CONFIG_STACKTRACE n
+
 make bindeb-pkg KDEB_SOURCENAME=linux KDEB_PKGVERSION=1.5.7-1
