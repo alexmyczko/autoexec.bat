@@ -8,4 +8,4 @@ kernel-hardening-checker -a|grep cmdline|grep -v OK
 echo 
 echo The following settings are via kconfig
 echo See install-1up-kernel to quickly build your own kernel
-kernel-hardening-checker -a |grep kconfig|grep -v OK:
+kernel-hardening-checker -a |grep kconfig|grep -v OK
