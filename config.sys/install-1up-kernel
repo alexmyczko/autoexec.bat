@@ -10,11 +10,29 @@ cp /boot/config-$(uname -r) .config
 yes "" | make oldconfig
 # yes "" | make localmodconfig
 
+# drop some debugging/tracing options
 # crudini --get .config "" CONFIG_DEBUG_KERNEL
 crudini --set .config "" CONFIG_DEBUG_KERNEL n
 crudini --set .config "" CONFIG_DEBUG_INFO n
 crudini --set .config "" CONFIG_FTRACE n
 crudini --set .config "" CONFIG_KALLSYMS n
 crudini --set .config "" CONFIG_STACKTRACE n
+
+# drop entire categories
+#crudini --set .config "" CONFIG_SOUND n
+#crudini --set .config "" CONFIG_MEDIA_SUPPORT n
+#crudini --set .config "" CONFIG_DRM n
+#crudini --set .config "" CONFIG_WLAN n
+
+# performance focused tweaks
+#crudini --set .config "" CONFIG_PREEMPT y
+#crudini --set .config "" CONFIG_HZ 1000
+#crudini --set .config "" CONFIG_NO_HZ_FULL y
+#crudini --set .config "" CONFIG_HIGH_RES_TIMERS y
+
+# CPU optimizations
+#crudini --set .config "" CONFIG_MCORE2 y
+#crudini --set .config "" CONFIG_MNATIVE y
+#crudini --set .config "" CONFIG_CC_OPTIMIZE_FOR_SIZE n
 
 make bindeb-pkg KDEB_SOURCENAME=linux KDEB_PKGVERSION=1.5.7-1
