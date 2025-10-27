@@ -1,4 +1,4 @@
-# apt install lynx wget make gcc crudini bison flex
+# apt install lynx wget make gcc crudini bison flex debhelper-compat libdw-dev libelf-dev libssl-dev rsync
 cd /usr/src
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
 wget $k
