@@ -1,10 +1,10 @@
-deb http://debian.ethz.ch/debian/ trixie main contrib non-free non-free-firmware
-deb-src http://debian.ethz.ch/debian/ trixie main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ trixie main contrib non-free non-free-firmware
 deb http://security.debian.org/debian-security trixie-security main
 deb-src http://security.debian.org/debian-security trixie-security main
 # trixie-updates, to get updates before a point release is made;
 # see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
-deb http://debian.ethz.ch/debian/ trixie-updates main contrib non-free non-free-firmware
-deb-src http://debian.ethz.ch/debian/ trixie-updates main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ trixie-updates main contrib non-free non-free-firmware
 # if you want backports
 # deb http://deb.debian.org/debian trixie-backports main contrib non-free
