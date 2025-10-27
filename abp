@@ -20,7 +20,7 @@ if [ x$1 = x ]; then
     exit 0
 fi
 if [ ! -n "$DEBFULLNAME" ]; then export DEBFULLNAME="ARTIFICIAL INTELLIGENCE BACKPORT"; fi
-if [ ! -n "$DEBEMAIL" ]; thene xport DEBEMAIL="me@somewhere.lol"; fi
+if [ ! -n "$DEBEMAIL" ]; then export DEBEMAIL="me@somewhere.lol"; fi
 
 # get some storage and do it for the whole archive, prefer leaf packages
 
