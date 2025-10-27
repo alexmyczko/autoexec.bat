@@ -1,10 +1,10 @@
-deb http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-firmware
-deb-src http://debian.ethz.ch/debian/ bookworm main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ bookworm main contrib non-free non-free-firmware
 deb http://security.debian.org/debian-security bookworm-security main
 deb-src http://security.debian.org/debian-security bookworm-security main
 # bookworm-updates, to get updates before a point release is made;
 # see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
-deb http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
-deb-src http://debian.ethz.ch/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
 # if you want backports
 # deb http://deb.debian.org/debian bookworm-backports main contrib non-free
