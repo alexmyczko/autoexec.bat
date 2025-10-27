@@ -1,4 +1,4 @@
-# apt install lynx wget make gcc crudini
+# apt install lynx wget make gcc crudini bison flex
 cd /usr/src
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
 wget $k
