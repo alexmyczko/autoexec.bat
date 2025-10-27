@@ -63,6 +63,12 @@ for building using an email to
 
 https://github.com/alexmyczko/autoexec.bat/blob/master/git2deb
 
+## UDEB
+
+This is a special case of packages for the Debian Installer.
+
+Add `XC-Package-Type: udeb` to the binary part in `debian/control` and set `Section: debian-installer`
+
 ## Packaging the software
 
 First you need to get the source of the software. Then put it in some directory. There you unpack the software, usually
