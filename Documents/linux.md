@@ -124,6 +124,12 @@ aptitude search '?provides(^x-terminal-emulator$)'
 ```
 you can also try x-display-manager, x-session-manager, x-window-manager.
 
+## Python runtime
+
+```
+apt install pypy3
+```
+
 ## RTL-SDR
 
 Visualizing ADS-B signals from aircrafts
