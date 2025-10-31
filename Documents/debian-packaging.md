@@ -29,7 +29,7 @@ $ export EDITOR=mcedit
 
 For this course I have chosen mguesser, as I packaged it already and it is not too hard (single binary) to get you started. This should give you an idea what it is like. For Debian the package
 
-- must be DFSG compliant
+- must be DFSG compliant, https://www.debian.org/social_contract
 - must have some public download place (usually http/https, or ftp)
 - naming should be software-maj.min.tar.gz and unpacks into software-maj.min/
 
