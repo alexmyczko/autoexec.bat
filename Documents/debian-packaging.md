@@ -149,6 +149,10 @@ If you are not on stable but want to create backports for it
 debootstrap --arch amd64 trixie trixie/
 chroot trixie
 apt install devscripts lynx -uy
+curl https://raw.githubusercontent.com/alexmyczko/autoexec.bat/refs/heads/master/abp -o abp
+chmod +x abp
+cp abp /usr/bin/
+# make sure to have DEBEMAIL and DEBFULLNAME set
 abp srcpkg
 ```
 
