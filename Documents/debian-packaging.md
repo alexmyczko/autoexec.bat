@@ -141,6 +141,19 @@ If your software works with data files, that can be detected with the file(5) ut
 
 You can either use `apt-get build-dep . # or pkg name` or `mk-build-deps`
 
+## Backports
+
+If you are not on stable but want to create backports for it
+
+```
+debootstrap --arch amd64 trixie trixie/
+chroot trixie
+apt install devscripts lynx -uy
+abp srcpkg
+```
+
+Automatic Back Port (from sid or .dsc url) https://github.com/alexmyczko/autoexec.bat/blob/master/abp
+
 ## Github of Debian
 
 It's called https://salsa.debian.org and based on gitlab. You can download projects from there
