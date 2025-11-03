@@ -137,10 +137,12 @@ Now test your packages with:
 When uploading initial packaging, you'll want to upload the binary .changes, for iterative package updates
 a source .changes upload is to be done.
 
+```
 $ eval $(keychain --nogui --eval --agents ssh --quick id_ed25519 id_rsa)   # load SSH keys
 $ eval $(keychain --nogui --eval --agents gpg --quick 116852BCDF7515C0)    # load GPG keys
 $ debsign -k B60A1BF363DC1319FF0A8E89116852BCDF7515C0 your_source.changes
 $ dput -u ftp-master your_source.changes
+```
 
 ## After Work
 
