@@ -4,3 +4,6 @@ zgrep Install: /var/log/apt/history.log* |sed "s,:amd64 , ,g;s,.*Install: ,,;s/,
 # not installed from Debian or Ubuntu repo
 # aptitude search "?installed?not(?origin(Debian))"
 # aptitude search "?installed?not(?origin(Ubuntu))"
+
+# zcat /var/log/apt/history.log* |grep apt |grep install |grep -v ./|grep ^Commandline|cut -d' ' -f4-
+# cat history.log |grep apt |grep install |grep -v ./|grep ^Commandline|cut -d' ' -f4-
