@@ -52,10 +52,13 @@ https://github.com/alexmyczko/autoexec.bat/blob/master/deb2itp
 
 `mail -r $DEBEMAIL -s "ITP: pkg -- shortdescription" submit@bugs.debian.org`
 
-## Ask for XS-Autobuild: yes
+## Enabling auto building for non-free/contrib (XS-Autobuild: yes)
 
 non-free and contrib packages are not built by default, if the license allows you can request them to be white listed
 for building using an email to
+
+Send a mail to non-free@buildd.debian.org
+explaining the license allows distributing binary packages.
 
 `mail -r $DEBEMAIL -s "non-free/pkgname XS-Autobuild: yes activation" non-free@buildd.debian.org`
 
@@ -129,6 +132,16 @@ sbuild-createchroot --include=eatmydata,ccache,gnupg unstable /srv/chroot/sid ht
 Now test your packages with:
 `sbuild -d sid yourpackage_version-rev.dsc`
 
+## Sign and Upload your package
+
+When uploading initial packaging, you'll want to upload the binary .changes, for iterative package updates
+a source .changes upload is to be done.
+
+$ eval $(keychain --nogui --eval --agents ssh --quick id_ed25519 id_rsa)   # load SSH keys
+$ eval $(keychain --nogui --eval --agents gpg --quick 116852BCDF7515C0)    # load GPG keys
+$ debsign -k B60A1BF363DC1319FF0A8E89116852BCDF7515C0 your_source.changes
+$ dput -u ftp-master your_source.changes
+
 ## After Work
 
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
@@ -162,11 +175,6 @@ Automatic Back Port (from sid or .dsc url) https://github.com/alexmyczko/autoexe
 
 It's called https://salsa.debian.org and based on gitlab. You can download projects from there
 using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
-
-## Enabling auto building for non-free/contrib
-
-Send a mail to non-free@buildd.debian.org
-explaining the license allows distributing binary packages.
 
 ## When packages.debian.org or tracker.debian.org is slow
 
