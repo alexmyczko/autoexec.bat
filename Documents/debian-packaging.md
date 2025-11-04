@@ -1,5 +1,4 @@
 # Debian Packaging
-pretty much the same with Ubuntu
 
 2003-2025 Alex Myczko <tar@debian.org>
 
