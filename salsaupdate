@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# initial repo creation
+#gbp clone git@salsa.debian.org:debian/your.git
+#gbp import-dsc --create-missing-branches ../your.dsc
+#git push origin master upstream pristine-tar;git push --tags;git push -u origin --all
+# for new repos
+#git push origin master upstream;git push --tags;git push -u origin --all
+#or see git branch
+#git push origin main upstream;git push --tags;git push -u origin --all
+
 #gbp clone git@salsa.debian.org:debian/${1}.git
 #gbp clone git@salsa.debian.org:deeplearning-team/${1}.git
 #gbp clone git@salsa.debian.org:debian-astro-team/${1}.git
