@@ -1,0 +1,5 @@
+apt install libdvd-pkg handbrake-cli
+dpkg-reconfigure libdvd-pkg
+# ready for
+# HandBrakeCLI -i /dev/sr0 -o publicenemies.mkv --all-audio --all-subtitles --format mkv
+# might want to use another codec? --encoder av1, vp9, x265
