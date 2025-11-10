@@ -147,7 +147,8 @@ $ dput -u ftp-master your_source.changes
 
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
 Check Lintian output: https://lintian.debian.org/
-I did not go into detail with `debian/watch`.
+I did not go into detail with `debian/watch`. Once you have a watch file you can upgrade it to the lastest version
+with `uscan --update-watchfile`.
 Make sure it builds on as many architectures as possible: https://buildd.debian.org/
 If your software works with data files, that can be detected with the file(5) utility, send patches for its detection.
 
