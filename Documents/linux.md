@@ -130,6 +130,13 @@ you can also try x-display-manager, x-session-manager, x-window-manager.
 apt install pypy3
 ```
 
+## Scripting GUI software
+
+When software does not read input from stidn, and you can't use `(echo f) | pacman.c`:
+```
+pacman.c & sleep 0.1; win_id=$(xdotool search --onlyvisible --name "pacman" | head -n 1); xdotool windowactivate $win_id; xdotool key --window $win_id f
+```
+
 ## RTL-SDR
 
 Visualizing ADS-B signals from aircrafts
