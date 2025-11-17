@@ -141,7 +141,7 @@ pacman.c & sleep 0.1; win_id=$(xdotool search --onlyvisible --name "pacman" | he
 
 Visualizing ADS-B signals from aircrafts
 ```
-dump1090-mutability --net
+dump1090-mutability --net --metric --interactive
 viz1090 --fullscreen --lat 47.5 --lon 8.2 --metric --uiscale 3
 ```
 or
