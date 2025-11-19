@@ -39,6 +39,8 @@ unset RPS1
 # if you don't want to see any deprecation warnings from Python
 export PYTHONWARNINGS='ignore::PendingDeprecationWarning,ignore::DeprecationWarning'
 
+export MANGOHUD_CONFIGFILE=~/.mangohud.conf
+
 # history
 HISTSIZE=100000
 SAVEHIST=100000
