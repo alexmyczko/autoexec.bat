@@ -1,0 +1,4 @@
+wget https://github.com/ziglang/zig/releases/download/0.15.1/zig-bootstrap-0.15.1.tar.xz
+tar xf zig-bootstrap-0.15.1.tar.xz
+cd zig*/
+./build x86_64-linux-gnu baseline
