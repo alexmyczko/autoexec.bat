@@ -1,0 +1,30 @@
+{
+    "layer": "top",
+    "modules-left": ["custom/text", "custom/kernel"],
+    "modules-center": ["memory", "cpu"],
+    "modules-right": ["clock"],
+
+    "custom/text": {
+      "format": " Workbench release ",
+      "interval": 3600
+    },
+    "custom/kernel": {
+      "exec": "uname -r",
+      "interval": 600,
+      "format": "{} "
+    },
+
+    "memory": {
+      "format": "{avail}G free mem ",
+      "interval": 1
+    },
+    "cpu": {
+      "format": "{usage}% cpu",
+      "interval": 1
+    },
+
+    "clock": {
+        "format": "{:%a, %d/%b/%Y %H:%M:%S} ",
+        "interval": 1
+    }
+}
