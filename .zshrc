@@ -52,6 +52,8 @@ DEBFULLNAME="Alex Myczko"; export DEBFULLNAME
 
 # blank and lock screen
 alias xlock='xset s blank; xset s 600; xset dpms force off; i3lock -c000000'
+# blank screen for wayland
+alias wlock='hyprctl dispatch dpms off; read -n1; hyprctl dispatch dpms on'
 
 # trim whitespaces
 alias rtrim="sed -i 's/[ \t]*$//'"
