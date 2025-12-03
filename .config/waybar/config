@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "modules-left": ["custom/text", "custom/kernel"],
-    "modules-center": ["memory", "cpu"],
+    "modules-center": ["memory", "cpu", "custom/text3"],
     "modules-right": ["clock"],
 
     "custom/text": {
@@ -21,6 +21,11 @@
     "cpu": {
       "format": "{usage}% cpu",
       "interval": 1
+    },
+    "custom/text3": {
+      "exec": "cat /sys/class/power_supply/macsmc-battery/capacity",
+      "interval": 60,
+      "format": " {}% bat"
     },
 
     "clock": {
