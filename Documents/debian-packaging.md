@@ -143,6 +143,14 @@ $ debsign -k B60A1BF363DC1319FF0A8E89116852BCDF7515C0 your_source.changes
 $ dput -u ftp-master your_source.changes
 ```
 
+## NEW queue
+
+If your package is new it lands in the new queue which reviews the license and either ACCEPTs or REJECTs your package.
+
+https://salsa.debian.org/ftp-team/manpages/-/blob/master/doc/ftp-new.7.man?ref_type=heads
+
+You can view it https://ftp-master.debian.org/new.html
+
 ## After Work
 
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
