@@ -155,9 +155,12 @@ You can view it https://ftp-master.debian.org/new.html
 
 Adding a screenshot to the package is recommended: http://screenshots.debian.net/
 Check Lintian output: https://lintian.debian.org/
+
 I did not go into detail with `debian/watch`. Once you have a watch file you can upgrade it to the lastest version
 with `uscan --update-watchfile`.
+
 Make sure it builds on as many architectures as possible: https://buildd.debian.org/
+
 If your software works with data files, that can be detected with the file(5) utility, send patches for its detection.
 
 ## Satisfying build depends
@@ -210,9 +213,13 @@ Install `popularity-contest` and visit https://popcon.debian.org
 - https://release.debian.org/transitions/index.html
 - http://packages.debian.org/unstable/main/newpkg
 - http://buildd.debian.org/quinn-diff/Packages-arch-specific
+- https://buildd.debian.org/status/architecture.php?a=all&suite=sid
 - http://www.debian.org/Bugs/Developer#severities
 - http://www.debian.org/Bugs/pseudo-packages
 - http://bugs.debian.org/release-critical/
+- https://people.debian.org/~eriberto/udd/uploaders_ranking.html
+- https://people.debian.org/~eriberto/udd/top_500_new.html
+- https://people.debian.org/~eriberto/udd/help_a_package.html
 
 ## Links
 
