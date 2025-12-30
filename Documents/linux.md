@@ -137,6 +137,19 @@ When software does not read input from stidn, and you can't use `(echo f) | pacm
 pacman.c & sleep 0.1; win_id=$(xdotool search --onlyvisible --name "pacman" | head -n 1); xdotool windowactivate $win_id; xdotool key --window $win_id f
 ```
 
+## Highresolution displays
+
+Console
+```
+setfont -d default8x16
+```
+
+X
+```
+xrandr --output eDP-1 --mode 1920x1080 --scale 1.25x1.25
+exec 
+```
+
 ## RTL-SDR
 
 Visualizing ADS-B signals from aircrafts
