@@ -35,4 +35,4 @@ crudini --set .config "" CONFIG_STACKTRACE n
 #crudini --set .config "" CONFIG_MNATIVE y
 #crudini --set .config "" CONFIG_CC_OPTIMIZE_FOR_SIZE n
 
-make bindeb-pkg KDEB_SOURCENAME=linux KDEB_PKGVERSION=1.5.7-1
+make -j$(nproc) bindeb-pkg KDEB_SOURCENAME=linux KDEB_PKGVERSION=1.5.7-1
