@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#n=$(apt-cache pkgnames|sort|wc -l)
+n=$(apt-cache dumpavail | awk '/^Source: /{print $2}' | sort -u|wc -l)
+c=1
+p=0
+
+mkdir work
+mkdir graudit
+
+for a in $(apt-cache dumpavail | awk '/^Source: /{print $2}' | sort -u); do
+    echo "[$c/$n] $a ($p%)"
+
+    if [ ! -f graudit/$a.txt ]; then
+    cd work
+    timeout 10m apt-get source $a
+    timeout 5m graudit -Bz $a*/ > ../graudit/$a.txt
+    cd ..
+    rm -rf work
+    mkdir work
+    fi
+
+    #sleep 0.1
+    p=$(echo "100*$c/$n"|bc)
+    c=$((c + 1))
+done
