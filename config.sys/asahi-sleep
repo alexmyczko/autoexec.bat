@@ -1,0 +1,5 @@
+nmcli radio wifi off
+systemctl suspend
+# nmcli radio wifi on
+# wpa_supplicant -Dnl80211 -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# dhclient dhcpcd-base udhcpc
