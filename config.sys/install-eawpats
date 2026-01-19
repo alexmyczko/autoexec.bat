@@ -1,0 +1,14 @@
+# apt install timidity opencubicplayer
+mv /etc/timidity/timidity.cfg /etc/timidity/timidity.orig
+cat << EOF > /etc/timidity/timidity.cfg
+#on my debian: /usr/local/share/timidity/timidity.cfg
+dir /usr/share/midi/eawpats/
+source gravis.cfg
+source gsdrums.cfg
+source gssfx.cfg
+source xgmap2.cfg
+#mid -> wav: timidity input.mid -Ow1S -s 44100 -o output.wav
+EOF
+mkdir -p /usr/share/midi/
+wget https://ftp.swin.edu.au/gentoo/distfiles/85/eawpats12_full.tar.gz
+tar xf eawpats12_full.tar.gz
