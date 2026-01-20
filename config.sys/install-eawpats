@@ -10,5 +10,6 @@ source xgmap2.cfg
 #mid -> wav: timidity input.mid -Ow1S -s 44100 -o output.wav
 EOF
 mkdir -p /usr/share/midi/
+cd /usr/share/midi/
 wget https://ftp.swin.edu.au/gentoo/distfiles/85/eawpats12_full.tar.gz
 tar xf eawpats12_full.tar.gz
