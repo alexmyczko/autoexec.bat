@@ -1,0 +1,8 @@
+if [ ! -f packages-with-smells-sorted-by-maintainer.txt ]; then
+   wget https://trends.debian.net/packages-with-smells-sorted-by-maintainer.txt
+fi
+grep machine-readable packages-with-smells-sorted-by-maintainer.txt |sort -u|wc -l
+grep -v machine-readable packages-with-smells-sorted-by-maintainer.txt |grep VCS|sort -u|wc -l
+grep -v machine-readable packages-with-smells-sorted-by-maintainer.txt |grep -v VCS|grep salsa|sort -u|wc -l
+grep -v machine-readable packages-with-smells-sorted-by-maintainer.txt |grep -v VCS|grep -v salsa|grep "switch to dh"|sort -u|wc -l
+grep -v machine-readable packages-with-smells-sorted-by-maintainer.txt |grep -v VCS|grep -v salsa|grep -v "switch to dh"|grep -v @|grep -v ^$
