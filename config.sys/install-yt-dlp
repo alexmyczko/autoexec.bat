@@ -1,0 +1,3 @@
+apt install -uy zip pandoc
+# wget it from github
+# because the debian package keeps to be defunct, and does not support -U
