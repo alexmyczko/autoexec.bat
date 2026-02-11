@@ -1,6 +1,8 @@
 # apt install lynx wget make gcc crudini bison flex debhelper-compat libdw-dev libelf-dev libssl-dev rsync
 cd /usr/src
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
+# if you want to go with a longterm kernel
+# lynx -dump http://kernel.org/|grep tar.xz$|awk '{print $2}'|sort -rVu|sed 1d
 wget $k
 tar xf $(basename $k)
 cd $(basename $k .tar.xz)
@@ -9,6 +11,8 @@ cp /boot/config-$(uname -r) .config
 # kernel-hardening-checker -g $(arch|tr '[:lower:]' '[:upper:]')
 yes "" | make oldconfig
 # yes "" | make localmodconfig
+
+# if you go with a non modular kernel, you might need to add firmware blobs, CONFIG_EXTRA_FIRMWARE
 
 # drop some debugging/tracing options
 # crudini --get .config "" CONFIG_DEBUG_KERNEL
