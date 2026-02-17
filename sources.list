@@ -2,3 +2,5 @@ deb http://deb.debian.org/debian sid main contrib non-free non-free-firmware
 deb http://deb.debian.org/debian experimental main contrib non-free
 deb-src http://deb.debian.org/debian sid main contrib non-free
 deb-src http://deb.debian.org/debian experimental main contrib non-free
+#deb https://incoming.debian.org/debian-buildd buildd-unstable main contrib non-free
+#deb-src https://incoming.debian.org/debian-buildd buildd-unstable main contrib non-free
