@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#n=$(apt-cache pkgnames|sort|wc -l)
+n=$(apt-cache dumpavail | awk '/^Source: /{print $2}' | sort -u|wc -l)
+c=1
+p=0
+
+mkdir work
+mkdir spellintian
+
+for a in $(apt-cache dumpavail | awk '/^Source: /{print $2}'|tac | sort -u); do
+    echo "[$c/$n] $a ($p%)"
+
+    if [ ! -f spellintian/$a.txt ]; then
+    cd work
+    timeout 10m apt-get source $a
+    timeout 5m find $a*/ -type f -exec spellintian {} \; >> ../spellintian/$a.txt
+    cd ..
+    rm -rf work
+    mkdir work
+    fi
+
+    #sleep 0.1
+    p=$(echo "100*$c/$n"|bc)
+    c=$((c + 1))
+done
