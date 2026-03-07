@@ -1,6 +1,6 @@
 # Debian Packaging
 
-2003-2025 Alex Myczko <tar@debian.org>
+2003-2026 Alex Myczko <tar@debian.org>
 
 ## Introduction
 
