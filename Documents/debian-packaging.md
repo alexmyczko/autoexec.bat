@@ -188,7 +188,7 @@ Automatic Back Port (from sid or .dsc url) https://github.com/alexmyczko/autoexe
 ## Github of Debian
 
 It's called https://salsa.debian.org and based on gitlab. You can download projects from there
-using `gbp clone`, and create the orig.tar ball using `gbp export-orig`.
+using `gbp clone`, and create the orig.tar ball using `gbp export-orig` or `origtargz`.
 
 ## When packages.debian.org or tracker.debian.org is slow
 
