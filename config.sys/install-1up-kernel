@@ -4,7 +4,7 @@ cd /usr/src
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
 # if you want to go with a longterm kernel
 # lynx -dump http://kernel.org/|grep tar.xz$|awk '{print $2}'|sort -rVu|sed 1d
-wget $k
+wget --no-check-certificate $k
 tar xf $(basename $k)
 cd $(basename $k .tar.xz)
 cp /boot/config-$(uname -r) .config
