@@ -1,5 +1,9 @@
 nmcli radio wifi off
+brightnessctl s 0%
+echo 0 > /sys/class/leds/kbd_backlight/brightness
 systemctl suspend
 # nmcli radio wifi on
+# brightnessctl s 50%
+# echo 10 > /sys/class/leds/kbd_backlight/brightness
 # wpa_supplicant -Dnl80211 -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 # dhclient dhcpcd-base udhcpc
