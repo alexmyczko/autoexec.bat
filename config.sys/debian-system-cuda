@@ -5,6 +5,12 @@ if [ ! -e /etc/apt/sources.list.d/nvidia.list ]; then
   #echo "deb http://developer.download.nvidia.com/compute/cuda/repos/debian13/sbsa/ /" > /etc/apt/sources.list.d/nvidia.list
 fi
 
+# when your internet does not work for reasons
+#lftp with .lftprc with set ssl:verify-certificate no
+#open http://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/
+#mirror
+#deb [trusted=yes] file:/usr/src/nvidia-repo ./
+
 if [ ! -e /etc/apt/trusted.gpg.d/nvidia.asc ]; then
 cat << EOF > /etc/apt/trusted.gpg.d/nvidia.asc
 -----BEGIN PGP PUBLIC KEY BLOCK-----
