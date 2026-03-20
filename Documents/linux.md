@@ -164,3 +164,23 @@ viz1090 --server adsb.1090mhz.uk --port 30005 --metric --uiscale 2
 Maybe useful to have: https://github.com/alexmyczko/autoexec.bat/blob/master/mapdata.bin
 
 `rtl_433` and `rtl_ais` are also interesting.
+
+## autoconf
+
+```
+libtoolize --force
+aclocal
+autoheader
+automake --force-missing --add-missing
+autoconf
+./configure
+```
+
+`autoconf -vif`
+
+## systemd
+
+```
+set search domain
+resolvectl domain ens11f0 somethi.ng
+```
