@@ -175,7 +175,7 @@ If you are not on stable but want to create backports for it
 # distro-info -af # might be useful, also ubuntu-distro-info
 debootstrap --arch amd64 trixie trixie/
 chroot trixie
-apt install devscripts lynx -uy
+apt install devscripts lynx curl -uy
 curl https://raw.githubusercontent.com/alexmyczko/autoexec.bat/refs/heads/master/abp -o abp
 chmod +x abp
 cp abp /usr/bin/
