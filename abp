@@ -2,6 +2,10 @@
 # automatic simple sid backport
 # maybe add URL support for ssh://user@host:/the.dsc using dcmd
 
+# you most likely want to operate in a chroot
+# debootstrap --arch arm64 trixie trixie/
+# chroot trixie
+
 # installed leaf packages: aptitude search '~i !~Rdepends:~i'
 # installed packages: dpkg -l|grep ^ii
 
@@ -29,6 +33,13 @@ if [ ! -n "$DEBEMAIL" ]; then export DEBEMAIL="me@somewhere.lol"; fi
 # optional version selection
 # salsa experimental sid testing stable
 # archive.d.o snapshot.d.o
+
+# since packages.d.o seems unreliably, use rmadison/debsnap instead
+# debsnap -d . src:pkg $(debsnap src:pkg -l|head -1)
+# dpkg-source -x src:pkg.dsc
+# dch --bpo ""
+# apt build-dep .
+# debuild
 
 # packages.d.o very unreliable replace it
 # wget http://ftp.debian.org/debian/dists/unstable/main/source/Sources.xz
