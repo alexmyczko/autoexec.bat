@@ -74,3 +74,5 @@ pip3 found... 248
 ## Interesting Links
 
 [ANSI Escape Sequences](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
+
+[Debian and git](https://bblank.thinkmo.de/introducing-dpkg-format-gitarchive.html)
