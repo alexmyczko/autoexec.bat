@@ -1,12 +1,21 @@
 #!/bin/bash
  
 # cronjob
-#0 * * * * /var/www/bts/sync
- 
+#0 * * * * /var/www/bts/btssync
+#0 * * * * /var/www/bts/btsupdatestats
+
+#btsupdatestats
+#!/bin/bash
+#cd /var/www/bts/
+#links2 -dump https://ftp-master.debian.org/new.html|grep \# |wc -l >> .ftp-closes
+#links2 -dump https://www.debian.org/devel/wnpp/orphaned|grep ": "|wc -l >> .orphaned
+#links2 -dump https://popcon.debian.org/|grep considered:|awk '{print $NF}' >> .popcon-debian
+
 #cd /home/me/public_html/bts
 cd /var/www/bts
  
 #rsync rsync://bugs-mirror.debian.org
+# if port rsync is closed, might redirect through somewhe.re:8080 with pen
 /usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-db bts-spool-db
 /usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-archive bts-spool-archive
 /usr/bin/rsync -av rsync://bugs-mirror.debian.org/bts-spool-index bts-spool-index
