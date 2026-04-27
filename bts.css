@@ -1,0 +1,41 @@
+body {
+    background-color: #0e0907;
+    margin-left: 40px;
+    margin-right: 0px;
+    margin-top: -5px;
+    margin-bottom: 0px;
+//    font-family: sans-serif;
+//    background: url('/web/20201208015055im_/http://bootes.ethz.ch/bts/psycho.gif');
+    color: #d9137a;
+}
+h1 {
+    color: #65da0b;
+    letter-spacing: -3px;
+}
+h2 {
+    color: #d9137a;
+    letter-spacing: -2px;
+}
+h5 {
+    color: #f4e407;
+    padding-left: 30px;
+    margin: 0px;
+    font-weight: bold;
+}
+h6 {
+    color: #777777;
+    margin: 0px;
+    font-size: 6pt;
+}
+a {
+    color: #f4e407;
+    border-bottom: 1px dotted;
+    text-decoration: none;
+}
+p {
+    color: #0b8fda;
+    margin-bottom: 0px;
+}
+a:hover { border-bottom: 4px solid; }
+h5:hover { border-bottom: 4px solid; margin-left: 30px; padding-left: 0px }
+h1,h2,h5,h6,p { border-bottom: 4px solid; border-color: #0e0907 }
