@@ -18,7 +18,7 @@ html { font-family: 'Inter', sans-serif; }
     }
 --></style>
 EOF
-CSS=the.css
+CSS=bts.css
 q=`echo $QUERY_STRING | sed "s,?,,g"`
 if [ -z $QUERY_STRING ]; then echo -n; else CSS=http://${q}; fi
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$CSS\">"
