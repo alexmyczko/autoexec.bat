@@ -4,6 +4,10 @@
 
 # you most likely want to operate in a chroot
 # debootstrap --arch arm64 trixie trixie/
+# mount --bind /dev     trixie/dev
+# mount --bind /dev/pts trixie/dev/pts
+# mount -t proc /proc   trixie/proc
+# mount -t sysfs /sys   trixie/sys
 # chroot trixie
 
 # installed leaf packages: aptitude search '~i !~Rdepends:~i'
