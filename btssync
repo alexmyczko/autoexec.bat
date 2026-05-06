@@ -10,6 +10,8 @@
 #links2 -dump https://ftp-master.debian.org/new.html|grep \# |wc -l >> .ftp-closes
 #links2 -dump https://www.debian.org/devel/wnpp/orphaned|grep ": "|wc -l >> .orphaned
 #links2 -dump https://popcon.debian.org/|grep considered:|awk '{print $NF}' >> .popcon-debian
+#find bts-spool-db -name "*.report"|wc -l >> .num-db
+#find bts-spool-archive -name "*.report"|wc -l >> .num-arch
 
 #cd /home/me/public_html/bts
 cd /var/www/bts
