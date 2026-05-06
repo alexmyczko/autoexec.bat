@@ -12,6 +12,8 @@
 #links2 -dump https://popcon.debian.org/|grep considered:|awk '{print $NF}' >> .popcon-debian
 #find bts-spool-db -name "*.report"|wc -l >> .num-db
 #find bts-spool-archive -name "*.report"|wc -l >> .num-arch
+#du -sm bts-spool-db | awk '{print $1}' >> .size-db
+#du -sm bts-spool-archive | awk '{print $1}' >> .size-arch
 
 #cd /home/me/public_html/bts
 cd /var/www/bts
