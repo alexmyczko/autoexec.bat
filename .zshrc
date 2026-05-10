@@ -63,3 +63,6 @@ alias reb00t="echo 1 > /proc/sys/kernel/sysrq;echo b > /proc/sysrq-trigger"
 
 # ls tricks
 alias ls="echo CONFIG.SYS AUTOEXEC.BAT TEMP WINDOWS My Documents PROGRA~1"
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
