@@ -1,4 +1,4 @@
-' run with pcbasic --interface=text stars.bas or -b stars.bas
+00 ' run with pcbasic --interface=text stars.bas or -b stars.bas
 10 RANDOMIZE TIMER: CLS: WIDTH 80,25: LOCATE ,,,1,15
 20 LOCATE INT(RND*20)+1,INT(RND*79)+1:COLOR INT(RND*15)+1:LOCATE ,,1:PRINT "*";
 30 T=TIMER+.33
