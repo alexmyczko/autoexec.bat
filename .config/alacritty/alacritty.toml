@@ -3,9 +3,18 @@ opacity = 0.8
 
 [font]
 size = 12
+offset = { x = -5, y = -5 }
 
 [font.normal]
-family = "Agave"
+family = "OCR B S"
+#family = "C-64"
+#family = "Topaz Unicode KS13"
+#family = "Px IBM VGA9"
+#family = "OCRA"
+#family = "TT2020 Style B"
+#family = "Kode Mono Semibold"
+#family = "League Mono Narrow Medium"
+#family = "Atari"
 #style = "Regular"
 
 [colors.primary]
