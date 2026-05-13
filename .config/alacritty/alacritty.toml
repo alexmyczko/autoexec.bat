@@ -1,0 +1,25 @@
+[window]
+opacity = 0.8
+
+[font]
+size = 12
+
+[font.normal]
+family = "Agave"
+#style = "Regular"
+
+[colors.primary]
+background = "#0044aa"
+foreground = "#ffffff"
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+blink_interval = 666
+blink_timeout = 0
+
+[cursor.vi_mode_style]
+shape = "Block"
+
+[colors.cursor]
+cursor = "#ee8800"
+text = "#0044aa"
