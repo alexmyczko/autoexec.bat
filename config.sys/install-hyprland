@@ -1,2 +1,2 @@
 # for trixie
-apt install -t trixie-backports hyprland hyprlock fuzzel grim kitty alacritty fonts-inter fonts-agave fonts-ocr-b
+apt install -t trixie-backports hyprland hyprlock fuzzel grim kitty alacritty waybar fonts-inter fonts-agave fonts-ocr-b
