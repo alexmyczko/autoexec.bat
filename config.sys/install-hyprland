@@ -1,2 +1,16 @@
 # for trixie
 apt install -t trixie-backports hyprland hyprlock fuzzel grim kitty alacritty waybar fonts-inter fonts-agave fonts-ocr-b
+exit 0
+
+# multi monitor tips
+# wlr-randr|grep -v "^ "
+# hyprctl dispatch swapactiveworkspaces eDP-1 HDMI-A-1
+
+#!/bin/bash
+BATCH_CMD=$(hyprctl monitors -j | jq -r '
+  sort_by(.x) |
+  .[0] as $l | .[1] as $r |
+  ($r.width / $r.scale | round) as $offset |
+  "keyword monitor \($r.name),\($r.width)x\($r.height)@\($r.refreshRate),0x0,\($r.scale) ; keyword monitor \($l.name),\($l.width)x\($l.height)@\($l.refreshRate),\($offset)x0,\($l.scale)"
+')
+hyprctl --batch "$BATCH_CMD"
