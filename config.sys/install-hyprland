@@ -1,6 +1,18 @@
 # for trixie
-apt install -t trixie-backports hyprland hyprlock fuzzel grim kitty alacritty waybar fonts-inter fonts-agave fonts-ocr-b
+apt install -t trixie-backports hyprland hyprlock fuzzel slurp grim wl-clipboard kitty alacritty waybar fonts-inter fonts-agave fonts-ocr-b
 exit 0
+
+# hyprshot
+wget https://raw.githubusercontent.com/Gustash/Hyprshot/refs/heads/main/hyprshot
+chmod +x hyprshot # -d . -f the.png
+cp hyprshot /usr/bin
+
+# Screenshot a window
+bind = SUPER, Print, exec, hyprshot -m window
+# Screenshot a monitor
+bind = , Print, exec, hyprshot -m output
+# Screenshot a region (interactive crosshair)
+bind = SUPER SHIFT, Print, exec, hyprshot -m region
 
 # multi monitor tips
 # wlr-randr|grep -v "^ "
