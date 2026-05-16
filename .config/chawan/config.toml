@@ -2,4 +2,5 @@
 images = true
 
 [display]
-image-mode = "kitty"
+image-mode = "sixel"
+#image-mode = "kitty"
