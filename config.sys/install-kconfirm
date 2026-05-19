@@ -1,0 +1,2 @@
+# apt install -uy cargo
+argo install --git https://github.com/julianbraha/kconfirm --tag v0.7.0 kconfirm-cli
