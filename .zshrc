@@ -30,7 +30,8 @@ fi
 FAR2L_ARGS="-an --tty"; export FAR2L_ARGS
 
 # set favourite editor, emacs is an alternative
-EDITOR=mcedit; export EDITOR
+#EDITOR=mcedit; export EDITOR
+EDITOR=vim; export EDITOR
 
 # shell prompt
 export PS1='%n@%m:%~%(!.#.$) '
@@ -42,9 +43,22 @@ export PYTHONWARNINGS='ignore::PendingDeprecationWarning,ignore::DeprecationWarn
 export MANGOHUD_CONFIGFILE=~/.mangohud.conf
 
 # history
-HISTSIZE=100000
-SAVEHIST=100000
 HISTFILE=~/.history
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 # debian packages
 DEBEMAIL="alex@aiei.ch"; export DEBEMAIL
@@ -62,7 +76,7 @@ alias rtrim="sed -i 's/[ \t]*$//'"
 alias reb00t="echo 1 > /proc/sys/kernel/sysrq;echo b > /proc/sysrq-trigger"
 
 # ls tricks
-alias ls="echo CONFIG.SYS AUTOEXEC.BAT TEMP WINDOWS My Documents PROGRA~1"
+#alias ls="echo CONFIG.SYS AUTOEXEC.BAT TEMP WINDOWS My Documents PROGRA~1"
 
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
