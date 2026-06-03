@@ -46,9 +46,9 @@ echo "<br>Archived Bugs"
 printf "<b>%0.0f</b>\n" `tail -1 .num-arch`
 echo \(`(tail -2 .num-arch | head -1;tail -1 .num-arch) | (read a;read b;printf "%+0.0f\n" $(echo $b-$a|bc))`\)
 printf "%0.0f mb\n" `tail -1 .size-arch`
-echo "<br>Debian <a href=https://ftp-master.debian.org/deferred.html>DEFERRED</a>"
-echo "<br>Debian <a href=http://ftp-master.debian.org/new.html>NEW</a> closable bugs"
-printf "<b>%0.0f</b> (<a href=http://molly.corsac.net/~corsac/debian/new/>%0.0f/%0.0f</a>)\n" `tail -1 .ftp-closes` `tail -1 .new-total | awk '{print $1}'` `tail -1 .new-total | awk '{print $2}'`
+<br>Debian <a href=https://ftp-master.debian.org/deferred.html>DEFERRED</a>
+ <a href=http://ftp-master.debian.org/new.html>NEW</a>
+ <a href=https://ftp-master.debian.org/backports-new.html>BPO-NEW</a>
 echo "<br>Source packages in <a href=http://incoming.debian.org>incoming.debian.org</a>"
 printf "<b>%0.0f</b>\n" `tail -1 .incoming`
 echo "<br>Package movement for <a href=http://bjorn.haxx.se/debian/accepted.html>testing</a>"
