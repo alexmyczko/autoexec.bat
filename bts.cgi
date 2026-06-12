@@ -49,6 +49,8 @@ printf "%0.0f mb\n" `tail -1 .size-arch`
 <br>Debian <a href=https://ftp-master.debian.org/deferred.html>DEFERRED</a>
  <a href=http://ftp-master.debian.org/new.html>NEW</a>
  <a href=https://ftp-master.debian.org/backports-new.html>BPO-NEW</a>
+# lynx -dump https://mentors.debian.net/packages/|grep package/ |wc -l
+# link to https://mentors.debian.net/packages/ "Potential new packages awaiting review"
 echo "<br>Source packages in <a href=http://incoming.debian.org>incoming.debian.org</a>"
 printf "<b>%0.0f</b>\n" `tail -1 .incoming`
 echo "<br>Package movement for <a href=http://bjorn.haxx.se/debian/accepted.html>testing</a>"
