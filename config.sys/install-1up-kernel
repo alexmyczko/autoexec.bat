@@ -32,6 +32,10 @@ crudini --set .config "" CONFIG_STACKTRACE n
 #crudini --set .config "" CONFIG_BT n
 #crudini --set .config "" CONFIG_NFC n
 #crudini --set .config "" CONFIG_HAMRADIO n
+#crudini --set .config "" CONFIG_A11Y_BRAILLE_CONSOLE n
+#crudini --set .config "" CONFIG_ACCESSIBILITY n
+#crudini --set .config "" CONFIG_SPEAKUP n
+#crudini --set .config "" CONFIG_PARPORT n
 
 # performance focused tweaks
 #crudini --set .config "" CONFIG_PREEMPT y
