@@ -29,6 +29,9 @@ crudini --set .config "" CONFIG_STACKTRACE n
 #crudini --set .config "" CONFIG_MEDIA_SUPPORT n
 #crudini --set .config "" CONFIG_DRM n
 #crudini --set .config "" CONFIG_WLAN n
+#crudini --set .config "" CONFIG_BT n
+#crudini --set .config "" CONFIG_NFC n
+#crudini --set .config "" CONFIG_HAMRADIO n
 
 # performance focused tweaks
 #crudini --set .config "" CONFIG_PREEMPT y
