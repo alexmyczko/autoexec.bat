@@ -1,4 +1,4 @@
-# apt install lynx wget make gcc crudini bison flex debhelper-compat libdw-dev libelf-dev libssl-dev rsync
+# apt install lynx wget make bc gcc crudini bison flex debhelper-compat libdw-dev libelf-dev libssl-dev rsync clang llvm lld
 cd /usr/src
 # links2 -ssl.certificates 0 -source https://kernel.org/|grep complete|grep tar.xz | head -1|sed "s,.*ref=.,,g;s,xz.*,xz,g"
 k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head -1)
