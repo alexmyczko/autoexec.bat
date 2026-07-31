@@ -46,8 +46,11 @@ crudini --set .config "" CONFIG_STACKTRACE n
 #crudini --set .config "" CONFIG_HIGH_RES_TIMERS y
 
 # CPU optimizations
-#crudini --set .config "" CONFIG_MCORE2 y
-#crudini --set .config "" CONFIG_MNATIVE y
-#crudini --set .config "" CONFIG_CC_OPTIMIZE_FOR_SIZE n
+#crudini --set .config "" CONFIG_GENERIC_CPU=y
+#crudini --set .config "" CONFIG_MZEN y        # AMD Zen
+#crudini --set .config "" CONFIG_MNATIVE y     # local only build
+#crudini --set .config "" CONFIG_CC_OPTIMIZE_FOR_SIZE n # go for performance (-O2, otherwise for size -Os)
 
+# to build using clang instead of gcc
+#export CC=clang LLVM=1
 make -j$(nproc) bindeb-pkg KDEB_SOURCENAME=linux KDEB_PKGVERSION=1.5.7-1
