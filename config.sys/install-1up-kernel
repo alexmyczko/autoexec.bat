@@ -5,6 +5,8 @@ k=$(lynx -dump https://kernel.org/ |grep tar.xz$|awk '{print $2}'|sort -rV|head 
 # if you want to go with a longterm kernel
 # lynx -dump http://kernel.org/|grep tar.xz$|awk '{print $2}'|sort -rVu|sed 1d
 # might also want to go with a debian one: rmadison linux|grep -v bpo|grep -v debug
+# to get specific debian kernel version
+# debsnap -d . linux $(debsnap -l linux|grep "^6\|^7"|grep -v "bpo\|exp\|rc\|sun"|sort -Vr|fzf)
 wget --no-check-certificate $k
 tar xf $(basename $k)
 cd $(basename $k .tar.xz)
