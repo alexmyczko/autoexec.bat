@@ -19,6 +19,7 @@ yes "" | make oldconfig
 # if you go with a non modular kernel, you might need to add firmware blobs, CONFIG_EXTRA_FIRMWARE
 
 # drop some debugging/tracing options
+# or use native scripts/config --enable|--disable|--module CONFIG_OPTION
 # crudini --get .config "" CONFIG_DEBUG_KERNEL
 crudini --set .config "" CONFIG_DEBUG_KERNEL n
 crudini --set .config "" CONFIG_DEBUG_INFO n
@@ -50,6 +51,9 @@ crudini --set .config "" CONFIG_STACKTRACE n
 #crudini --set .config "" CONFIG_MZEN y        # AMD Zen
 #crudini --set .config "" CONFIG_MNATIVE y     # local only build
 #crudini --set .config "" CONFIG_CC_OPTIMIZE_FOR_SIZE n # go for performance (-O2, otherwise for size -Os)
+
+# verify/fix settings
+make olddefconfig
 
 # to build using clang instead of gcc
 #export CC=clang LLVM=1
