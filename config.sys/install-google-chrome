@@ -2,5 +2,6 @@ cat << EOF > /etc/default/google-chrome
 repo_add_once="false"
 repo_reenable_on_distupgrade="false"
 EOF
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb
+a=$(dpkg --print-architecture)
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_$(a).deb
+apt install ./google-chrome-stable_current_$(a).deb
