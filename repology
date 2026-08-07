@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+pkg=${1:?usage: repology PACKAGE [REPO]}
+repo=${2:-}
+
+curl -fsS \
+  -A 'repology/0.1 (https://repology.org/)' \
+  "https://repology.org/api/v1/project/$(printf '%s' "$pkg" | jq -sRr @uri)" |
+jq -r --arg repo "$repo" '
+  .[]
+  | select($repo == "" or .repo == $repo)
+  | [.repo, .version]
+  | @tsv
+' |
+column -t -s "$(printf '\t')"
