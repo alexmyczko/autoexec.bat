@@ -1,5 +1,6 @@
 # there is also ntpsec and chrony
 # apt install systemd-timesyncd
 # see timedatectl -h
+# timedatectl set-ntp true
 timedatectl
 PAGER= systemctl status systemd-timesyncd
