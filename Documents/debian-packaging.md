@@ -112,7 +112,7 @@ If that says all is right (no Warnings or Errors). You can install it with
 You must check if the program works. Also make sure the manpage is working.
 From what I experienced I will most likely to have go through this several times.
 
-Never forget reportbug, it will be your friend. When you package something from http://www.debian.org/devel/wnpp/requested you can close the bug also with an e-mail to <number>-done@bugs.debian.org. If you don't know what to package, check orphaned packages.
+Never forget reportbug, it will be your friend (reporting bugs against packages, wnpp, ftp.debian.org is common). When you package something from http://www.debian.org/devel/wnpp/requested you can close the bug also with an e-mail to <number>-done@bugs.debian.org. If you don't know what to package, check orphaned packages.
 
 It can be helpful to look at how other packages are packaged
 
