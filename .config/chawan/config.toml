@@ -1,6 +1,8 @@
 [buffer]
 images = true
+cookie = true
+scripting = true
 
 [display]
-image-mode = "sixel"
-#image-mode = "kitty"
+#image-mode = "sixel"
+image-mode = "kitty"
