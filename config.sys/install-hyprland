@@ -1,5 +1,5 @@
 # for trixie
-apt install -t trixie-backports hyprland hyprlock fuzzel slurp grim wl-clipboard kitty alacritty waybar fonts-inter fonts-agave fonts-ocr-b
+apt install -t trixie-backports hyprland hyprlock fuzzel slurp grim wl-clipboard kitty playerctl brightnessctl wireplumber alacritty waybar fonts-inter fonts-agave fonts-ocr-b
 exit 0
 
 # hyprshot
