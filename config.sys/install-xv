@@ -6,3 +6,5 @@ cd xv-6.0.4
 cmake .
 make
 cp src/xv /usr/bin
+cp src/contrib/xv.desktop /usr/share/applications                                                 
+convert src/contrib/xv.xpm -sample 256x256 /usr/share/pixmaps/xv.png
