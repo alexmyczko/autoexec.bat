@@ -1,8 +1,8 @@
 # Please consult https://github.com/jasper-software/xv/blob/main/src/README for registration
 # apt install cmake libwebp-dev libtiff-dev libpng-dev libjpeg-dev
-wget https://github.com/jasper-software/xv/archive/refs/tags/v6.0.4.tar.gz
-tar xf v6.0.4.tar.gz
-cd xv-6.0.4
+wget https://github.com/jasper-software/xv/archive/refs/tags/v6.2.0.tar.gz
+tar xf v6.2.0.tar.gz
+cd xv-6.2.0
 cmake .
 make
 cp src/xv /usr/bin
