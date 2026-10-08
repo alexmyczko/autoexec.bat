@@ -2,6 +2,7 @@
 images = true
 cookie = true
 scripting = true
+meta-refresh = "always"
 
 [display]
 #image-mode = "sixel"
