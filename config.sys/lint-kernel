@@ -5,5 +5,4 @@ k=$(uname -r)
 # rmadison linux|grep -v debug
 # debsnap -l linux|sort -V
 
-# links2 -ssl.certificates 0 -source https://kernel.org/|grep complete|grep tar..z | sed "s,.*ref=.,,g;s,z.*,z,g"
-# lynx -dump http://kernel.org/|grep tar..z$|awk '{print $2}'|sort -rVu
+curl -s https://www.kernel.org/releases.json | jq -r '.releases[] | [.version, .moniker, .source, .released.isodate] | @tsv'
