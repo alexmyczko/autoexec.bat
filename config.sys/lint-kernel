@@ -1,6 +1,7 @@
 #!/bin/bash
 
 k=$(uname -r)
+export $(echo $k | sed -E 's/^([0-9]+)\.([0-9]+)\.([0-9]+).*/MAJ=\1 MIN=\2 PAT=\3/')
 
 # rmadison linux|grep -v debug
 # debsnap -l linux|sort -V
